@@ -1,0 +1,8 @@
+@import '../node_modules/foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
+
+
+//Partial Imports -------------------------------------------------
+@import 'partials/header';

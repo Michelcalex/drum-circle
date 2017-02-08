@@ -18,7 +18,7 @@ gulp.task('assets', function() {
 });
 
 gulp.task('css', function () {
-    return gulp.src('scss/style.scss')
+    return gulp.src('styles/style.scss')
         .pipe(sass()) 
         .pipe(gulp.dest('public/'));
 });
