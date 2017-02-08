@@ -6,13 +6,13 @@
         <p>Our blurb goes blah blah blah</p>
     </section>
     <section id="log-in">
-        <div ="userlogin">
-            <button>Sign Up </button>
-            <button>Log In</button>
+        <div id="userlogin">
+            <button ng-click="showForm=true">Sign Up</button>
+            <button ng-click="showForm=true">Log In</button>
         </div>
-        <div= "form">
-            <p>form goes Here</p>
-            <input type="text" ng-model="username" placeholder="Username here">
+        <div ng-show="showForm" id="form">
+            <input type="text" ng-model="username" placeholder="Username">
+            <input type="text" ng-model="password" placeholder="Password">
         </div>
     </section>
 </section>
