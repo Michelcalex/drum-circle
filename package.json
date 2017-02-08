@@ -1,0 +1,31 @@
+{
+  "name": "drum-circle",
+  "version": "1.0.0",
+  "description": "Drum Circle",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "foundation-sites": "^6.3.0",
+    "gulp-sass": "^3.0.0",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "foundation-sites": "^6.3.0",
+    "gulp": "^3.9.1",
+    "gulp-browser": "^3.0.4",
+    "gulp-sass": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michelcalex/drum-circle.git"
+  },
+  "keywords": [],
+  "author": "Lexi Michel (@Michelcalex), Leo Wolf(@leowolf749), Ben Burr(@bburrva)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michelcalex/drum-circle/issues"
+  },
+  "homepage": "https://github.com/Michelcalex/drum-circle#readme"
+}
