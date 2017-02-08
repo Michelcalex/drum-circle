@@ -1,7 +1,7 @@
 const app = angular.module('DrumCircleApp', ['ui.router']);
 
 
-//Components ---------------------------------------------------
+//Components ----------------------------------------------------
 const components = [
     require('../components/welcome/welcome.component'),
 ];
@@ -11,13 +11,23 @@ for (let i = 0; i < components.length; i++) {
 }
 
 
-//Controllers ---------------------------------------------------
+//Controllers ----------------------------------------------------
 const controllers = [
     require('../components/welcome/welcome.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
     app.controller(controllers[i].name, controllers[i].func);
+}
+
+
+//Services -------------------------------------------------------
+const services = [
+    require('../services/welcome.service'),
+];
+
+for (let i = 0; i < services.length; i++) {
+    app.factory(services[i].name, services[i].func);
 }
 
 
