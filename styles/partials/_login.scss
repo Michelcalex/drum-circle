@@ -3,6 +3,7 @@
 
     #userlogin {
         text-align: center;
+        padding: 2%;
 
         button {
             background-color: #0D4656;
@@ -11,12 +12,7 @@
         }
     }
 
-    #form {
-        text-align: center;  
-        padding: 2%;
-
-        input {
+   input {
             border: 1px solid black;
         } 
-    }
 }
