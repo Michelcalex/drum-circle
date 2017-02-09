@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test For Drum Circle</title>
+</head>
+<body>
+
+<a href="/login">login</a>
+<a href="/sign-up">sign up</a>
+
+{{^user}}
+Login
+<form action="/login" method="post">
+    <input type="text" placeholder="Username" name="username" required/>
+    <input type="password" placeholder="Password" name="password" required/>
+    <button type="submit">Login</button>
+</form>
+
+Sign Up
+<form action="/sign-up" method="post">
+    <input type="text" placeholder="Username" name="username" required/>
+    <input type="password" placeholder="Password" name="password" required/>
+    <button type="submit">Sign Up</button>
+</form>
+{{/user}}
+
+{{#user}}
+Welcome, {{username}}!
+{{/user}}
+</body>
+</html>

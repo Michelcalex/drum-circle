@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/../AngularSpring" value="1484943400000" />
+        <entry key="$PROJECT_DIR$/../CalendarSpring" value="1485377366000" />
+        <entry key="$PROJECT_DIR$/../CalendarSpringAssignment" value="1486163142000" />
+        <entry key="$PROJECT_DIR$/../GameTrackerSpring" value="1484772008000" />
+        <entry key="$PROJECT_DIR$/../HelloGame" value="2967256278000" />
+        <entry key="$PROJECT_DIR$/../HelloSpring" value="1484683636000" />
+        <entry key="$PROJECT_DIR$/../Hibernate-QueryMethods" value="1486166830000" />
+        <entry key="$PROJECT_DIR$/../IronGram" value="1485464464000" />
+        <entry key="$PROJECT_DIR$/../IronGramAssignment" value="1485526217000" />
+        <entry key="$PROJECT_DIR$/../MastermindBackend" value="1485032706000" />
+        <entry key="$PROJECT_DIR$/../SuperKoalio" value="2967263332000" />
+        <entry key="$PROJECT_DIR$" value="1486512450000" />
+        <entry key="$PROJECT_DIR$/../drumCloud" value="1486512450000" />
+        <entry key="$PROJECT_DIR$/../java-koans-master/koans" value="1468032122000" />
+        <entry key="$PROJECT_DIR$/../libgdx" value="2967422650000" />
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" default="true">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
