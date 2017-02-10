@@ -22,5 +22,5 @@ public class Sound {
 
     @Lob
     @Column(nullable = false)
-
+    String randomPlaceHolder;
 }
