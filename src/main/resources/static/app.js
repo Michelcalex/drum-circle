@@ -3,8 +3,8 @@ module.exports = {
     name: 'welcome',
     object: {
         controller: 'WelcomeController',
-        controllerAs: '$ctrl',
-        templateUrl: 'templates/welcome/welcome.temp.html',
+        // controllerAs: '$ctrl',
+        templateUrl: 'welcome/welcome.temp.html',
     },
 };
 },{}],2:[function(require,module,exports){
@@ -17,12 +17,23 @@ module.exports = {
     },
 };
 },{}],3:[function(require,module,exports){
+module.exports = {
+    name: 'headerSection',
+    object: {
+        templateUrl: 'welcome/welcome.header.html',
+        bindings: {
+            loggedIn: '<',
+        }
+    },
+};
+},{}],4:[function(require,module,exports){
 const app = angular.module('DrumCircleApp', ['ui.router']);
 
 
 //Components ----------------------------------------------------
 const components = [
     require('../components/welcome/welcome.component'),
+    require('../components/welcome/welcome.header.component'),
 ];
 
 for (let i = 0; i < components.length; i++) {
@@ -64,6 +75,7 @@ app.config(function ($stateProvider) {
         url: '/index',
         component: 'welcome',
     });
+
 }).run(function ($location, $state) {
     // There is probably a cleaner way to do this; specifically it feels kinda
     // gross because we have to put file names in here (which could change).
@@ -82,7 +94,7 @@ app.config(function ($stateProvider) {
     }
 
 });
-},{"../components/welcome/welcome.component":1,"../components/welcome/welcome.controller":2,"../services/welcome.service":4}],4:[function(require,module,exports){
+},{"../components/welcome/welcome.component":1,"../components/welcome/welcome.controller":2,"../components/welcome/welcome.header.component":3,"../services/welcome.service":5}],5:[function(require,module,exports){
 module.exports = {
     name: 'WelcomeService',
     func: function ($http) {
@@ -93,4 +105,4 @@ module.exports = {
         }
     }
 }
-},{}]},{},[3]);
+},{}]},{},[4]);

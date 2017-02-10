@@ -1,8 +1,9 @@
 module.exports = {
-    name: 'header',
+    name: 'headerSection',
     object: {
-        controller: 'HeaderController',
-        controllerAs: '$ctrl',
-        templateUrl: 'templates/welcome/welcome.header.html',
+        templateUrl: 'welcome/welcome.header.html',
+        bindings: {
+            loggedIn: '<',
+        }
     },
 };

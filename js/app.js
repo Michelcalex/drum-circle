@@ -4,6 +4,7 @@ const app = angular.module('DrumCircleApp', ['ui.router']);
 //Components ----------------------------------------------------
 const components = [
     require('../components/welcome/welcome.component'),
+    require('../components/welcome/welcome.header.component'),
 ];
 
 for (let i = 0; i < components.length; i++) {
@@ -45,6 +46,7 @@ app.config(function ($stateProvider) {
         url: '/index',
         component: 'welcome',
     });
+
 }).run(function ($location, $state) {
     // There is probably a cleaner way to do this; specifically it feels kinda
     // gross because we have to put file names in here (which could change).
