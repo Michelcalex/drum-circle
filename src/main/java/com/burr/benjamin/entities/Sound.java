@@ -20,6 +20,7 @@ public class Sound {
     @Column(nullable = false)
     String category;
 
+    @Lob
     @Column(nullable = false)
-    
+
 }
