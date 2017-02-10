@@ -28,8 +28,11 @@ public class DrumCircleController {
         User user = users.findByUsername(username);
         if (user != null) {
             System.out.println("welcome");
+            return "redirect:/index.html";
+        } else {
+            System.out.println("not logged in.");
+            return "redirect:/start.html";
         }
-        return "home";
     }
 
 
