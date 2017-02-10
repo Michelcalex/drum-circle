@@ -32,6 +32,7 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
     return gulp.src('js/app.js')
+        .pipe(browser.browserify())
         //note you took browersify out
         .pipe(gulp.dest(BUILD_URL))
         .pipe(gulp.dest(SRC_URL));
