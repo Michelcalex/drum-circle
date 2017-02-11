@@ -13,7 +13,21 @@
     <main>
         <ui-view></ui-view>
     </main>
-    <section>OUR FORM GOES IN HERE - FORM FORM FORM FORM FORM</section>
+    <section id "login-form">
+        <form action="/login" method="post">
+            <input type="text" placeholder="Username" name="username"  ng-model="loginUserName" required/>
+            <input type="password" placeholder="Password" name="password" ng-model="loginUserPassword" required/>
+            <button type="submit" ng-click="addLogin()">Login</button>
+        </form>
+    </section>
+    <section id "signup-form">
+        <form action="/sign-up" method="post">
+            <input type="text" placeholder="Username" name="username" ng-model="signupUserName" required/>
+            <input type="password" placeholder="Password" name="password" ng-model="signupUserPassword"  required/>
+            <button type="submit" ng-click="addSignup()">Sign Up</button>
+        </form>
+    </section>
+
     <footer>
         <p>Footer goes here</p>
     </footer>
