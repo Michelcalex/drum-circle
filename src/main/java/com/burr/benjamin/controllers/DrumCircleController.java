@@ -1,8 +1,6 @@
 package com.burr.benjamin.controllers;
 
-import com.burr.benjamin.Services.SoundRepository;
 import com.burr.benjamin.Services.UserRepository;
-import com.burr.benjamin.entities.Sound;
 import com.burr.benjamin.entities.User;
 import com.burr.benjamin.utilities.PasswordStorage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,13 +92,13 @@ public class DrumCircleController {
         }
     }
 
-    @CrossOrigin
-    @RequestMapping("/sounds")
-    public List<Sound> showSounds(HttpSession session) throws Exception {
-        String username = (String) session.getAttribute("username");
-        if (username == null) {
-            throw new Exception("Not logged in");
-        }
-        return null;
-    }
+//    @CrossOrigin
+//    @RequestMapping("/sounds")
+//    public List<Sound> showSounds(HttpSession session) throws Exception {
+//        String username = (String) session.getAttribute("username");
+//        if (username == null) {
+//            throw new Exception("Not logged in");
+//        }
+//        return null;
+//    }
 }
