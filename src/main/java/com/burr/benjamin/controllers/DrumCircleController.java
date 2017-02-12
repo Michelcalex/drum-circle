@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 /**
  * Created by Ben on 2/7/17.
@@ -61,6 +63,13 @@ public class DrumCircleController {
             e.printStackTrace();
         }
         return "redirect:/";
+    }
+
+    @CrossOrigin
+    @RequestMapping("/logout")
+    public void logout(HttpSession session, HttpServletResponse response) throws IOException {
+        session.invalidate();
+        response.sendRedirect("/");
     }
 
     @PostConstruct
