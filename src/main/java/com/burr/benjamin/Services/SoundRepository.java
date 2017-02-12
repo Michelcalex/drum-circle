@@ -9,5 +9,6 @@ import java.util.List;
  * Created by Ben on 2/12/17.
  */
 public interface SoundRepository {
-    List<Sound> findByFavorite(List<User> favorite);
+    List<Sound> findByFavorite(User favorite);
+    List<Sound> findByName(String name);
 }

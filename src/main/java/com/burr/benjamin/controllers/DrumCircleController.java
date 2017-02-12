@@ -39,6 +39,7 @@ public class DrumCircleController {
         User user = users.findByUsername(username);
         if (user != null) {
             System.out.println("welcome");
+            //The secret of life
             return "redirect:/index.html";
         } else {
             System.out.println("not logged in.");
@@ -100,8 +101,6 @@ public class DrumCircleController {
         if (username == null) {
             throw new Exception("Not logged in");
         }
-
-        User user = users.findByUsername(username);
-        return sounds.findByFavorite(user);
+        return null;
     }
 }
