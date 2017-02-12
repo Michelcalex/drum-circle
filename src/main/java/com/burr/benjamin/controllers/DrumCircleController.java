@@ -29,8 +29,8 @@ public class DrumCircleController {
     @Autowired
     UserRepository users;
 
-    @Autowired
-    SoundRepository sounds;
+//    @Autowired
+//    SoundRepository sounds;
 
     @CrossOrigin
     @RequestMapping(path = "/", method = RequestMethod.GET)
