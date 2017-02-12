@@ -1,6 +1,7 @@
 package com.burr.benjamin.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Ben on 2/9/17.
@@ -24,7 +25,7 @@ public class Sound {
     String fileName;
 
     @ManyToMany
-    User favorite;
+    List<User> favorite;
 
     public Sound() {
     }
