@@ -30,7 +30,7 @@ public class Sound {
     public Sound() {
     }
 
-    public Sound(String name, String category, String fileName, User favorite) {
+    public Sound(String name, String category, String fileName, List<User> favorite) {
         this.name = name;
         this.category = category;
         this.fileName = fileName;
@@ -69,11 +69,11 @@ public class Sound {
         this.fileName = fileName;
     }
 
-    public User getFavorite() {
+    public List<User> getFavorite() {
         return favorite;
     }
 
-    public void setFavorite(User favorite) {
+    public void setFavorite(List<User> favorite) {
         this.favorite = favorite;
     }
 }
