@@ -1,0 +1,18 @@
+<header class="row">
+    <nav>
+        <div id="nav-logo">
+            <h1>Drum Circle</h1>
+        </div>
+        <div id="nav-links">
+            <ul ng-if="$ctrl.loggedIn">
+                <li><a ui-sref="browse">Browse</a></li>
+                <li><a ui-sref="kit">Kit</a></li>
+                <li><a ui-sref="logout">Logout</a></li>
+            </ul>
+            <ul ng-if="!$ctrl.loggedIn">
+                <li><a ui-sref="login">Log In</a></li>
+                <li><a ui-sref="browse">Browse</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -3,8 +3,16 @@ const app = angular.module('DrumCircleApp', ['ui.router']);
 
 //Components ----------------------------------------------------
 const components = [
-    require('../components/welcome/welcome.component'),
-    require('../components/welcome/welcome.header.component'),
+    require('../components/home/home.component'),
+    require('../components/header/header.component'),
+    require('../components/login/login.component'),
+    require('../components/browse/browse.component'),
+    require('../components/signup/signup.component'),
+    require('../components/start/start.component'),
+    require('../components/kit/kit.component'),
+    require('../components/logout/logout.component'),
+    //require('../components/home/welcome.component'),
+    //require('../components/welcome/welcome.header.component'),
 ];
 
 for (let i = 0; i < components.length; i++) {
@@ -14,7 +22,10 @@ for (let i = 0; i < components.length; i++) {
 
 //Controllers ----------------------------------------------------
 const controllers = [
-    require('../components/welcome/welcome.controller'),
+    require('../components/header/header.controller'),
+    require('../components/login/login.controller'),
+    require('../components/signup/signup.controller'),
+    //require('../components/welcome/welcome.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -24,7 +35,7 @@ for (let i = 0; i < controllers.length; i++) {
 
 //Services -------------------------------------------------------
 const services = [
-    require('../services/welcome.service'),
+    require('../services/home.service'),
 ];
 
 for (let i = 0; i < services.length; i++) {
@@ -38,13 +49,37 @@ app.config(function ($stateProvider) {
     $stateProvider.state({
         name: 'start',
         url: '/start',
-        component: 'welcome',
+        component: 'start',
     });
 
     $stateProvider.state({
         name: 'index',
         url: '/index',
-        component: 'welcome',
+        component: 'home',
+    });
+
+    $stateProvider.state({
+        name: 'login',
+        url: '/start',
+        component: 'start',
+    });
+
+    $stateProvider.state({
+        name: 'browse',
+        url: '/browse',
+        component: 'browse',
+    });
+
+    $stateProvider.state({
+        name: 'kit',
+        url: '/kit',
+        component: 'kit',
+    });
+
+    $stateProvider.state({
+        name: 'logout',
+        url: '/logout',
+        component: 'logout',
     });
 
 }).run(function ($location, $state) {
