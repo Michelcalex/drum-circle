@@ -22,7 +22,6 @@ module.exports = {
     name: 'HeaderController',
     func: function($scope) {
         console.log('I am header controller');
-        //Need to write login function!
     },
 };
 },{}],4:[function(require,module,exports){
@@ -50,13 +49,6 @@ module.exports = {
 };
 },{}],7:[function(require,module,exports){
 module.exports = {
-    name: 'logout',
-    object: {
-        templateUrl: 'logout/logout.view.html',
-    },
-};
-},{}],8:[function(require,module,exports){
-module.exports = {
     name: 'signupForm',
     object: {
         // controller: 'SignupController',
@@ -64,14 +56,14 @@ module.exports = {
         templateUrl: 'signup/signup.view.html',
     },
 };
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 module.exports = {
     name: 'start',
     object: {
         templateUrl: 'start/start.view.html',
     },
 };
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 // window.addEventListener('load', function() {
 //     checkUser(id);
 // });
@@ -89,7 +81,7 @@ const components = [
     require('../components/signup/signup.component'),
     require('../components/start/start.component'),
     require('../components/kit/kit.component'),
-    require('../components/logout/logout.component'),
+    //require('../components/logout/logout.component'),
     //require('../components/home/welcome.component'),
 ];
 
@@ -153,11 +145,11 @@ app.config(function ($stateProvider) {
         component: 'kit',
     });
 
-    $stateProvider.state({
-        name: 'logout',
-        url: '/logout',
-        component: 'logout',
-    });
+    // $stateProvider.state({
+    //     name: 'logout',
+    //     url: '/start',
+    //     component: 'logout',
+    // });
 
 }).run(function ($location, $state) {
     // There is probably a cleaner way to do this; specifically it feels kinda
@@ -177,7 +169,7 @@ app.config(function ($stateProvider) {
     }
 
 });
-},{"../components/browse/browse.component":1,"../components/header/header.component":2,"../components/header/header.controller":3,"../components/home/home.component":4,"../components/kit/kit.component":5,"../components/login/login.component":6,"../components/logout/logout.component":7,"../components/signup/signup.component":8,"../components/start/start.component":9,"../services/home.service":11}],11:[function(require,module,exports){
+},{"../components/browse/browse.component":1,"../components/header/header.component":2,"../components/header/header.controller":3,"../components/home/home.component":4,"../components/kit/kit.component":5,"../components/login/login.component":6,"../components/signup/signup.component":7,"../components/start/start.component":8,"../services/home.service":10}],10:[function(require,module,exports){
 module.exports = {
     name: 'HomeService',
     func: function ($http, $state) {
@@ -206,4 +198,4 @@ module.exports = {
         }
     }
 }
-},{}]},{},[10]);
+},{}]},{},[9]);

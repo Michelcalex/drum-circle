@@ -15,7 +15,7 @@ const components = [
     require('../components/signup/signup.component'),
     require('../components/start/start.component'),
     require('../components/kit/kit.component'),
-    require('../components/logout/logout.component'),
+    //require('../components/logout/logout.component'),
     //require('../components/home/welcome.component'),
 ];
 
@@ -79,11 +79,11 @@ app.config(function ($stateProvider) {
         component: 'kit',
     });
 
-    $stateProvider.state({
-        name: 'logout',
-        url: '/logout',
-        component: 'logout',
-    });
+    // $stateProvider.state({
+    //     name: 'logout',
+    //     url: '/start',
+    //     component: 'logout',
+    // });
 
 }).run(function ($location, $state) {
     // There is probably a cleaner way to do this; specifically it feels kinda
