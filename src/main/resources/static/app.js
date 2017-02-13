@@ -23,9 +23,6 @@ module.exports = {
     func: function($scope) {
         console.log('I am header controller');
         //Need to write login function!
-        $scope.loggedin = function() {
-            
-        }
     },
 };
 },{}],4:[function(require,module,exports){
@@ -216,15 +213,15 @@ module.exports = {
                     console.log('POST successful!');
                 });
             }, 
-            // sendSignup(username, userpassword) {
-            //     $http.post('https://drumcircle1.herokuapp.com/sign-up', {
-            //         username: username,
-            //         password: userpassword
-            //     }).then(function(response) {
-            //         console.log('POST successful!');
-            //         $state.go('index');
-            //     });
-            // }
+            sendSignup(username, userpassword) {
+                $http.post('https://drumcircle1.herokuapp.com/sign-up', {
+                    username: username,
+                    password: userpassword
+                }).then(function(response) {
+                    console.log('POST signup successful!');
+                    $state.go('index');
+                });
+            }
         }
     }
 }

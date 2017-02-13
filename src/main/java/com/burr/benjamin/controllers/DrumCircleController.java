@@ -63,6 +63,7 @@ public class DrumCircleController {
     @RequestMapping(path = "/sign-up", method = RequestMethod.POST)
     public String signUp(HttpSession session, String username, String password) {
         try {
+            
             User user = new User(username, PasswordStorage.createHash(password));
             users.save(user);
         } catch (PasswordStorage.CannotPerformOperationException e) {
