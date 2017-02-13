@@ -5,11 +5,11 @@
     <title>Test For Drum Circle</title>
 </head>
 <body>
-
+{{^user}}
 <a href="/login">login</a>
 <a href="/sign-up">sign up</a>
 
-{{^user}}
+
 Login
 <form action="/login" method="post">
     <input type="text" placeholder="Username" name="username" required/>
@@ -24,6 +24,11 @@ Sign Up
     <button type="submit">Sign Up</button>
 </form>
 {{/user}}
+
+Log Out
+<form action="/logout" method="post">
+    <input type="submit" />
+</form>
 
 {{#user}}
 Welcome, {{username}}!

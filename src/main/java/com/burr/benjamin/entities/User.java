@@ -1,6 +1,7 @@
 package com.burr.benjamin.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Ben on 2/7/17.
@@ -19,6 +20,9 @@ public class User {
 
     @Column(nullable = false)
     String password;
+
+    @ManyToMany
+    List<Sound> favorites;
 
     public User() {
     }

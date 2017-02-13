@@ -24,17 +24,13 @@ public class Sound {
     @Column(nullable = false)
     String fileName;
 
-    @ManyToMany
-    List<User> favorite;
-
     public Sound() {
     }
 
-    public Sound(String name, String category, String fileName, List<User> favorite) {
+    public Sound(String name, String category, String fileName) {
         this.name = name;
         this.category = category;
         this.fileName = fileName;
-        this.favorite = favorite;
     }
 
     public int getId() {
@@ -69,11 +65,4 @@ public class Sound {
         this.fileName = fileName;
     }
 
-    public List<User> getFavorite() {
-        return favorite;
-    }
-
-    public void setFavorite(List<User> favorite) {
-        this.favorite = favorite;
-    }
 }
