@@ -1,6 +1,7 @@
 module.exports = {
     name: 'BrowseController',
-    func: function($scope, BrowseService) {
-        BrowseService.showSounds();
+    func: function($scope) {
+        console.log('I am browse controller');
+        
     },
 };

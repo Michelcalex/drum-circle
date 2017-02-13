@@ -3,6 +3,6 @@ module.exports = {
     object: {
         // controller: 'LoginController',
         // controllerAs: '$ctrl',
-        templateUrl: 'login/login.view.html',
+        templateUrl: 'components/login/login.view.html',
     },
 };

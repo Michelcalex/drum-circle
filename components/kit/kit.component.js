@@ -1,6 +1,6 @@
 module.exports = {
     name: 'kit',
     object: {
-        templateUrl: 'kit/kit.view.html',
+        templateUrl: 'components/kit/kit.view.html',
     },
 };

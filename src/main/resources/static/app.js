@@ -9,8 +9,9 @@ module.exports = {
 },{}],2:[function(require,module,exports){
 module.exports = {
     name: 'BrowseController',
-    func: function($scope, BrowseService) {
-        BrowseService.showSounds();
+    func: function($scope) {
+        console.log('I am browse controller');
+        
     },
 };
 },{}],3:[function(require,module,exports){
@@ -19,7 +20,7 @@ module.exports = {
     object: {
         controller: 'HeaderController',
         controllerAs: '$ctrl',
-        templateUrl: 'header/header.view.html',
+        templateUrl: 'components/header/header.view.html',
         bindings: {
             loggedIn: '<',
         }
@@ -36,14 +37,14 @@ module.exports = {
 module.exports = {
     name: 'home',
     object: {
-        templateUrl: 'home/home.view.html',
+        templateUrl: 'components/home/home.view.html',
     },
 };
 },{}],6:[function(require,module,exports){
 module.exports = {
     name: 'kit',
     object: {
-        templateUrl: 'kit/kit.view.html',
+        templateUrl: 'components/kit/kit.view.html',
     },
 };
 },{}],7:[function(require,module,exports){
@@ -52,7 +53,7 @@ module.exports = {
     object: {
         // controller: 'LoginController',
         // controllerAs: '$ctrl',
-        templateUrl: 'login/login.view.html',
+        templateUrl: 'components/login/login.view.html',
     },
 };
 },{}],8:[function(require,module,exports){
@@ -61,14 +62,14 @@ module.exports = {
     object: {
         // controller: 'SignupController',
         // controllerAs: '$ctrl',
-        templateUrl: 'signup/signup.view.html',
+        templateUrl: 'components/signup/signup.view.html',
     },
 };
 },{}],9:[function(require,module,exports){
 module.exports = {
     name: 'start',
     object: {
-        templateUrl: 'start/start.view.html',
+        templateUrl: 'components/start/start.view.html',
     },
 };
 },{}],10:[function(require,module,exports){
@@ -172,11 +173,11 @@ app.config(function ($stateProvider) {
 
 
     // If the url includes 'index.html', redirect to the main app state.
-    if ($location.absUrl().includes('index.html')) {
-        $state.go('index');
-    } else {
-        $state.go('start');
-    }
+    // if ($location.absUrl().includes('index.html')) {
+    //     $state.go('index');
+    // } else {
+    //     $state.go('start');
+    // }
 
 });
 },{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/header/header.component":3,"../components/header/header.controller":4,"../components/home/home.component":5,"../components/kit/kit.component":6,"../components/login/login.component":7,"../components/signup/signup.component":8,"../components/start/start.component":9,"../services/browse.service":11,"../services/home.service":12}],11:[function(require,module,exports){
