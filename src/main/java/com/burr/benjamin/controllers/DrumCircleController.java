@@ -26,8 +26,4 @@ import java.util.List;
 public class DrumCircleController {
     @Autowired
     UserRepository users;
-
-    @Autowired
-    SoundRepository sounds;
-
 }
