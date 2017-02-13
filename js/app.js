@@ -1,3 +1,8 @@
+// window.addEventListener('load', function() {
+//     checkUser(id);
+// });
+
+
 const app = angular.module('DrumCircleApp', ['ui.router']);
 
 
@@ -12,7 +17,6 @@ const components = [
     require('../components/kit/kit.component'),
     require('../components/logout/logout.component'),
     //require('../components/home/welcome.component'),
-    //require('../components/welcome/welcome.header.component'),
 ];
 
 for (let i = 0; i < components.length; i++) {
@@ -23,9 +27,8 @@ for (let i = 0; i < components.length; i++) {
 //Controllers ----------------------------------------------------
 const controllers = [
     require('../components/header/header.controller'),
-    require('../components/login/login.controller'),
-    require('../components/signup/signup.controller'),
-    //require('../components/welcome/welcome.controller'),
+    // require('../components/login/login.controller'),
+    // require('../components/signup/signup.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {

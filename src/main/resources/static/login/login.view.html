@@ -1,7 +1,5 @@
-<section>
-    <form ng-submit="addUserLogin()">
-        <input type="text" placeholder="Username" ng-model="userName">
-        <input type="text" placeholder="Password" ng-model="userPassword">
-        <button type="submit">Submit</button>
-    </form>
-</section>
+<form action="/login" method="post">
+    <input type="text" placeholder="Username" name="username">
+    <input type="text" placeholder="Password" name="password">
+    <button type="submit">Submit</button>
+</form>
