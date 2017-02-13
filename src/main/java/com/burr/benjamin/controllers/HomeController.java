@@ -33,14 +33,13 @@ public class HomeController {
         if (userId != null) {
 
             User user = users.findOne(userId);
-            //The secret of life
             model.addAttribute("user", user);
             return "index";
         } else {
             return "start";
         }
     }
-
+// the answer to the ultimate question of life, the universe, and everything
 
     @CrossOrigin
     @RequestMapping(path = "/login", method = RequestMethod.POST)
@@ -56,7 +55,7 @@ public class HomeController {
 
     @RequestMapping(path = "/sign-up", method = RequestMethod.GET)
     public String signUp(HttpSession session) {
-        return "sample-sign-up";
+        return "start";
     }
 
     @CrossOrigin
