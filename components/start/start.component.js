@@ -1,6 +1,6 @@
 module.exports = {
     name: 'start',
     object: {
-        templateUrl: 'start/start.view.html',
+        templateUrl: 'components/start/start.view.html',
     },
 };

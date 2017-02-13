@@ -98,10 +98,10 @@ app.config(function ($stateProvider) {
 
 
     // If the url includes 'index.html', redirect to the main app state.
-    if ($location.absUrl().includes('index.html')) {
-        $state.go('index');
-    } else {
-        $state.go('start');
-    }
+    // if ($location.absUrl().includes('index.html')) {
+    //     $state.go('index');
+    // } else {
+    //     $state.go('start');
+    // }
 
 });
