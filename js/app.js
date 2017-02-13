@@ -27,6 +27,7 @@ for (let i = 0; i < components.length; i++) {
 //Controllers ----------------------------------------------------
 const controllers = [
     require('../components/header/header.controller'),
+    require('../components/browse/browse.controller'),
     // require('../components/login/login.controller'),
     // require('../components/signup/signup.controller'),
 ];
@@ -39,6 +40,7 @@ for (let i = 0; i < controllers.length; i++) {
 //Services -------------------------------------------------------
 const services = [
     require('../services/home.service'),
+    require('../services/browse.service'),
 ];
 
 for (let i = 0; i < services.length; i++) {

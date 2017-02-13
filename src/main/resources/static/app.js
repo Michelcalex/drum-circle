@@ -2,10 +2,18 @@
 module.exports = {
     name: 'browse',
     object: {
+        controller: 'BrowseController',
         templateUrl: 'browse/browse.view.html',
     },
 };
 },{}],2:[function(require,module,exports){
+module.exports = {
+    name: 'BrowseController',
+    func: function($scope, BrowseService) {
+        BrowseService.showSounds();
+    },
+};
+},{}],3:[function(require,module,exports){
 module.exports = {
     name: 'headerSection',
     object: {
@@ -17,28 +25,28 @@ module.exports = {
         }
     },
 };
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 module.exports = {
     name: 'HeaderController',
     func: function($scope) {
         console.log('I am header controller');
     },
 };
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 module.exports = {
     name: 'home',
     object: {
         templateUrl: 'home/home.view.html',
     },
 };
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = {
     name: 'kit',
     object: {
         templateUrl: 'kit/kit.view.html',
     },
 };
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = {
     name: 'loginForm',
     object: {
@@ -47,7 +55,7 @@ module.exports = {
         templateUrl: 'login/login.view.html',
     },
 };
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 module.exports = {
     name: 'signupForm',
     object: {
@@ -56,14 +64,14 @@ module.exports = {
         templateUrl: 'signup/signup.view.html',
     },
 };
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = {
     name: 'start',
     object: {
         templateUrl: 'start/start.view.html',
     },
 };
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 // window.addEventListener('load', function() {
 //     checkUser(id);
 // });
@@ -93,6 +101,7 @@ for (let i = 0; i < components.length; i++) {
 //Controllers ----------------------------------------------------
 const controllers = [
     require('../components/header/header.controller'),
+    require('../components/browse/browse.controller'),
     // require('../components/login/login.controller'),
     // require('../components/signup/signup.controller'),
 ];
@@ -105,6 +114,7 @@ for (let i = 0; i < controllers.length; i++) {
 //Services -------------------------------------------------------
 const services = [
     require('../services/home.service'),
+    require('../services/browse.service'),
 ];
 
 for (let i = 0; i < services.length; i++) {
@@ -169,7 +179,23 @@ app.config(function ($stateProvider) {
     }
 
 });
-},{"../components/browse/browse.component":1,"../components/header/header.component":2,"../components/header/header.controller":3,"../components/home/home.component":4,"../components/kit/kit.component":5,"../components/login/login.component":6,"../components/signup/signup.component":7,"../components/start/start.component":8,"../services/home.service":10}],10:[function(require,module,exports){
+},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/header/header.component":3,"../components/header/header.controller":4,"../components/home/home.component":5,"../components/kit/kit.component":6,"../components/login/login.component":7,"../components/signup/signup.component":8,"../components/start/start.component":9,"../services/browse.service":11,"../services/home.service":12}],11:[function(require,module,exports){
+module.exports = {
+    name: 'BrowseService',
+    func: function ($state, $http) {
+        const sounds = ['hello'];
+
+        return {
+            showSounds() {
+                for (let i = 0; i < sounds.length; i++) {
+                console.log(sounds[i]);
+                }
+            },
+        };        
+
+    },
+};
+},{}],12:[function(require,module,exports){
 module.exports = {
     name: 'HomeService',
     func: function ($http, $state) {
@@ -198,4 +224,4 @@ module.exports = {
         }
     }
 }
-},{}]},{},[9]);
+},{}]},{},[10]);
