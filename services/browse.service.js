@@ -1,12 +1,18 @@
 module.exports = {
     name: 'BrowseService',
     func: function ($state, $http) {
-        const sounds = ['hello'];
+        const sounds = [
+            {
+                name: 'Kick Cypress 1',
+                source: 'http://localhost:50383/music/Kick Cypress 1.wav',
+                icon: 'play icon', 
+            },
+        ];
 
         return {
             showSounds() {
                 for (let i = 0; i < sounds.length; i++) {
-                console.log(sounds[i]);
+                console.log(sounds[i].name);
                 }
             },
         };        
