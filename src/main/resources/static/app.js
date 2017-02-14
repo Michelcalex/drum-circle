@@ -9,8 +9,8 @@ module.exports = {
 },{}],2:[function(require,module,exports){
 module.exports = {
     name: 'BrowseController',
-    func: function($scope) {
-        console.log('I am browse controller');
+    func: function($scope, BrowseService) {
+        BrowseService.showSounds();
         
     },
 };
