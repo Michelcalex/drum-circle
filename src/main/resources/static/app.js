@@ -3,6 +3,7 @@ module.exports = {
     name: 'browse',
     object: {
         controller: 'BrowseController',
+        controllerAs: '$ctrl',
         templateUrl: 'components/browse/browse.view.html',
         bindings: {
             preview: '<',
@@ -21,21 +22,26 @@ module.exports = {
 };
 },{}],3:[function(require,module,exports){
 module.exports = {
+    name: 'TabsController',
+    func: function($scope) {
+        $scope.tab = 1;
+        $scope.setTab = function(newTab){
+            $scope.tab = newTab;
+        };
+
+        $scope.isSet = function(tabNum){
+            return $scope.tab === tabNum;
+        };
+    }
+};
+},{}],4:[function(require,module,exports){
+module.exports = {
     name: 'headerSection',
     object: {
-        controller: 'HeaderController',
-        controllerAs: '$ctrl',
         templateUrl: 'components/header/header.view.html',
         bindings: {
             loggedIn: '<',
         }
-    },
-};
-},{}],4:[function(require,module,exports){
-module.exports = {
-    name: 'HeaderController',
-    func: function($scope) {
-        console.log('I am header controller');
     },
 };
 },{}],5:[function(require,module,exports){
@@ -56,8 +62,6 @@ module.exports = {
 module.exports = {
     name: 'loginForm',
     object: {
-        // controller: 'LoginController',
-        // controllerAs: '$ctrl',
         templateUrl: 'components/login/login.view.html',
     },
 };
@@ -65,8 +69,6 @@ module.exports = {
 module.exports = {
     name: 'signupForm',
     object: {
-        // controller: 'SignupController',
-        // controllerAs: '$ctrl',
         templateUrl: 'components/signup/signup.view.html',
     },
 };
@@ -78,11 +80,6 @@ module.exports = {
     },
 };
 },{}],10:[function(require,module,exports){
-// window.addEventListener('load', function() {
-//     checkUser(id);
-// });
-
-
 const app = angular.module('DrumCircleApp', ['ui.router']);
 
 
@@ -95,8 +92,6 @@ const components = [
     require('../components/signup/signup.component'),
     require('../components/start/start.component'),
     require('../components/kit/kit.component'),
-    //require('../components/logout/logout.component'),
-    //require('../components/home/welcome.component'),
 ];
 
 for (let i = 0; i < components.length; i++) {
@@ -106,10 +101,8 @@ for (let i = 0; i < components.length; i++) {
 
 //Controllers ----------------------------------------------------
 const controllers = [
-    require('../components/header/header.controller'),
     require('../components/browse/browse.controller'),
-    // require('../components/login/login.controller'),
-    // require('../components/signup/signup.controller'),
+    require('../components/browse/browse.tabs.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -160,32 +153,8 @@ app.config(function ($stateProvider) {
         url: '/kit',
         component: 'kit',
     });
-
-    // $stateProvider.state({
-    //     name: 'logout',
-    //     url: '/start',
-    //     component: 'logout',
-    // });
-
-// }).run(function ($location, $state) {
-    // There is probably a cleaner way to do this; specifically it feels kinda
-    // gross because we have to put file names in here (which could change).
-    // Should work fine for you guys for now, but this will break if you
-    // rename your html files.
-
-    // Once routes are setup, move to a different default route based on 
-    // what file we've loaded.
-
-
-    // If the url includes 'index.html', redirect to the main app state.
-    // if ($location.absUrl().includes('index.html')) {
-    //     $state.go('index');
-    // } else {
-    //     $state.go('start');
-    // }
-
 });
-},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/header/header.component":3,"../components/header/header.controller":4,"../components/home/home.component":5,"../components/kit/kit.component":6,"../components/login/login.component":7,"../components/signup/signup.component":8,"../components/start/start.component":9,"../services/browse.service":11,"../services/home.service":12}],11:[function(require,module,exports){
+},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/browse/browse.tabs.controller":3,"../components/header/header.component":4,"../components/home/home.component":5,"../components/kit/kit.component":6,"../components/login/login.component":7,"../components/signup/signup.component":8,"../components/start/start.component":9,"../services/browse.service":11,"../services/home.service":12}],11:[function(require,module,exports){
 module.exports = {
     name: 'BrowseService',
     func: function ($state, $http) {
