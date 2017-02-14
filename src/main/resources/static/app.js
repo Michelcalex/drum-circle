@@ -165,10 +165,13 @@ module.exports = {
             },
 
         ];
-
-        /** This is pushing everything in the sounds array into an array called wads.
-         *  Then the for loop creates a new Wad for everything in the wads array.
-         */ 
+        
+        const wads = [];
+        for (let i = 0; i < sounds.length; i++) {
+            wads.push(new Wad({
+                source: sounds[i].source,
+            }));
+        };
 
 
         return {
@@ -177,12 +180,6 @@ module.exports = {
 
             },
             previewSounds() {
-                const wads = [];
-                for (let i = 0; i < sounds.length; i++) {
-                    wads.push(new Wad({
-                        source: sounds[i].source,
-                    }));
-                };
                 wads[0].play();
                 console.log(wads[0]);
             }
