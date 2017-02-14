@@ -3,5 +3,8 @@ module.exports = {
     object: {
         controller: 'BrowseController',
         templateUrl: 'components/browse/browse.view.html',
+        bindings: {
+            preview: '<',
+        },
     },
 };

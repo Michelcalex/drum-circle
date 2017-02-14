@@ -4,13 +4,16 @@ module.exports = {
     object: {
         controller: 'BrowseController',
         templateUrl: 'components/browse/browse.view.html',
+        bindings: {
+            preview: '<',
+        },
     },
 };
 },{}],2:[function(require,module,exports){
 module.exports = {
     name: 'BrowseController',
     func: function($scope, BrowseService) {
-        BrowseService.showSounds();
+       $scope.sounds = BrowseService.showSounds();
         
     },
 };
@@ -162,7 +165,7 @@ app.config(function ($stateProvider) {
     //     component: 'logout',
     // });
 
-// }).run(function ($location, $state) {
+}).run(function ($location, $state) {
     // There is probably a cleaner way to do this; specifically it feels kinda
     // gross because we have to put file names in here (which could change).
     // Should work fine for you guys for now, but this will break if you
@@ -187,21 +190,21 @@ module.exports = {
         const sounds = [
             {
                 name: 'Kick Cypress 1',
-                source: 'http://localhost:50383/test-sounds/Kick Cypress 1.wav',
-                icon: 'play icon', 
+                source: 'http://localhost:55645/test-sounds/Kick Cypress 1.wav',
             },
             {
                 name: 'Bleep MrBleep',
-                source: 'http://localhost:50383/test-sounds/Bleep MrBleep.wav',
-                icon: 'play icon',
+                source: 'http://localhost:55645/test-sounds/Bleep MrBleep.wav',
             },
         ];
 
         return {
             showSounds() {
-                for (let i = 0; i < sounds.length; i++) {
-                console.log(sounds[i].name);
-                }
+                return sounds;
+                // for (let i = 0; i < sounds.length; i++) {
+                // console.log(sounds[i].icon);
+
+                // }
             },
         };        
 

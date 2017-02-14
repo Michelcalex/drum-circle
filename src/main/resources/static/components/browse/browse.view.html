@@ -1,1 +1,10 @@
-<h1>I am Browse dude!</h1>
+<sounds preview="sound">
+<section ng-controller="BrowseController">
+    <ul>
+        <li ng-repeat="sound in sounds">
+            <p>{{ sound.name }}</p>
+            <a><img src="http://localhost:55645/assets/play-button (2).png"/></a>
+        </li>
+    </ul>
+</section>
+</sounds>
