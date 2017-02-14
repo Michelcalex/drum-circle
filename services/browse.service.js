@@ -1,17 +1,14 @@
 module.exports = {
     name: 'BrowseService',
     func: function ($state, $http) {
-        const playIcon = 'assets/play-button (2).png';
         const sounds = [
             {
                 name: 'Kick Cypress 1',
-                source: 'http://localhost:50383/test-sounds/Kick Cypress 1.wav',
-                icon: playIcon, 
+                source: 'http://localhost:55645/test-sounds/Kick Cypress 1.wav',
             },
             {
                 name: 'Bleep MrBleep',
-                source: 'http://localhost:50383/test-sounds/Bleep MrBleep.wav',
-                icon: playIcon,
+                source: 'http://localhost:55645/test-sounds/Bleep MrBleep.wav',
             },
         ];
 
