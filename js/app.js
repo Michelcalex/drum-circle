@@ -15,7 +15,7 @@ const components = [
     require('../components/signup/signup.component'),
     require('../components/start/start.component'),
     require('../components/kit/kit.component'),
-    require('../components/logout/logout.component'),
+    //require('../components/logout/logout.component'),
     //require('../components/home/welcome.component'),
 ];
 
@@ -27,6 +27,7 @@ for (let i = 0; i < components.length; i++) {
 //Controllers ----------------------------------------------------
 const controllers = [
     require('../components/header/header.controller'),
+    require('../components/browse/browse.controller'),
     // require('../components/login/login.controller'),
     // require('../components/signup/signup.controller'),
 ];
@@ -39,6 +40,7 @@ for (let i = 0; i < controllers.length; i++) {
 //Services -------------------------------------------------------
 const services = [
     require('../services/home.service'),
+    require('../services/browse.service'),
 ];
 
 for (let i = 0; i < services.length; i++) {
@@ -79,11 +81,11 @@ app.config(function ($stateProvider) {
         component: 'kit',
     });
 
-    $stateProvider.state({
-        name: 'logout',
-        url: '/logout',
-        component: 'logout',
-    });
+    // $stateProvider.state({
+    //     name: 'logout',
+    //     url: '/start',
+    //     component: 'logout',
+    // });
 
 }).run(function ($location, $state) {
     // There is probably a cleaner way to do this; specifically it feels kinda
@@ -96,10 +98,10 @@ app.config(function ($stateProvider) {
 
 
     // If the url includes 'index.html', redirect to the main app state.
-    if ($location.absUrl().includes('index.html')) {
-        $state.go('index');
-    } else {
-        $state.go('start');
-    }
+    // if ($location.absUrl().includes('index.html')) {
+    //     $state.go('index');
+    // } else {
+    //     $state.go('start');
+    // }
 
 });
