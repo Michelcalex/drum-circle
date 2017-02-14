@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface SoundRepository {
     List<Sound> findByName(String name);
+    List<Sound> findAll(Iterable<Integer> id);
 }

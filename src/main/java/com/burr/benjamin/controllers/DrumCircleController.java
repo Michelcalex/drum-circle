@@ -26,4 +26,12 @@ import java.util.List;
 public class DrumCircleController {
     @Autowired
     UserRepository users;
+
+    @Autowired
+    SoundRepository sounds;
+
+    @RequestMapping(path = "/sounds", method = RequestMethod.GET)
+    public List<Sound> sound() {
+        return sounds.findAll();
+    }
 }
