@@ -3,7 +3,7 @@ module.exports = {
     name: 'browse',
     object: {
         controller: 'BrowseController',
-        templateUrl: 'browse/browse.view.html',
+        templateUrl: 'components/browse/browse.view.html',
     },
 };
 },{}],2:[function(require,module,exports){
@@ -162,7 +162,7 @@ app.config(function ($stateProvider) {
     //     component: 'logout',
     // });
 
-}).run(function ($location, $state) {
+// }).run(function ($location, $state) {
     // There is probably a cleaner way to do this; specifically it feels kinda
     // gross because we have to put file names in here (which could change).
     // Should work fine for you guys for now, but this will break if you
