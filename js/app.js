@@ -1,8 +1,3 @@
-// window.addEventListener('load', function() {
-//     checkUser(id);
-// });
-
-
 const app = angular.module('DrumCircleApp', ['ui.router']);
 
 
@@ -15,8 +10,6 @@ const components = [
     require('../components/signup/signup.component'),
     require('../components/start/start.component'),
     require('../components/kit/kit.component'),
-    //require('../components/logout/logout.component'),
-    //require('../components/home/welcome.component'),
 ];
 
 for (let i = 0; i < components.length; i++) {
@@ -28,8 +21,7 @@ for (let i = 0; i < components.length; i++) {
 const controllers = [
     require('../components/header/header.controller'),
     require('../components/browse/browse.controller'),
-    // require('../components/login/login.controller'),
-    // require('../components/signup/signup.controller'),
+    require('../components/browse/browse.tabs.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -80,28 +72,4 @@ app.config(function ($stateProvider) {
         url: '/kit',
         component: 'kit',
     });
-
-    // $stateProvider.state({
-    //     name: 'logout',
-    //     url: '/start',
-    //     component: 'logout',
-    // });
-
-// }).run(function ($location, $state) {
-    // There is probably a cleaner way to do this; specifically it feels kinda
-    // gross because we have to put file names in here (which could change).
-    // Should work fine for you guys for now, but this will break if you
-    // rename your html files.
-
-    // Once routes are setup, move to a different default route based on 
-    // what file we've loaded.
-
-
-    // If the url includes 'index.html', redirect to the main app state.
-    // if ($location.absUrl().includes('index.html')) {
-    //     $state.go('index');
-    // } else {
-    //     $state.go('start');
-    // }
-
 });

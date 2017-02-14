@@ -8,3 +8,41 @@
         </ul>
     </section>
 </sounds>
+
+
+
+<section ng-controller="TabsController">
+    <h2>Tabs Example</h2>
+    <ul class="tabs" data-tabs>
+        <li ng-class= "{ active: isSet(1) }" class="tabs-title"><a href ng-click="setTab(1)">All</a></li>
+        <li ng-class= "{ active: isSet(2) }" class="tabs-title"><a href ng-click="setTab(2)">Kick</a></li>
+        <li ng-class= "{ active: isSet(3) }" class="tabs-title"><a href ng-click="setTab(3)">Snare</a></li>
+        <li ng-class= "{ active: isSet(4) }" class="tabs-title"><a href ng-click="setTab(4)">Tom</a></li>
+        <li ng-class= "{ active: isSet(5) }" class="tabs-title"><a href ng-click="setTab(5)">Highat</a></li>
+        <li ng-class= "{ active: isSet(6) }" class="tabs-title"><a href ng-click="setTab(6)">Symbol</a></li>
+        <li ng-class= "{ active: isSet(7) }" class="tabs-title"><a href ng-click="setTab(7)">Percussion</a></li>
+    </ul>
+    <div class="col-md-8">
+        <div ng-show="isSet(1)">
+            <h1>Show All list</h1>
+        </div>
+        <div ng-show="isSet(2)">
+            <h1>Show Kick list</h1>
+        </div>
+        <div ng-show="isSet(3)">
+            <h1>Show Snare list</h1>
+        </div>
+        <div ng-show="isSet(4)">
+            <h1>Show Tom list</h1>
+        </div>
+        <div ng-show="isSet(5)">
+            <h1>Show Highhat list</h1>
+        </div>
+        <div ng-show="isSet(6)">
+            <h1>Show Symbol list</h1>
+        </div>
+        <div ng-show="isSet(7)">
+            <h1>Show Percussion list</h1>
+        </div>
+    </div>
+</section>

@@ -19,6 +19,21 @@ module.exports = {
 };
 },{}],3:[function(require,module,exports){
 module.exports = {
+    name: 'TabsController',
+    func: function($scope, BrowseService) {
+       $scope.tab = 1;
+
+    $scope.setTab = function(newTab){
+      $scope.tab = newTab;
+    };
+
+    $scope.isSet = function(tabNum){
+      return $scope.tab === tabNum;
+    };
+    }
+};
+},{}],4:[function(require,module,exports){
+module.exports = {
     name: 'headerSection',
     object: {
         controller: 'HeaderController',
@@ -29,28 +44,28 @@ module.exports = {
         }
     },
 };
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 module.exports = {
     name: 'HeaderController',
     func: function($scope) {
         console.log('I am header controller');
     },
 };
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = {
     name: 'home',
     object: {
         templateUrl: 'components/home/home.view.html',
     },
 };
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = {
     name: 'kit',
     object: {
         templateUrl: 'components/kit/kit.view.html',
     },
 };
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 module.exports = {
     name: 'loginForm',
     object: {
@@ -59,7 +74,7 @@ module.exports = {
         templateUrl: 'components/login/login.view.html',
     },
 };
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = {
     name: 'signupForm',
     object: {
@@ -68,19 +83,14 @@ module.exports = {
         templateUrl: 'components/signup/signup.view.html',
     },
 };
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = {
     name: 'start',
     object: {
         templateUrl: 'components/start/start.view.html',
     },
 };
-},{}],10:[function(require,module,exports){
-// window.addEventListener('load', function() {
-//     checkUser(id);
-// });
-
-
+},{}],11:[function(require,module,exports){
 const app = angular.module('DrumCircleApp', ['ui.router']);
 
 
@@ -106,6 +116,7 @@ for (let i = 0; i < components.length; i++) {
 const controllers = [
     require('../components/header/header.controller'),
     require('../components/browse/browse.controller'),
+    require('../components/browse/tabs.controller'),
     // require('../components/login/login.controller'),
     // require('../components/signup/signup.controller'),
 ];
@@ -183,7 +194,7 @@ app.config(function ($stateProvider) {
     // }
 
 });
-},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/header/header.component":3,"../components/header/header.controller":4,"../components/home/home.component":5,"../components/kit/kit.component":6,"../components/login/login.component":7,"../components/signup/signup.component":8,"../components/start/start.component":9,"../services/browse.service":11,"../services/home.service":12}],11:[function(require,module,exports){
+},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/browse/tabs.controller":3,"../components/header/header.component":4,"../components/header/header.controller":5,"../components/home/home.component":6,"../components/kit/kit.component":7,"../components/login/login.component":8,"../components/signup/signup.component":9,"../components/start/start.component":10,"../services/browse.service":12,"../services/home.service":13}],12:[function(require,module,exports){
 module.exports = {
     name: 'BrowseService',
     func: function ($state, $http) {
@@ -213,7 +224,7 @@ module.exports = {
 
     },
 };
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 module.exports = {
     name: 'HomeService',
     func: function ($http, $state) {
@@ -242,4 +253,4 @@ module.exports = {
         }
     }
 }
-},{}]},{},[10]);
+},{}]},{},[11]);
