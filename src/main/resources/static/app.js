@@ -3,14 +3,17 @@ module.exports = {
     name: 'browse',
     object: {
         controller: 'BrowseController',
-        templateUrl: 'browse/browse.view.html',
+        templateUrl: 'components/browse/browse.view.html',
+        bindings: {
+            preview: '<',
+        },
     },
 };
 },{}],2:[function(require,module,exports){
 module.exports = {
     name: 'BrowseController',
     func: function($scope, BrowseService) {
-        BrowseService.showSounds();
+       $scope.sounds = BrowseService.showSounds();
         
     },
 };
@@ -187,21 +190,21 @@ module.exports = {
         const sounds = [
             {
                 name: 'Kick Cypress 1',
-                source: 'http://localhost:50383/test-sounds/Kick Cypress 1.wav',
-                icon: 'play icon', 
+                source: 'http://localhost:55645/test-sounds/Kick Cypress 1.wav',
             },
             {
                 name: 'Bleep MrBleep',
-                source: 'http://localhost:50383/test-sounds/Bleep MrBleep.wav',
-                icon: 'play icon',
+                source: 'http://localhost:55645/test-sounds/Bleep MrBleep.wav',
             },
         ];
 
         return {
             showSounds() {
-                for (let i = 0; i < sounds.length; i++) {
-                console.log(sounds[i].name);
-                }
+                return sounds;
+                // for (let i = 0; i < sounds.length; i++) {
+                // console.log(sounds[i].icon);
+
+                // }
             },
         };        
 
