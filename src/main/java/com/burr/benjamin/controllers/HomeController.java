@@ -49,7 +49,6 @@ public class HomeController {
         if (user != null && PasswordStorage.verifyPassword(password, user.getPassword())) {
             session.setAttribute("user", user.getId());
         }
-
         return "redirect:/";
     }
 
