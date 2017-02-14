@@ -20,7 +20,10 @@ module.exports = {
 
                 // }
             },
-        };        
+            playSound() {
+                console.log('play sound');
+            },
+        }; 
 
     },
 };
