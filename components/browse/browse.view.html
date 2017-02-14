@@ -1,10 +1,10 @@
 <sounds preview="sound">
-<section ng-controller="BrowseController">
-    <ul>
-        <li ng-repeat="sound in sounds">
-            <p>{{ sound.name }}</p>
-            <img ng-click="play()" src="http://localhost:55645/assets/play-button (2).png">
-        </li>
-    </ul>
-</section>
+    <section ng-controller="BrowseController">
+        <ul>
+            <li ng-repeat="sound in sounds">
+                <p>{{ sound.name }}</p>
+                <a><div id="play-btn"></div></a>
+            </li>
+        </ul>
+    </section>
 </sounds>
