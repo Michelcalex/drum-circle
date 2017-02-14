@@ -19,7 +19,6 @@ for (let i = 0; i < components.length; i++) {
 
 //Controllers ----------------------------------------------------
 const controllers = [
-    require('../components/header/header.controller'),
     require('../components/browse/browse.controller'),
     require('../components/browse/browse.tabs.controller'),
 ];
