@@ -14,8 +14,8 @@ module.exports = {
     name: 'BrowseController',
     func: function($scope, BrowseService) {
        $scope.sounds = BrowseService.showSounds();
-        
-    },
+       $scope.play = BrowseService.playSound(); 
+    }, 
 };
 },{}],3:[function(require,module,exports){
 module.exports = {
@@ -206,7 +206,10 @@ module.exports = {
 
                 // }
             },
-        };        
+            playSound() {
+                console.log('play sound');
+            },
+        }; 
 
     },
 };
