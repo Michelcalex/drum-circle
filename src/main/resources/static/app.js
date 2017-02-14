@@ -183,7 +183,8 @@ module.exports = {
                         source: sounds[i].source,
                     }));
                 };
-                console.log(wads[0].name);
+                wads[0].play();
+                console.log(wads[0]);
             }
 
         }; 
