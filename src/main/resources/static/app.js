@@ -187,8 +187,13 @@ module.exports = {
         const sounds = [
             {
                 name: 'Kick Cypress 1',
-                source: 'http://localhost:50383/music/Kick Cypress 1.wav',
+                source: 'http://localhost:50383/test-sounds/Kick Cypress 1.wav',
                 icon: 'play icon', 
+            },
+            {
+                name: 'Bleep MrBleep',
+                source: 'http://localhost:50383/test-sounds/Bleep MrBleep.wav',
+                icon: 'play icon',
             },
         ];
 
