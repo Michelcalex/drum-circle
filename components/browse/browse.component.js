@@ -2,6 +2,9 @@ module.exports = {
     name: 'browse',
     object: {
         controller: 'BrowseController',
-        templateUrl: 'browse/browse.view.html',
+        templateUrl: 'components/browse/browse.view.html',
+        bindings: {
+            preview: '<',
+        },
     },
 };
