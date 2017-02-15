@@ -5,6 +5,7 @@ import com.burr.benjamin.Services.UserRepository;
 import com.burr.benjamin.entities.Sound;
 import com.burr.benjamin.entities.User;
 import com.burr.benjamin.utilities.PasswordStorage;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by Ben on 2/13/17.
@@ -101,17 +103,35 @@ public class HomeController {
             }
             users.save(user);
         }
+        this.initSounds();
     }
 
-//    @PostConstruct
-//    public void initSounds() {
-//        if (sounds.count() == 0) {
-//            Sound sound = new Sound();
-//            sound.setName(name);
-//            sound.setCategory(category);
-//            sound.setFilePath(path);
-//            sounds.save(sound);
-//        }
-//    }
+    public void initSounds() {
+        if (sounds.count() == 0) {
+
+            List<File> files = (List) FileUtils.listFiles(new File("test-sounds"), null, true);
+
+            if (!files.equals(".DS_Store")) {
+                files.stream().forEach(f -> {
+                    String[] parts = f.getAbsolutePath().split("\\/");
+
+                    Sound sound = new Sound();
+                    // parts[parts.length - 2] gives you the category
+                    // "/test-sounds/" + parts[parts.length - 2] + "/" + parts[parts.length - 1]; gives you the relative path
+                    // (which you can hit from a browser)
+
+                    String category = parts[parts.length - 2];
+                    String name = parts[parts.length - 1];
+                    String fullPath = "/test-sounds/" + parts[parts.length - 2] + "/" + parts[parts.length - 1];
+
+                    sound.setName(name);
+                    sound.setCategory(category);
+                    sound.setFilePath(fullPath);
+                    sounds.save(sound);
+
+                });
+            }
+        }
+    }
 
 }
