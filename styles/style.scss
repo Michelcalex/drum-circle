@@ -1,13 +1,14 @@
-@import '../node_modules/foundation-sites/scss/foundation';
+// @import '../node_modules/foundation-sites/scss/foundation';
 
-@include foundation-global-styles;
-@include foundation-grid;
+// @include foundation-global-styles;
+// @include foundation-grid;
 
 
 //Partial Imports -------------------------------------------------
 @import 'partials/header';
 @import 'partials/hero-blurb';
 @import 'partials/login';
+@import 'partials/browse';
 @import 'partials/footer';
 
 
