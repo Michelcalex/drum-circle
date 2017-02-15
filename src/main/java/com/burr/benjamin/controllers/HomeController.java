@@ -78,7 +78,7 @@ public class HomeController {
 
     @CrossOrigin
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public User user(HttpSession session, Model model) {
+    public User user(HttpSession session) {
         Integer userId = (Integer) session.getAttribute("user");
         User user = users.findOne(userId);
 
