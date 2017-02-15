@@ -26,4 +26,18 @@ import java.util.List;
 public class DrumCircleController {
     @Autowired
     UserRepository users;
+
+    @CrossOrigin
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public String user(HttpSession session) {
+        Integer userId = (Integer) session.getAttribute("user");
+
+        if (userId != null) {
+            User user = users.findOne(userId);
+
+            return user.getUsername();
+        } else {
+            return "";
+        }
+    }
 }
