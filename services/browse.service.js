@@ -28,15 +28,15 @@ module.exports = {
 
             },
             previewSounds() {
-                const wads = [];
+                let wads = [];
                 for (let i = 0; i < sounds.length; i++) {
                     wads.push(new Wad({
                         source: sounds[i].source,
                     }));
-                    if (wads[i].source === sounds[i].source) {
+                    // if (wads[i].source === sounds[i].source) {
                         wads[i].play();
                         console.log(wads[i]);
-                    };   
+                    // };   
                 };
     
                 // let i = wads[0];

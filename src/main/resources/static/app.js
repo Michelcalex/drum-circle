@@ -15,8 +15,8 @@ module.exports = {
     name: 'BrowseController',
     func: function($scope, BrowseService) {
        $scope.sounds = BrowseService.showSounds();
-       $scope.testPlay = function playSound() {
-            BrowseService.previewSounds();
+       $scope.testPlay = function playSound(target) {
+            BrowseService.previewSounds(target);
        }; 
     }, 
 };
@@ -185,15 +185,15 @@ module.exports = {
 
             },
             previewSounds() {
-                const wads = [];
+                let wads = [];
                 for (let i = 0; i < sounds.length; i++) {
                     wads.push(new Wad({
                         source: sounds[i].source,
                     }));
-                    if (wads[i].source === sounds[i].source) {
+                    // if (wads[i].source === sounds[i].source) {
                         wads[i].play();
                         console.log(wads[i]);
-                    };   
+                    // };   
                 };
     
                 // let i = wads[0];
