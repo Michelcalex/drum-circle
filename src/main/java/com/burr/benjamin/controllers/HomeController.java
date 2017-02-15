@@ -78,11 +78,16 @@ public class HomeController {
 
     @CrossOrigin
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public User user(HttpSession session) {
+    public String user(HttpSession session) {
         Integer userId = (Integer) session.getAttribute("user");
-        User user = users.findOne(userId);
 
-        return user;
+        if (userId != null) {
+            User user = users.findOne(userId);
+
+            return user.getUsername();
+        } else {
+            return "not logged in";
+        }
     }
 
     @PostConstruct
