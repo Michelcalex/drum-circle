@@ -15,8 +15,8 @@ module.exports = {
     name: 'BrowseController',
     func: function($scope, BrowseService) {
        $scope.sounds = BrowseService.showSounds();
-       $scope.testPlay = function playSound() {
-            BrowseService.previewSounds();
+       $scope.testPlay = function playSound(target) {
+            BrowseService.previewSounds(target);
        }; 
     }, 
 };
@@ -48,38 +48,64 @@ module.exports = {
 module.exports = {
     name: 'home',
     object: {
+        controller: 'HomeController',
+        controllerAs: '$ctrl',
         templateUrl: 'components/home/home.view.html',
     },
 };
 },{}],6:[function(require,module,exports){
+module.exports = {
+    name: 'HomeController',
+    func: function($scope, HomeService) {
+       console.log ('hey');
+       HomeService.getUser()
+       
+    //    .then(function(response){
+    //        let user = response.data;
+    //        console.log(user);
+    //    })
+    //    HomeService.getUser().then(function(response) {
+    //        let user = response.data;
+    //        if (user !== null) {
+    //            console.log('cool dude')
+    //        } else {
+    //            console.log("this is not working");
+    //        console.log(user);
+    //    }
+    //  });
+    },
+};
+
+
+},{}],7:[function(require,module,exports){
 module.exports = {
     name: 'kit',
     object: {
         templateUrl: 'components/kit/kit.view.html',
     },
 };
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 module.exports = {
     name: 'loginForm',
     object: {
         templateUrl: 'components/login/login.view.html',
     },
 };
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = {
     name: 'signupForm',
     object: {
         templateUrl: 'components/signup/signup.view.html',
     },
 };
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = {
     name: 'start',
     object: {
         templateUrl: 'components/start/start.view.html',
     },
 };
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 const app = angular.module('DrumCircleApp', ['ui.router']);
 
 
@@ -103,6 +129,7 @@ for (let i = 0; i < components.length; i++) {
 const controllers = [
     require('../components/browse/browse.controller'),
     require('../components/browse/browse.tabs.controller'),
+    require('../components/home/home.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -154,7 +181,7 @@ app.config(function ($stateProvider) {
         component: 'kit',
     });
 });
-},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/browse/browse.tabs.controller":3,"../components/header/header.component":4,"../components/home/home.component":5,"../components/kit/kit.component":6,"../components/login/login.component":7,"../components/signup/signup.component":8,"../components/start/start.component":9,"../services/browse.service":11,"../services/home.service":12}],11:[function(require,module,exports){
+},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/browse/browse.tabs.controller":3,"../components/header/header.component":4,"../components/home/home.component":5,"../components/home/home.controller":6,"../components/kit/kit.component":7,"../components/login/login.component":8,"../components/signup/signup.component":9,"../components/start/start.component":10,"../services/browse.service":12,"../services/home.service":13}],12:[function(require,module,exports){
 module.exports = {
     name: 'BrowseService',
     func: function ($state, $http) {
@@ -162,6 +189,10 @@ module.exports = {
             {
                 name: 'Kick 808 1',
                 source: 'http://localhost:8080/test-sounds/Kick/Kick 808 1.wav',
+            },
+            {
+                name: 'Rim Mononoke',
+                source: 'http://localhost:8080/test-sounds/Snare/Rim Mononoke.wav',
             },
 
         ];
@@ -174,28 +205,40 @@ module.exports = {
         };
 
 
+
         return {
             showSounds() {
                 return sounds;
 
             },
             previewSounds() {
-                wads[0].play();
-                console.log(wads[0]);
-            }
+                let wads = [];
+                for (let i = 0; i < sounds.length; i++) {
+                    wads.push(new Wad({
+                        source: sounds[i].source,
+                    }));
+                    // if (wads[i].source === sounds[i].source) {
+                        wads[i].play();
+                        console.log(wads[i]);
+                    // };   
+                };
+    
+                // let i = wads[0];
+                
+            },
 
         }; 
 
     },
 };
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 module.exports = {
     name: 'HomeService',
     func: function ($http, $state) {
         return {
-            // checkUser(id) {
-            //     return $http.get('https://drumcircle1.herokuapp.com/user');
-            // },
+            getUser() {
+                return $http.get('/user');
+            },
             
             // sendLogin(username, userpassword) {
             //     $http.post('https://drumcircle1.herokuapp.com/login', {
@@ -217,4 +260,4 @@ module.exports = {
         }
     }
 }
-},{}]},{},[10]);
+},{}]},{},[11]);

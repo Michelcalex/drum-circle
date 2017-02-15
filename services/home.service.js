@@ -2,9 +2,9 @@ module.exports = {
     name: 'HomeService',
     func: function ($http, $state) {
         return {
-            // checkUser(id) {
-            //     return $http.get('https://drumcircle1.herokuapp.com/user');
-            // },
+            getUser() {
+                return $http.get('/user');
+            },
             
             // sendLogin(username, userpassword) {
             //     $http.post('https://drumcircle1.herokuapp.com/login', {
