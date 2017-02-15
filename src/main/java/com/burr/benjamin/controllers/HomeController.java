@@ -86,7 +86,7 @@ public class HomeController {
 
             return user.getUsername();
         } else {
-            return "redirect:/";
+            return "";
         }
     }
 
