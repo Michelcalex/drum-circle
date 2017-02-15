@@ -1,7 +1,6 @@
 package com.burr.benjamin.entities;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by Ben on 2/9/17.
@@ -22,15 +21,15 @@ public class Sound {
     String category;
 
     @Column(nullable = false)
-    String fileName;
+    String filePath;
 
     public Sound() {
     }
 
-    public Sound(String name, String category, String fileName) {
+    public Sound(String name, String category, String filePath) {
         this.name = name;
         this.category = category;
-        this.fileName = fileName;
+        this.filePath = filePath;
     }
 
     public int getId() {
@@ -57,12 +56,12 @@ public class Sound {
         this.category = category;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getFilePath() {
+        return filePath;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
     }
 
 }
