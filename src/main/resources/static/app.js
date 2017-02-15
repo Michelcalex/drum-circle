@@ -15,8 +15,8 @@ module.exports = {
     name: 'BrowseController',
     func: function($scope, BrowseService) {
        $scope.sounds = BrowseService.showSounds();
-       $scope.testPlay = function playSound(target) {
-            BrowseService.previewSounds(target);
+       $scope.testPlay = function playSound(index) {
+            BrowseService.previewSounds(index);
        }; 
     }, 
 };
@@ -221,6 +221,8 @@ module.exports = {
         
         const wads = [];
         for (let i = 0; i < sounds.length; i++) {
+            sounds[i].index = i;
+
             wads.push(new Wad({
                 source: sounds[i].source,
             }));
@@ -233,17 +235,16 @@ module.exports = {
                 return sounds;
 
             },
-            previewSounds() {
-                let wads = [];
-                for (let i = 0; i < sounds.length; i++) {
-                    wads.push(new Wad({
-                        source: sounds[i].source,
-                    }));
+            previewSounds(index) {
+                // let wads = [];
+                // for (let i = 0; i < sounds.length; i++) {
+                //     wads.push(new Wad({
+                //         source: sounds[i].source,
+                //     }));
                     // if (wads[i].source === sounds[i].source) {
-                        wads[i].play();
-                        console.log(wads[i]);
+                        wads[index].play();
+                        // console.log(wads[i]);
                     // };   
-                };
     
                 // let i = wads[0];
                 
