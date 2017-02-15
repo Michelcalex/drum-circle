@@ -22,6 +22,7 @@ const controllers = [
     require('../components/browse/browse.controller'),
     require('../components/browse/browse.tabs.controller'),
     require('../components/home/home.controller'),
+    require('../components/header/header.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -38,6 +39,17 @@ const services = [
 for (let i = 0; i < services.length; i++) {
     app.factory(services[i].name, services[i].func);
 }
+
+
+
+
+//Filters -------------------------------------------------------
+app.filter('capitalize', function() {
+    return function(input) {
+        return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
+});
+
 
 
 //States ---------------------------------------------------------

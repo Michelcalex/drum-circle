@@ -15,8 +15,8 @@ module.exports = {
     name: 'BrowseController',
     func: function($scope, BrowseService) {
        $scope.sounds = BrowseService.showSounds();
-       $scope.testPlay = function playSound(target) {
-            BrowseService.previewSounds(target);
+       $scope.testPlay = function playSound(index) {
+            BrowseService.previewSounds(index);
        }; 
     }, 
 };
@@ -58,7 +58,9 @@ module.exports = {
     name: 'HomeController',
     func: function($scope, HomeService) {
        console.log ('hey');
-       HomeService.getUser()
+       HomeService.getUser().then(function (name) {
+        $scope.name = name;
+       });
        
     //    .then(function(response){
     //        let user = response.data;
@@ -181,6 +183,26 @@ app.config(function ($stateProvider) {
         component: 'kit',
     });
 });
+
+// window.addEventListener('load', function() {
+//     getUser().then(function(response) {
+//         let answer = response;
+//         console.log(answer);
+//     })
+// })
+
+
+// .then(function(response){
+    //        let user = response.data;
+    //        console.log(user);
+    //    })
+    //    HomeService.getUser().then(function(response) {
+    //        let user = response.data;
+    //        if (user !== null) {
+    //            console.log('cool dude')
+    //        } else {
+    //            console.log("this is not working");
+    //        console.log(user);
 },{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/browse/browse.tabs.controller":3,"../components/header/header.component":4,"../components/home/home.component":5,"../components/home/home.controller":6,"../components/kit/kit.component":7,"../components/login/login.component":8,"../components/signup/signup.component":9,"../components/start/start.component":10,"../services/browse.service":12,"../services/home.service":13}],12:[function(require,module,exports){
 module.exports = {
     name: 'BrowseService',
@@ -199,6 +221,8 @@ module.exports = {
         
         const wads = [];
         for (let i = 0; i < sounds.length; i++) {
+            sounds[i].index = i;
+
             wads.push(new Wad({
                 source: sounds[i].source,
             }));
@@ -211,17 +235,16 @@ module.exports = {
                 return sounds;
 
             },
-            previewSounds() {
-                let wads = [];
-                for (let i = 0; i < sounds.length; i++) {
-                    wads.push(new Wad({
-                        source: sounds[i].source,
-                    }));
+            previewSounds(index) {
+                // let wads = [];
+                // for (let i = 0; i < sounds.length; i++) {
+                //     wads.push(new Wad({
+                //         source: sounds[i].source,
+                //     }));
                     // if (wads[i].source === sounds[i].source) {
-                        wads[i].play();
-                        console.log(wads[i]);
+                        wads[index].play();
+                        // console.log(wads[i]);
                     // };   
-                };
     
                 // let i = wads[0];
                 
@@ -237,7 +260,11 @@ module.exports = {
     func: function ($http, $state) {
         return {
             getUser() {
-                return $http.get('/user');
+                return $http.get('/user', {
+                    transformResponse: undefined,
+                }).then(function (response) {
+                    return response.data;  
+                });
             },
             
             // sendLogin(username, userpassword) {
