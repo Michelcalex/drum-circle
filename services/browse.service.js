@@ -3,24 +3,31 @@ module.exports = {
     func: function ($state, $http) {
         const sounds = [
             {
-                name: 'Kick Cypress 1',
-                source: 'http://localhost:55645/test-sounds/Kick Cypress 1.wav',
+                name: 'Kick 808 1',
+                source: 'http://localhost:8080/test-sounds/Kick/Kick 808 1.wav',
             },
-            {
-                name: 'Bleep MrBleep',
-                source: 'http://localhost:55645/test-sounds/Bleep MrBleep.wav',
-            },
+
         ];
+        
+        const wads = [];
+        for (let i = 0; i < sounds.length; i++) {
+            wads.push(new Wad({
+                source: sounds[i].source,
+            }));
+        };
+
 
         return {
             showSounds() {
                 return sounds;
-                // for (let i = 0; i < sounds.length; i++) {
-                // console.log(sounds[i].icon);
 
-                // }
             },
-        };        
+            previewSounds() {
+                wads[0].play();
+                console.log(wads[0]);
+            }
+
+        }; 
 
     },
 };
