@@ -21,6 +21,7 @@ for (let i = 0; i < components.length; i++) {
 const controllers = [
     require('../components/browse/browse.controller'),
     require('../components/browse/browse.tabs.controller'),
+    require('../components/home/home.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
