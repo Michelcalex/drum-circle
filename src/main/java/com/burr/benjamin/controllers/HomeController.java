@@ -76,6 +76,15 @@ public class HomeController {
         response.sendRedirect("/");
     }
 
+    @CrossOrigin
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public User user(HttpSession session, Model model) {
+        Integer userId = (Integer) session.getAttribute("user");
+        User user = users.findOne(userId);
+
+        return user;
+    }
+
     @PostConstruct
     public void init() {
         if (users.count() == 0) {
