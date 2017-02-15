@@ -1,6 +1,8 @@
 package com.burr.benjamin.controllers;
 
+import com.burr.benjamin.Services.SoundRepository;
 import com.burr.benjamin.Services.UserRepository;
+import com.burr.benjamin.entities.Sound;
 import com.burr.benjamin.entities.User;
 import com.burr.benjamin.utilities.PasswordStorage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Ben on 2/13/17.
@@ -25,6 +31,11 @@ public class HomeController {
     @Autowired
     UserRepository users;
 
+    @Autowired
+    SoundRepository sounds;
+
+
+
     @CrossOrigin
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String home(HttpSession session, Model model) {
@@ -34,12 +45,12 @@ public class HomeController {
 
             User user = users.findOne(userId);
             model.addAttribute("user", user);
+            // the answer to the ultimate question of life, the universe, and everything
             return "index";
         } else {
             return "start";
         }
     }
-// the answer to the ultimate question of life, the universe, and everything
 
     @CrossOrigin
     @RequestMapping(path = "/login", method = RequestMethod.POST)
@@ -76,19 +87,7 @@ public class HomeController {
         response.sendRedirect("/");
     }
 
-    @CrossOrigin
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public String user(HttpSession session) {
-        Integer userId = (Integer) session.getAttribute("user");
 
-        if (userId != null) {
-            User user = users.findOne(userId);
-
-            return user.getUsername();
-        } else {
-            return "";
-        }
-    }
 
     @PostConstruct
     public void init() {
@@ -103,5 +102,16 @@ public class HomeController {
             users.save(user);
         }
     }
+
+//    @PostConstruct
+//    public void initSounds() {
+//        if (sounds.count() == 0) {
+//            Sound sound = new Sound();
+//            sound.setName(name);
+//            sound.setCategory(category);
+//            sound.setFilePath(path);
+//            sounds.save(sound);
+//        }
+//    }
 
 }
