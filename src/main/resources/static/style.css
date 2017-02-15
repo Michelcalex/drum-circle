@@ -6,6 +6,8 @@ header nav {
   header nav #nav-logo {
     display: flex;
     align-items: center; }
+    header nav #nav-logo img {
+      height: 70px; }
   header nav #nav-links ul {
     display: flex;
     padding: 0; }
@@ -42,6 +44,20 @@ header nav {
   background-repeat: no-repeat;
   height: 35px;
   background-size: contain; }
+
+#kit h1 {
+  border: 1px solid red; }
+
+#wad-btns {
+  border: 1px solid green; }
+
+#fav-sounds {
+  border: 1px solid blue; }
+
+.pad {
+  width: 150px;
+  height: 150px;
+  background-color: lightblue; }
 
 footer {
   background-color: #0D4656;
