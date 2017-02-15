@@ -2,7 +2,9 @@ module.exports = {
     name: 'HomeController',
     func: function($scope, HomeService) {
        console.log ('hey');
-       HomeService.getUser()
+       HomeService.getUser().then(function (name) {
+        $scope.name = name;
+       });
        
     //    .then(function(response){
     //        let user = response.data;

@@ -3,7 +3,11 @@ module.exports = {
     func: function ($http, $state) {
         return {
             getUser() {
-                return $http.get('/user');
+                return $http.get('/user', {
+                    transformResponse: undefined,
+                }).then(function (response) {
+                    return response.data;  
+                });
             },
             
             // sendLogin(username, userpassword) {
