@@ -211,10 +211,12 @@ module.exports = {
             {
                 name: 'Kick 808 1',
                 source: 'http://localhost:8080/test-sounds/Kick/Kick 808 1.wav',
+                type: 'Kick',
             },
             {
                 name: 'Rim Mononoke',
                 source: 'http://localhost:8080/test-sounds/Snare/Rim Mononoke.wav',
+                type: 'Snare',
             },
 
         ];
