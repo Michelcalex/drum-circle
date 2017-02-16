@@ -190,9 +190,19 @@ module.exports = {
     name: 'BrowseService',
     func: function ($state, $http) {
         const sounds = [];
+        const wads = [];
+
 
         $http.get('/sounds').then(function (response) {
             angular.copy(response.data, sounds);
+
+            for (let i = 0; i < sounds.length; i++) {
+                sounds[i].index = i;
+                wads.push(new Wad({
+                    source: sounds[i].filePath,
+               
+                }));
+            };
         });
 
         // ------This was for testing before /sounds database was setup
@@ -210,16 +220,13 @@ module.exports = {
 
         // ];
         
-        const wads = [];
-        for (let i = 0; i < sounds.length; i++) {
-            sounds[i].index = i;
-            wads.push(new Wad({
-                source: sounds[i].filePath,
+        // for (let i = 0; i < sounds.length; i++) {
+        //     sounds[i].index = i;
+        //     wads.push(new Wad({
+        //         source: sounds[i].filePath,
                
-            }));
-        };
-
-        console.log(wads);
+        //     }));
+        // };
 
 
         return {
@@ -234,6 +241,8 @@ module.exports = {
                 //         source: sounds[i].source,
                 //     }));
                     // if (wads[i].source === sounds[i].source) {
+                        console.log(wads);
+                        console.log(sounds);
                         wads[index].play();
                         console.log(wads[index]);
                     // };   
@@ -241,6 +250,7 @@ module.exports = {
                 // let i = wads[0];
                 
             },
+            
 
         }; 
 
