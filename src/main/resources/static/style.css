@@ -45,6 +45,9 @@ header nav {
   height: 35px;
   background-size: contain; }
 
+md-tabs {
+  height: 600px; }
+
 #kit h1 {
   border: 1px solid red; }
 
