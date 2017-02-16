@@ -13,13 +13,34 @@ module.exports = {
 },{}],2:[function(require,module,exports){
 module.exports = {
     name: 'BrowseController',
-    func: function($scope, BrowseService) {
-       $scope.sounds = BrowseService.showSounds();
-       $scope.testPlay = function playSound(index) {
-            BrowseService.previewSounds(index);
-       }; 
+    func: function($scope, BrowseService, $log) {
+        $scope.sounds = BrowseService.showSounds();
+        $scope.testPlay = function playSound(index) {
+                BrowseService.previewSounds(index);
+        }; 
+
+        $scope.favorite = function() {
+            console.log('button clicked');
+        }
+
+        let tabs = [
+            {title: 'All', content: $scope.sounds },
+            {title: 'Kick', content: $scope.sounds },
+            {title: 'Snare', content: $scope.sounds },
+            // {title: 'Tom', content: 'this is for category Tom'},
+            // {title: 'Hihat', content: 'this is for category Hihat'},
+            // {title: 'Cymbal', content: 'this is for category cymbal'},
+            // {title: 'Percussion', content: 'this is for category percussion'},
+        ], 
+        selected = null,
+        previous = null;
+        $scope.tabs = tabs;
+        $scope.selectedIndex = 2;
     }, 
 };
+
+
+
 },{}],3:[function(require,module,exports){
 module.exports = {
     name: 'TabsController',
@@ -94,7 +115,7 @@ module.exports = {
     },
 };
 },{}],11:[function(require,module,exports){
-const app = angular.module('DrumCircleApp', ['ui.router']);
+const app = angular.module('DrumCircleApp', ['ui.router', 'ngMaterial']);
 
 
 //Components ----------------------------------------------------
@@ -192,7 +213,6 @@ module.exports = {
         const sounds = [];
         const wads = [];
 
-
         $http.get('/sounds').then(function (response) {
             angular.copy(response.data, sounds);
 
@@ -219,15 +239,6 @@ module.exports = {
         //     },
 
         // ];
-        
-        // for (let i = 0; i < sounds.length; i++) {
-        //     sounds[i].index = i;
-        //     wads.push(new Wad({
-        //         source: sounds[i].filePath,
-               
-        //     }));
-        // };
-
 
         return {
             showSounds() {
@@ -235,25 +246,10 @@ module.exports = {
 
             },
             previewSounds(index) {
-                // let wads = [];
-                // for (let i = 0; i < sounds.length; i++) {
-                //     wads.push(new Wad({
-                //         source: sounds[i].source,
-                //     }));
-                    // if (wads[i].source === sounds[i].source) {
-                        console.log(wads);
-                        console.log(sounds);
                         wads[index].play();
-                        console.log(wads[index]);
-                    // };   
-    
-                // let i = wads[0];
-                
+                        console.log(wads[index]);             
             },
-            
-
         }; 
-
     },
 };
 },{}],13:[function(require,module,exports){

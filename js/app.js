@@ -1,4 +1,4 @@
-const app = angular.module('DrumCircleApp', ['ui.router']);
+const app = angular.module('DrumCircleApp', ['ui.router', 'ngMaterial']);
 
 
 //Components ----------------------------------------------------

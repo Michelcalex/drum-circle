@@ -18,7 +18,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('assets', function() {
-    return gulp.src(['assets/*.ico', 'assets/*.jpg', 'assets/*.png'])
+    return gulp.src(['assets/*.ico', 'assets/*.jpg', 'assets/*.png', 'assets/*.svg'])
         .pipe(gulp.dest('build/resources/main/static/assets'))
         .pipe(gulp.dest('src/main/resources/static/assets'));
 });

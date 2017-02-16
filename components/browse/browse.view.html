@@ -10,49 +10,25 @@
 </sounds>-->
 
 
+ <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button ng-click="favorite()" class="md-icon-button md-accent" aria-label="Favorite">
+            <md-icon md-svg-icon="../assets/heart.svg"></md-icon>
+        </md-button>
+        </section>
 
-<section ng-controller="TabsController">
+
+<section ng-controller="TabsController" class="sample tabsdemoDynamicTabs" layout="column" ng-cloak="">
     <h2>Tabs Example</h2>
-    <ul class="tabs" data-tabs>
-        <li ng-class= "{ active: isSet(1) }" class="tabs-title"><a href ng-click="setTab(1)">All</a></li>
-        <li ng-class= "{ active: isSet(2) }" class="tabs-title"><a href ng-click="setTab(2)">Kick</a></li>
-        <li ng-class= "{ active: isSet(3) }" class="tabs-title"><a href ng-click="setTab(3)">Snare</a></li>
-        <li ng-class= "{ active: isSet(4) }" class="tabs-title"><a href ng-click="setTab(4)">Tom</a></li>
-        <li ng-class= "{ active: isSet(5) }" class="tabs-title"><a href ng-click="setTab(5)">Highat</a></li>
-        <li ng-class= "{ active: isSet(6) }" class="tabs-title"><a href ng-click="setTab(6)">Cymbal</a></li>
-        <li ng-class= "{ active: isSet(7) }" class="tabs-title"><a href ng-click="setTab(7)">Percussion</a></li>
-    </ul>
-    <div class="col-md-8">
-        <div ng-show="isSet(1)">
-            <h1>Show All list</h1>
-            <sounds preview="sound">
-            <section ng-controller="BrowseController">
-                <ul>
-                    <li ng-repeat="sound in sounds">
+    <md-content class="md-padding">
+        <md-tabs md-selected="selectedIndex" md-border-bottom="" md-autoselect = "">
+            <md-tab ng-repeat="tab in tabs" ng-disabled="tab.disabled" label ="{{tab.title}}">
+                <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
+                    <div ng-repeat="sound in tab.content">
                         <p>{{ sound.name }}</p>
                         <a ng-click="testPlay(sound.index)"><div id="play-btn"></div></a>
-                    </li>
-                </ul>
-            </section>
-            </sounds>
-        </div>
-        <div ng-show="isSet(2)">
-            <h1>Show Kick list</h1>
-        </div>
-        <div ng-show="isSet(3)">
-            <h1>Show Snare list</h1>
-        </div>
-        <div ng-show="isSet(4)">
-            <h1>Show Tom list</h1>
-        </div>
-        <div ng-show="isSet(5)">
-            <h1>Show Highat list</h1>
-        </div>
-        <div ng-show="isSet(6)">
-            <h1>Show Cymbal list</h1>
-        </div>
-        <div ng-show="isSet(7)">
-            <h1>Show Percussion list</h1>
-        </div>
-    </div>
+                    </div>
+                </div>
+            </md-tab>
+        </md-tabs>
+    </md-content>
 </section>

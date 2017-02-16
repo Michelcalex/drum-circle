@@ -10,9 +10,45 @@
 </sounds>-->
 
 
+ <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button ng-click="favorite()" class="md-icon-button md-accent" aria-label="Favorite">
+            <md-icon md-svg-icon="../assets/heart.svg"></md-icon>
+        </md-button>
+        </section>
 
-<section ng-controller="TabsController">
+
+<section ng-controller="TabsController" class="sample tabsdemoDynamicTabs" layout="column" ng-cloak="">
     <h2>Tabs Example</h2>
+    <md-content class="md-padding">
+        <md-tabs md-selected="selectedIndex" md-border-bottom="" md-autoselect = "">
+            <md-tab ng-repeat="tab in tabs" ng-disabled="tab.disabled" label ="{{tab.title}}">
+                <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
+                    <div ng-repeat="sound in tab.content">
+                        <p>{{ sound.name }}</p>
+                        <a ng-click="testPlay(sound.index)"><div id="play-btn"></div></a>
+                    </div>
+                </div>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+<!--
+
+
     <ul class="tabs" data-tabs>
         <li ng-class= "{ active: isSet(1) }" class="tabs-title"><a href ng-click="setTab(1)">All</a></li>
         <li ng-class= "{ active: isSet(2) }" class="tabs-title"><a href ng-click="setTab(2)">Kick</a></li>
@@ -54,5 +90,5 @@
         <div ng-show="isSet(7)">
             <h1>Show Percussion list</h1>
         </div>
-    </div>
+    </div>-->
 </section>
