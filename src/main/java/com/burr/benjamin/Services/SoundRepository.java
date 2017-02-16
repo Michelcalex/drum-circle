@@ -12,4 +12,5 @@ import java.util.List;
 public interface SoundRepository extends CrudRepository<Sound, Integer>{
     List<Sound> findByName(String name);
     List<Sound> findAll(Iterable<Integer> id);
+    Sound findById(Integer id);
 }
