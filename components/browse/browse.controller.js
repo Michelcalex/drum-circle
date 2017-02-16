@@ -1,7 +1,7 @@
 module.exports = {
     name: 'BrowseController',
     func: function($scope, BrowseService, $log) {
-        $scope.sounds = BrowseService.showSounds();
+        $scope.sounds = BrowseService.showAllSounds();
         $scope.testPlay = function playSound(index) {
                 BrowseService.previewSounds(index);
         }; 
@@ -9,6 +9,12 @@ module.exports = {
         $scope.favorite = function() {
             console.log('button clicked');
         }
+
+        $scope.showSounds = [];
+
+        $scope.filterSounds = function (category) {
+            $scope.showSounds = []; // for loop or filter $scope.sounds to the ones you want.
+        };
 
         let tabs = [
             {title: 'All', content: $scope.sounds },

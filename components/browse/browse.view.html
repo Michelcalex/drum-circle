@@ -23,7 +23,7 @@
         <md-tabs md-selected="selectedIndex" md-border-bottom="" md-autoselect = "">
             <md-tab ng-repeat="tab in tabs" ng-disabled="tab.disabled" label ="{{tab.title}}">
                 <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
-                    <div ng-repeat="sound in tab.content">
+                    <div ng-repeat="sound in showSounds">
                         <p>{{ sound.name }}</p>
                         <a ng-click="testPlay(sound.index)"><div id="play-btn"></div></a>
                     </div>
