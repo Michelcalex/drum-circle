@@ -9,10 +9,7 @@ import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.util.FileSystemUtils;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
@@ -68,11 +65,15 @@ public class DrumCircleController {
             return user.getFavorites();
     }
 
-//    @CrossOrigin
-//    @RequestMapping(value = "/favorite{{id}}", method = RequestMethod.POST)
-//    public String favorite(HttpSession session) {
-//
-//    }
+    @CrossOrigin
+    @RequestMapping(value = "/favorites/{id}", method = RequestMethod.POST)
+    public void addFavorite(HttpSession session, @PathVariable("id") int id) {
+        Integer userId = (Integer) session.getAttribute("user");
+
+        Sound favorite = sounds.findById(id);
+        User user = users.findOne(userId);
+        user.setFavorites((List)favorite);
+    }
 
     @CrossOrigin
     @RequestMapping(value = "/user", method = RequestMethod.GET)
