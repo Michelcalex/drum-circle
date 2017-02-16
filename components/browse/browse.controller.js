@@ -1,7 +1,7 @@
 module.exports = {
     name: 'BrowseController',
     func: function($scope, BrowseService, $log) {
-        $scope.sounds = BrowseService.showSounds();
+        $scope.sounds = BrowseService.showAllSounds();
         $scope.testPlay = function playSound(index) {
                 BrowseService.previewSounds(index);
         }; 
@@ -14,10 +14,10 @@ module.exports = {
             {title: 'All', content: $scope.sounds },
             {title: 'Kick', content: $scope.sounds },
             {title: 'Snare', content: $scope.sounds },
-            // {title: 'Tom', content: 'this is for category Tom'},
-            // {title: 'Hihat', content: 'this is for category Hihat'},
-            // {title: 'Cymbal', content: 'this is for category cymbal'},
-            // {title: 'Percussion', content: 'this is for category percussion'},
+            {title: 'Tom', content: $scope.sounds },
+            {title: 'Hihat', content: $scope.sounds },
+            {title: 'Cymbal', content: $scope.sounds },
+            {title: 'Percussion', content: $scope.sounds },
         ], 
         selected = null,
         previous = null;
