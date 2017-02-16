@@ -37,11 +37,13 @@ public class DrumCircleController {
     @CrossOrigin
     @RequestMapping(path = "/sounds", method = RequestMethod.GET)
     public Iterable<Sound> sound() {
+        //returns all sounds in the database
         return sounds.findAll();
-    }
+    } //the answer to the ultimate question of life, the universe, and everything
 
     @RequestMapping(path = "file-test", method = RequestMethod.GET)
     public List<String> testFiles() {
+        //test method to see if the sounds are writing to the database
 
         List<File> files  =  (List)FileUtils.listFiles(new File("test-sounds"), null, true);
 
@@ -59,6 +61,7 @@ public class DrumCircleController {
     @CrossOrigin
     @RequestMapping(value = "/favorites", method = RequestMethod.GET)
     public List<Sound> favorite(HttpSession session) {
+        //returns the current user's favorites
         Integer userId = (Integer) session.getAttribute("user");
 
         User user = users.findOne(userId);
@@ -68,6 +71,9 @@ public class DrumCircleController {
     @CrossOrigin
     @RequestMapping(value = "/favorites/{id}", method = RequestMethod.POST)
     public void addFavorite(HttpSession session, @PathVariable("id") int id) {
+        //adds sound to favorites of current user by finding user in session,
+        //finding the sound by id, getting the current user's favorites
+        //and adding the sound to the favorites. then saving the user.
         Integer userId = (Integer) session.getAttribute("user");
 
         Sound favorite = sounds.findById(id);
@@ -77,8 +83,20 @@ public class DrumCircleController {
     }
 
     @CrossOrigin
+    @RequestMapping(value = "/unfavorite/{id}", method = RequestMethod.POST)
+    public void removeFavorite(HttpSession session, @PathVariable("id") int id) {
+        Integer userId = (Integer) session.getAttribute("user");
+
+        Sound favorite = sounds.findById(id);
+        User user = users.findOne(userId);
+        user.getFavorites().remove(favorite);
+        users.save(user);
+    }
+
+    @CrossOrigin
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public String user(HttpSession session) {
+        //returns just the user name
         Integer userId = (Integer) session.getAttribute("user");
 
         if (userId != null) {
