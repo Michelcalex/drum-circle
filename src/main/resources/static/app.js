@@ -14,7 +14,7 @@ module.exports = {
 module.exports = {
     name: 'BrowseController',
     func: function($scope, BrowseService) {
-       $scope.sounds = BrowseService.showSounds();
+       $scope.sounds = BrowseService.showAllSounds();
        $scope.testPlay = function playSound(index) {
             BrowseService.previewSounds(index);
        }; 
@@ -192,7 +192,6 @@ module.exports = {
         const sounds = [];
         const wads = [];
 
-
         $http.get('/sounds').then(function (response) {
             angular.copy(response.data, sounds);
 
@@ -203,7 +202,11 @@ module.exports = {
                
                 }));
             };
+
+
         });
+
+
 
         // ------This was for testing before /sounds database was setup
         // const sounds = [
@@ -219,41 +222,18 @@ module.exports = {
         //     },
 
         // ];
-        
-        // for (let i = 0; i < sounds.length; i++) {
-        //     sounds[i].index = i;
-        //     wads.push(new Wad({
-        //         source: sounds[i].filePath,
-               
-        //     }));
-        // };
-
 
         return {
-            showSounds() {
+            showAllSounds() {
                 return sounds;
 
             },
+
             previewSounds(index) {
-                // let wads = [];
-                // for (let i = 0; i < sounds.length; i++) {
-                //     wads.push(new Wad({
-                //         source: sounds[i].source,
-                //     }));
-                    // if (wads[i].source === sounds[i].source) {
-                        console.log(wads);
-                        console.log(sounds);
                         wads[index].play();
-                        console.log(wads[index]);
-                    // };   
-    
-                // let i = wads[0];
-                
+                        console.log(wads[index]);             
             },
-            
-
         }; 
-
     },
 };
 },{}],13:[function(require,module,exports){

@@ -1,15 +1,3 @@
-<!--<sounds preview="sound">
-    <section ng-controller="BrowseController">
-        <ul>
-            <li ng-repeat="sound in sounds">
-                <p>{{ sound.name }}</p>
-                <a ng-click="testPlay(sound.index)"><div id="play-btn"></div></a>
-            </li>
-        </ul>
-    </section>
-</sounds>-->
-
-
 
 <section ng-controller="TabsController">
     <h2>Tabs Example</h2>
@@ -26,18 +14,28 @@
         <div ng-show="isSet(1)">
             <h1>Show All list</h1>
             <sounds preview="sound">
-            <section ng-controller="BrowseController">
-                <ul>
-                    <li ng-repeat="sound in sounds">
-                        <p>{{ sound.name }}</p>
-                        <a ng-click="testPlay(sound.index)"><div id="play-btn"></div></a>
-                    </li>
-                </ul>
-            </section>
+                <section ng-controller="BrowseController">
+                    <ul>
+                        <li ng-repeat="sound in sounds">
+                            <p>{{ sound.name }}</p>
+                            <a ng-click="testPlay(sound.index)"><div id="play-btn"></div></a>
+                        </li>
+                    </ul>
+                </section>
             </sounds>
         </div>
         <div ng-show="isSet(2)">
             <h1>Show Kick list</h1>
+            <kick preview="sound">
+                <section ng-controller="BrowseController">
+                    <ul>
+                        <li ng-repeat="sound in sounds">
+                            <p>{{ sound.name }}</p>
+                            <a ng-click="testPlay(sound.index)"><div id="play-btn"></div></a>
+                        </li>
+                    </ul>
+                </section>
+            </kick>
         </div>
         <div ng-show="isSet(3)">
             <h1>Show Snare list</h1>
