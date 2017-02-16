@@ -37,6 +37,7 @@ public class DrumCircleController {
     @Autowired
     SoundRepository sounds;
 
+    @CrossOrigin
     @RequestMapping(path = "/sounds", method = RequestMethod.GET)
     public Iterable<Sound> sound() {
         return sounds.findAll();
@@ -57,6 +58,21 @@ public class DrumCircleController {
             return "/test-sounds/" + parts[parts.length - 2] + "/" + parts[parts.length - 1];
         }).collect(Collectors.toList());
     }
+
+    @CrossOrigin
+    @RequestMapping(value = "/favorites", method = RequestMethod.GET)
+    public List<Sound> favorite(HttpSession session) {
+        Integer userId = (Integer) session.getAttribute("user");
+
+        User user = users.findOne(userId);
+            return user.getFavorites();
+    }
+
+//    @CrossOrigin
+//    @RequestMapping(value = "/favorite{{id}}", method = RequestMethod.POST)
+//    public String favorite(HttpSession session) {
+//
+//    }
 
     @CrossOrigin
     @RequestMapping(value = "/user", method = RequestMethod.GET)
