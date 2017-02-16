@@ -36,8 +36,6 @@ public class HomeController {
     @Autowired
     SoundRepository sounds;
 
-
-
     @CrossOrigin
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String home(HttpSession session, Model model) {
@@ -65,6 +63,7 @@ public class HomeController {
         return "redirect:/";
     }
 
+    @CrossOrigin
     @RequestMapping(path = "/sign-up", method = RequestMethod.GET)
     public String signUp(HttpSession session) {
         return "start";
