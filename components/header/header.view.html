@@ -1,8 +1,10 @@
 <header class="row">
     <nav>
         <div id="nav-logo">
-            <img src="../assets/drumcircle-logo-small.png" alt="drumcircle-logo">
-            <h1>Drum Circle</h1>
+            <a ui-sref="home">
+                <img src="../assets/drumcircle-logo-small.png" alt="drumcircle-logo">
+                <h1>Drum Circle</h1>
+            </a>
         </div>
         <div id="nav-links">
             <ul ng-if="$ctrl.loggedIn">

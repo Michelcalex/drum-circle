@@ -22,7 +22,6 @@ const controllers = [
     require('../components/browse/browse.controller'),
     require('../components/browse/browse.tabs.controller'),
     require('../components/home/home.controller'),
-    require('../components/header/header.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -83,5 +82,10 @@ app.config(function ($stateProvider) {
         name: 'kit',
         url: '/kit',
         component: 'kit',
+    });
+
+    $stateProvider.state({
+        name: 'home',
+        url: '/',
     });
 });
