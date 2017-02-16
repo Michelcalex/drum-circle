@@ -40,6 +40,17 @@ for (let i = 0; i < services.length; i++) {
 }
 
 
+
+
+//Filters -------------------------------------------------------
+app.filter('capitalize', function() {
+    return function(input) {
+        return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
+});
+
+
+
 //States ---------------------------------------------------------
 
 app.config(function ($stateProvider) {
@@ -72,24 +83,9 @@ app.config(function ($stateProvider) {
         url: '/kit',
         component: 'kit',
     });
+
+    $stateProvider.state({
+        name: 'home',
+        url: '/',
+    });
 });
-
-// window.addEventListener('load', function() {
-//     getUser().then(function(response) {
-//         let answer = response;
-//         console.log(answer);
-//     })
-// })
-
-
-// .then(function(response){
-    //        let user = response.data;
-    //        console.log(user);
-    //    })
-    //    HomeService.getUser().then(function(response) {
-    //        let user = response.data;
-    //        if (user !== null) {
-    //            console.log('cool dude')
-    //        } else {
-    //            console.log("this is not working");
-    //        console.log(user);

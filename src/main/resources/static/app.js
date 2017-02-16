@@ -61,20 +61,6 @@ module.exports = {
        HomeService.getUser().then(function (name) {
         $scope.name = name;
        });
-       
-    //    .then(function(response){
-    //        let user = response.data;
-    //        console.log(user);
-    //    })
-    //    HomeService.getUser().then(function(response) {
-    //        let user = response.data;
-    //        if (user !== null) {
-    //            console.log('cool dude')
-    //        } else {
-    //            console.log("this is not working");
-    //        console.log(user);
-    //    }
-    //  });
     },
 };
 
@@ -150,6 +136,17 @@ for (let i = 0; i < services.length; i++) {
 }
 
 
+
+
+//Filters -------------------------------------------------------
+app.filter('capitalize', function() {
+    return function(input) {
+        return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
+});
+
+
+
 //States ---------------------------------------------------------
 
 app.config(function ($stateProvider) {
@@ -182,27 +179,12 @@ app.config(function ($stateProvider) {
         url: '/kit',
         component: 'kit',
     });
+
+    $stateProvider.state({
+        name: 'home',
+        url: '/',
+    });
 });
-
-// window.addEventListener('load', function() {
-//     getUser().then(function(response) {
-//         let answer = response;
-//         console.log(answer);
-//     })
-// })
-
-
-// .then(function(response){
-    //        let user = response.data;
-    //        console.log(user);
-    //    })
-    //    HomeService.getUser().then(function(response) {
-    //        let user = response.data;
-    //        if (user !== null) {
-    //            console.log('cool dude')
-    //        } else {
-    //            console.log("this is not working");
-    //        console.log(user);
 },{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/browse/browse.tabs.controller":3,"../components/header/header.component":4,"../components/home/home.component":5,"../components/home/home.controller":6,"../components/kit/kit.component":7,"../components/login/login.component":8,"../components/signup/signup.component":9,"../components/start/start.component":10,"../services/browse.service":12,"../services/home.service":13}],12:[function(require,module,exports){
 module.exports = {
     name: 'BrowseService',
@@ -268,24 +250,6 @@ module.exports = {
                     return response.data;  
                 });
             },
-            
-            // sendLogin(username, userpassword) {
-            //     $http.post('https://drumcircle1.herokuapp.com/login', {
-            //         username: username,
-            //         password: userpassword
-            //     }).then(function(response) {
-            //         console.log('POST successful!');
-            //     });
-            // }, 
-            // sendSignup(username, userpassword) {
-            //     $http.post('https://drumcircle1.herokuapp.com/sign-up', {
-            //         username: username,
-            //         password: userpassword
-            //     }).then(function(response) {
-            //         console.log('POST signup successful!');
-            //         $state.go('index');
-            //     });
-            // }
         }
     }
 }
