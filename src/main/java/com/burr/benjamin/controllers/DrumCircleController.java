@@ -72,7 +72,8 @@ public class DrumCircleController {
 
         Sound favorite = sounds.findById(id);
         User user = users.findOne(userId);
-        user.setFavorites((List)favorite);
+        user.getFavorites().add(favorite);
+        users.save(user);
     }
 
     @CrossOrigin
