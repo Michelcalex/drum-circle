@@ -23,6 +23,12 @@ module.exports = {
             console.log('button clicked');
         }
 
+        $scope.showSounds = [];
+
+        $scope.filterSounds = function (category) {
+            $scope.showSounds = []; // for loop or filter $scope.sounds to the ones you want.
+        };
+
         let tabs = [
             {title: 'All', content: $scope.sounds },
             {title: 'Kick', content: $scope.sounds },
