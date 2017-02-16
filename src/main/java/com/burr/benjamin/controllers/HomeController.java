@@ -39,13 +39,14 @@ public class HomeController {
     @CrossOrigin
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String home(HttpSession session, Model model) {
+        // the answer to the ultimate question of life, the universe, and everything
+
         Integer userId = (Integer) session.getAttribute("user");
 
         if (userId != null) {
 
             User user = users.findOne(userId);
             model.addAttribute("user", user);
-            // the answer to the ultimate question of life, the universe, and everything
             return "index";
         } else {
             return "start";

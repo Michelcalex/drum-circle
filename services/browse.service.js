@@ -14,7 +14,11 @@ module.exports = {
                
                 }));
             };
+
+
         });
+
+
 
         // ------This was for testing before /sounds database was setup
         // const sounds = [
@@ -32,10 +36,11 @@ module.exports = {
         // ];
 
         return {
-            showSounds() {
+            showAllSounds() {
                 return sounds;
 
             },
+
             previewSounds(index) {
                         wads[index].play();
                         console.log(wads[index]);             
