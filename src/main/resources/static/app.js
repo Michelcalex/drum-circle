@@ -249,7 +249,7 @@ module.exports = {
 
             previewSounds(index) {
                         wads[index].play();
-                        console.log(wads[index]);             
+                        // console.log(wads[index]);
             },
         }; 
     },
