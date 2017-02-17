@@ -1,14 +1,10 @@
 module.exports = {
     name: 'BrowseController',
-    func: function($scope, BrowseService, $log) {
+    func: function($scope, BrowseService) {
         $scope.sounds = BrowseService.showAllSounds();
         $scope.testPlay = function playSound(index) {
                 BrowseService.previewSounds(index);
         }; 
-
-        $scope.favorite = function() {
-            console.log('button clicked');
-        }
 
         $scope.showSounds = [];
 
@@ -24,7 +20,6 @@ module.exports = {
         };
         $scope.filterSounds('All');
 
-        // todo: remove content property
         let tabs = [
             {title: 'All' },
             {title: 'Kick' },
