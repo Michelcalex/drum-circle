@@ -18,8 +18,6 @@ module.exports = {
 
         });
 
-
-
         return {
             showAllSounds() {
                 return sounds;

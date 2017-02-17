@@ -10,11 +10,11 @@ module.exports = {
             console.log('button clicked');
         }
 
-        $scope.showSounds = [];
+        // $scope.showSounds = [];
 
-        $scope.filterSounds = function (category) {
-            $scope.showSounds = []; // for loop or filter $scope.sounds to the ones you want.
-        };
+        // $scope.filterSounds = function (category) {
+        //     $scope.showSounds = []; // for loop or filter $scope.sounds to the ones you want.
+        // };
 
         let tabs = [
             {title: 'All', content: $scope.sounds },
