@@ -26,22 +26,31 @@ module.exports = {
         $scope.showSounds = [];
 
         $scope.filterSounds = function (category) {
-            $scope.showSounds = []; // for loop or filter $scope.sounds to the ones you want.
+            // console.log(`Filtering ${category}`)
+            $scope.showSounds = [];
+            for (let i = 0; i < $scope.sounds.length; i++) {
+                if (category === $scope.sounds[i].category || category === 'All') {
+                    $scope.showSounds.push($scope.sounds[i]);
+                }
+            };
+            
         };
+        $scope.filterSounds('All');
 
+        // todo: remove content property
         let tabs = [
-            {title: 'All', content: $scope.sounds },
-            {title: 'Kick', content: $scope.sounds },
-            {title: 'Snare', content: $scope.sounds },
-            {title: 'Tom', content: $scope.sounds },
-            {title: 'Hihat', content: $scope.sounds },
-            {title: 'Cymbal', content: $scope.sounds },
-            {title: 'Percussion', content: $scope.sounds },
+            {title: 'All' },
+            {title: 'Kick' },
+            {title: 'Snare' },
+            {title: 'Tom' },
+            {title: 'Hihat' },
+            {title: 'Cymbal' },
+            {title: 'Percussion' },
         ], 
         selected = null,
         previous = null;
         $scope.tabs = tabs;
-        $scope.selectedIndex = 2;
+        $scope.selectedIndex = 0;
     }, 
 };
 
@@ -221,6 +230,7 @@ module.exports = {
 
         $http.get('/sounds').then(function (response) {
             angular.copy(response.data, sounds);
+            // console.log(sounds.length);
 
             for (let i = 0; i < sounds.length; i++) {
                 sounds[i].index = i;
@@ -229,26 +239,7 @@ module.exports = {
                
                 }));
             };
-
-
         });
-
-
-
-        // ------This was for testing before /sounds database was setup
-        // const sounds = [
-        //     {
-        //         name: 'Kick 808 1',
-        //         source: 'http://localhost:8080/test-sounds/Kick/Kick 808 1.wav',
-        //         type: 'Kick',
-        //     },
-        //     {
-        //         name: 'Rim Mononoke',
-        //         source: 'http://localhost:8080/test-sounds/Snare/Rim Mononoke.wav',
-        //         type: 'Snare',
-        //     },
-
-        // ];
 
         return {
             showAllSounds() {

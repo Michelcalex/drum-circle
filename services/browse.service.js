@@ -6,6 +6,7 @@ module.exports = {
 
         $http.get('/sounds').then(function (response) {
             angular.copy(response.data, sounds);
+            // console.log(sounds.length);
 
             for (let i = 0; i < sounds.length; i++) {
                 sounds[i].index = i;
@@ -14,8 +15,6 @@ module.exports = {
                
                 }));
             };
-
-
         });
 
         return {
