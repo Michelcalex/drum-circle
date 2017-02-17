@@ -13,40 +13,44 @@ module.exports = {
 },{}],2:[function(require,module,exports){
 module.exports = {
     name: 'BrowseController',
-    func: function($scope, BrowseService) {
-        $scope.sounds = BrowseService.getSounds();
-        BrowseService.showAllSounds();
-        console.log($scope.sounds);
+    func: function($scope, BrowseService, $log) {
+        $scope.sounds = BrowseService.showAllSounds();
         $scope.testPlay = function playSound(index) {
-            BrowseService.previewSounds(index);
+                BrowseService.previewSounds(index);
         }; 
 
-        
+        $scope.favorite = function() {
+            console.log('button clicked');
+        }
 
-        // $scope.isfavorite = function() {
-        //     BrowseService.addFavorite($scope.song);
-        //     console.log('button clicked');
-        // }
+        $scope.showSounds = [];
 
-        // $scope.showSounds = [];
+        $scope.filterSounds = function (category) {
+            // console.log(`Filtering ${category}`)
+            $scope.showSounds = [];
+            for (let i = 0; i < $scope.sounds.length; i++) {
+                if (category === $scope.sounds[i].category || category === 'All') {
+                    $scope.showSounds.push($scope.sounds[i]);
+                }
+            };
+            
+        };
+        $scope.filterSounds('All');
 
-        // $scope.filterSounds = function (category) {
-        //     $scope.showSounds = []; // for loop or filter $scope.sounds to the ones you want.
-        // };
-
+        // todo: remove content property
         let tabs = [
-            {title: 'All', content: $scope.sounds },
-            {title: 'Kick', content: $scope.sounds },
-            {title: 'Snare', content: $scope.sounds },
-            {title: 'Tom', content: $scope.sounds },
-            {title: 'Hihat', content: $scope.sounds },
-            {title: 'Cymbal', content: $scope.sounds },
-            {title: 'Percussion', content: $scope.sounds },
+            {title: 'All' },
+            {title: 'Kick' },
+            {title: 'Snare' },
+            {title: 'Tom' },
+            {title: 'Hihat' },
+            {title: 'Cymbal' },
+            {title: 'Percussion' },
         ], 
         selected = null,
         previous = null;
         $scope.tabs = tabs;
-        $scope.selectedIndex = 2;
+        $scope.selectedIndex = 0;
     }, 
 };
 
@@ -223,59 +227,33 @@ module.exports = {
     func: function ($state, $http) {
         const sounds = [];
         const wads = [];
-        const favoriteSounds = [];
 
+        $http.get('/sounds').then(function (response) {
+            angular.copy(response.data, sounds);
+            // console.log(sounds.length);
+
+            for (let i = 0; i < sounds.length; i++) {
+                sounds[i].index = i;
+                wads.push(new Wad({
+                    source: sounds[i].filePath,
+               
+                }));
+            };
+        });
 
         return {
-            getSounds() {
-                $http.get('/sounds').then(function(response){
-                    angular.copy(response.data, sounds);
-                    console.log(sounds);
-                    for (let i = 0; i < sounds.length; i++) {
-                        sounds[i].index = i;
-                        wads.push(new Wad({
-                            source: sounds[i].filePath,
-                        }));
-                    };
-                });
-            },
-
-            getSoundFavorite() {
-               $http.get('/sounds').then(function(soundResponse) {
-                    $http.get('/favorites').then(function(favoriteResponse){
-                        soundResponse.data.forEach(function(sound, index){
-                            sound.index = index;
-                            wads.push(new Wad({
-                                source: sound.filePath,
-                            }));
-                            const findFavorite = function(id) {
-                                return favoriteResponse.data.find(function(favorite){
-                                    return favorite === id;
-                                });
-                            }
-
-                            if(findFavorite(sound.id) !== undefined) {
-                                sound.isFavorite = true;
-                            } else {
-                                sound.isFavorite = false;
-                            }
-                        });
-                    });
-                });
-            },
-
             showAllSounds() {
                 return sounds;
+
             },
 
             previewSounds(index) {
-                wads[index].play();
-                console.log(wads[index]);             
+                        wads[index].play();
+                        // console.log(wads[index]);
             },
         }; 
     },
 };
-
 },{}],13:[function(require,module,exports){
 module.exports = {
     name: 'HomeService',

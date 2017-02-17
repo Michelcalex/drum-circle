@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -64,8 +65,12 @@ public class DrumCircleController {
         //returns the current user's favorites
         Integer userId = (Integer) session.getAttribute("user");
 
-        User user = users.findOne(userId);
+        if (userId == null) {
+            return new ArrayList<>();
+        } else {
+            User user = users.findOne(userId);
             return user.getFavorites();
+        }
     }
 
     @CrossOrigin

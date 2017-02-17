@@ -1,39 +1,43 @@
 module.exports = {
     name: 'BrowseController',
-    func: function($scope, BrowseService) {
-        $scope.sounds = BrowseService.getSounds();
-        BrowseService.showAllSounds();
-        console.log($scope.sounds);
+    func: function($scope, BrowseService, $log) {
+        $scope.sounds = BrowseService.showAllSounds();
         $scope.testPlay = function playSound(index) {
-            BrowseService.previewSounds(index);
+                BrowseService.previewSounds(index);
         }; 
 
-        
+        $scope.favorite = function() {
+            console.log('button clicked');
+        }
 
-        // $scope.isfavorite = function() {
-        //     BrowseService.addFavorite($scope.song);
-        //     console.log('button clicked');
-        // }
+        $scope.showSounds = [];
 
-        // $scope.showSounds = [];
+        $scope.filterSounds = function (category) {
+            // console.log(`Filtering ${category}`)
+            $scope.showSounds = [];
+            for (let i = 0; i < $scope.sounds.length; i++) {
+                if (category === $scope.sounds[i].category || category === 'All') {
+                    $scope.showSounds.push($scope.sounds[i]);
+                }
+            };
+            
+        };
+        $scope.filterSounds('All');
 
-        // $scope.filterSounds = function (category) {
-        //     $scope.showSounds = []; // for loop or filter $scope.sounds to the ones you want.
-        // };
-
+        // todo: remove content property
         let tabs = [
-            {title: 'All', content: $scope.sounds },
-            {title: 'Kick', content: $scope.sounds },
-            {title: 'Snare', content: $scope.sounds },
-            {title: 'Tom', content: $scope.sounds },
-            {title: 'Hihat', content: $scope.sounds },
-            {title: 'Cymbal', content: $scope.sounds },
-            {title: 'Percussion', content: $scope.sounds },
+            {title: 'All' },
+            {title: 'Kick' },
+            {title: 'Snare' },
+            {title: 'Tom' },
+            {title: 'Hihat' },
+            {title: 'Cymbal' },
+            {title: 'Percussion' },
         ], 
         selected = null,
         previous = null;
         $scope.tabs = tabs;
-        $scope.selectedIndex = 2;
+        $scope.selectedIndex = 0;
     }, 
 };
 
