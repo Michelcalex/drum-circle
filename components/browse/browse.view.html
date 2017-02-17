@@ -10,11 +10,11 @@
 </sounds>-->
 
 
- <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+ <!--<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
         <md-button ng-click="favorite()" class="md-icon-button md-accent" aria-label="Favorite">
             <md-icon md-svg-icon="../assets/heart.svg"></md-icon>
         </md-button>
-        </section>
+        </section>-->
 
 
 <section ng-controller="TabsController" class="sample tabsdemoDynamicTabs" layout="column" ng-cloak="">
@@ -25,7 +25,7 @@
                 <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
                     <div ng-repeat="sound in sounds">
                         <p>{{ sound.name }}</p>
-                        <a ng-click="testPlay(sound.index)"><div id="play-btn"></div></a>
+                        <input type="image" src="assets/play-button.png" id="play-btn" ng-click="testPlay(sound.index)">
                     </div>
                 </div>
             </md-tab>
