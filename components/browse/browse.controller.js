@@ -3,7 +3,7 @@ module.exports = {
     func: function($scope, BrowseService) {
         $scope.sounds = BrowseService.showAllSounds();
         $scope.testPlay = function playSound(index) {
-                BrowseService.previewSounds(index);
+            BrowseService.previewSounds(index);
         }; 
 
         $scope.showSounds = [];
