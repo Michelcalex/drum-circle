@@ -13,21 +13,26 @@ module.exports = {
 },{}],2:[function(require,module,exports){
 module.exports = {
     name: 'BrowseController',
-    func: function($scope, BrowseService, $log) {
-        $scope.sounds = BrowseService.showAllSounds();
+    func: function($scope, BrowseService) {
+        $scope.sounds = BrowseService.getSounds();
+        BrowseService.showAllSounds();
+        console.log($scope.sounds);
         $scope.testPlay = function playSound(index) {
-                BrowseService.previewSounds(index);
+            BrowseService.previewSounds(index);
         }; 
 
-        $scope.favorite = function() {
-            console.log('button clicked');
-        }
+        
 
-        $scope.showSounds = [];
+        // $scope.isfavorite = function() {
+        //     BrowseService.addFavorite($scope.song);
+        //     console.log('button clicked');
+        // }
 
-        $scope.filterSounds = function (category) {
-            $scope.showSounds = []; // for loop or filter $scope.sounds to the ones you want.
-        };
+        // $scope.showSounds = [];
+
+        // $scope.filterSounds = function (category) {
+        //     $scope.showSounds = []; // for loop or filter $scope.sounds to the ones you want.
+        // };
 
         let tabs = [
             {title: 'All', content: $scope.sounds },
@@ -218,51 +223,59 @@ module.exports = {
     func: function ($state, $http) {
         const sounds = [];
         const wads = [];
+        const favoriteSounds = [];
 
-        $http.get('/sounds').then(function (response) {
-            angular.copy(response.data, sounds);
-
-            for (let i = 0; i < sounds.length; i++) {
-                sounds[i].index = i;
-                wads.push(new Wad({
-                    source: sounds[i].filePath,
-               
-                }));
-            };
-
-
-        });
-
-
-
-        // ------This was for testing before /sounds database was setup
-        // const sounds = [
-        //     {
-        //         name: 'Kick 808 1',
-        //         source: 'http://localhost:8080/test-sounds/Kick/Kick 808 1.wav',
-        //         type: 'Kick',
-        //     },
-        //     {
-        //         name: 'Rim Mononoke',
-        //         source: 'http://localhost:8080/test-sounds/Snare/Rim Mononoke.wav',
-        //         type: 'Snare',
-        //     },
-
-        // ];
 
         return {
+            getSounds() {
+                $http.get('/sounds').then(function(response){
+                    angular.copy(response.data, sounds);
+                    console.log(sounds);
+                    for (let i = 0; i < sounds.length; i++) {
+                        sounds[i].index = i;
+                        wads.push(new Wad({
+                            source: sounds[i].filePath,
+                        }));
+                    };
+                });
+            },
+
+            getSoundFavorite() {
+               $http.get('/sounds').then(function(soundResponse) {
+                    $http.get('/favorites').then(function(favoriteResponse){
+                        soundResponse.data.forEach(function(sound, index){
+                            sound.index = index;
+                            wads.push(new Wad({
+                                source: sound.filePath,
+                            }));
+                            const findFavorite = function(id) {
+                                return favoriteResponse.data.find(function(favorite){
+                                    return favorite === id;
+                                });
+                            }
+
+                            if(findFavorite(sound.id) !== undefined) {
+                                sound.isFavorite = true;
+                            } else {
+                                sound.isFavorite = false;
+                            }
+                        });
+                    });
+                });
+            },
+
             showAllSounds() {
                 return sounds;
-
             },
 
             previewSounds(index) {
-                        wads[index].play();
-                        console.log(wads[index]);             
+                wads[index].play();
+                console.log(wads[index]);             
             },
         }; 
     },
 };
+
 },{}],13:[function(require,module,exports){
 module.exports = {
     name: 'HomeService',

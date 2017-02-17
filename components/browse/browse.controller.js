@@ -1,20 +1,25 @@
 module.exports = {
     name: 'BrowseController',
-    func: function($scope, BrowseService, $log) {
-        $scope.sounds = BrowseService.showAllSounds();
+    func: function($scope, BrowseService) {
+        $scope.sounds = BrowseService.getSounds();
+        BrowseService.showAllSounds();
+        console.log($scope.sounds);
         $scope.testPlay = function playSound(index) {
-                BrowseService.previewSounds(index);
+            BrowseService.previewSounds(index);
         }; 
 
-        $scope.favorite = function() {
-            console.log('button clicked');
-        }
+        
 
-        $scope.showSounds = [];
+        // $scope.isfavorite = function() {
+        //     BrowseService.addFavorite($scope.song);
+        //     console.log('button clicked');
+        // }
 
-        $scope.filterSounds = function (category) {
-            $scope.showSounds = []; // for loop or filter $scope.sounds to the ones you want.
-        };
+        // $scope.showSounds = [];
+
+        // $scope.filterSounds = function (category) {
+        //     $scope.showSounds = []; // for loop or filter $scope.sounds to the ones you want.
+        // };
 
         let tabs = [
             {title: 'All', content: $scope.sounds },
