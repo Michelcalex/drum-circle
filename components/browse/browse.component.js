@@ -6,6 +6,7 @@ module.exports = {
         templateUrl: 'components/browse/browse.view.html',
         bindings: {
             preview: '<',
+            loggedIn: '<',
         },
     },
 };

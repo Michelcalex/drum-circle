@@ -7,27 +7,23 @@ module.exports = {
         $http.get('/sounds').then(function(soundResponse) {
             angular.copy(soundResponse.data, sounds);
             for (let i = 0; i < sounds.length; i++) {
-                        sounds[i].index = i;
-                        wads.push(new Wad({
-                            source: sounds[i].filePath,
-                        }));
-                    };
+                sounds[i].index = i;
+                wads.push(new Wad({
+                    source: sounds[i].filePath,
+                }));
+            };
             $http.get('/favorites').then(function(favoriteResponse){
                 sounds.forEach(function(sound){
-
-                    
                     const findFavorite = function(id) {
                         return favoriteResponse.data.find(function(favorite){
                             return favorite.id === id;
                         });
                     }
-
                     if(findFavorite(sound.id) !== undefined) {
                         sound.isFavorite = true;
                     } else {
                         sound.isFavorite = false;
                     }
-                    console.log(sound);
                 });
             });
         });
@@ -40,6 +36,20 @@ module.exports = {
             previewSounds(index) {
                 wads[index].play();
             },
+
+            markFavorite(sound) {
+                $http.post('/favorites/' + sound.id, {
+                    id: sound.id,
+                });
+                sound.isFavorite = true;
+            }, 
+
+            markUnFavorite(sound) {
+                $http.post('/unfavorite/' + sound.id, {
+                    id: sound.id,
+                })
+                sound.isFavorite = false;
+            }
         }; 
     },
 };

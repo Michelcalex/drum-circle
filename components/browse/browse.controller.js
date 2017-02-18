@@ -6,6 +6,19 @@ module.exports = {
             BrowseService.previewSounds(index);
         }; 
 
+//favorite and unfavorite sounds
+        $scope.favorite = function(sound) {
+            BrowseService.markFavorite(sound);
+        };
+
+        $scope.unfavorite = function(sound) {
+            BrowseService.markUnFavorite(sound);
+        }
+
+
+
+
+//filter sounds and tab functionality 
         $scope.showSounds = [];
 
         $scope.filterSounds = function (category) {
