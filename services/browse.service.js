@@ -6,15 +6,16 @@ module.exports = {
 
         $http.get('/sounds').then(function(soundResponse) {
             angular.copy(soundResponse.data, sounds);
-            $http.get('/favorites').then(function(favoriteResponse){
-                sounds.forEach(function(sound){
-
-                    for (let i = 0; i < sounds.length; i++) {
+            for (let i = 0; i < sounds.length; i++) {
                         sounds[i].index = i;
                         wads.push(new Wad({
                             source: sounds[i].filePath,
                         }));
                     };
+            $http.get('/favorites').then(function(favoriteResponse){
+                sounds.forEach(function(sound){
+
+                    
                     const findFavorite = function(id) {
                         return favoriteResponse.data.find(function(favorite){
                             return favorite.id === id;
