@@ -62,6 +62,12 @@ md-tabs {
   height: 150px;
   background-color: lightblue; }
 
+#left-defaults {
+  border: 1px solid green; }
+
+#right-defaults {
+  border: 1px solid purple; }
+
 footer {
   background-color: #0D4656;
   width: 100%;

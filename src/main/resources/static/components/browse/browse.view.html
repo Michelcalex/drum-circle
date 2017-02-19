@@ -1,5 +1,4 @@
-
-<section ng-controller="TabsController" class="sample tabsdemoDynamicTabs" layout="column" ng-cloak="">
+<section class="sample tabsdemoDynamicTabs" layout="column" ng-cloak="">
     <h4>Browse through our soundbanks to customize your kit</h4>
     <md-content class="md-padding">
         <md-tabs md-selected="selectedIndex" md-border-bottom="" md-autoselect = "">
@@ -9,10 +8,11 @@
                         <p>{{ sound.name }}</p>
                         <input type="image" src="assets/play-button.png" id="play-btn" ng-click="testPlay(sound.index)">
                         <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                            <md-button ng-click="unfavorite(sound)" ng-show="sound.isFavorite" class="md-icon-button md-accent" aria-label="Favorite">
+                            <!--<md-button ng-click="unfavorite(sound)" ng-show="sound.isFavorite" class="md-icon-button md-accent" aria-label="Favorite">-->
+                            <md-button ng-click="unfavorite(sound)" ng-show="sound.isFavorite" class="md-icon-button md-primary" aria-label="Favorite">
                                 <md-icon md-svg-icon="../assets/favorite.svg"></md-icon>
                             </md-button>
-                            <md-button ng-click="favorite(sound)" ng-hide="sound.isFavorite" class="md-icon-button md-accent" aria-label="Favorite">
+                            <md-button ng-click="favorite(sound)" ng-hide="sound.isFavorite" class="md-icon-button md-primary" aria-label="Favorite">
                                 <md-icon md-svg-icon="../assets/unfavorite.svg"></md-icon>
                             </md-button>
                         </section>

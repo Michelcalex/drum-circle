@@ -1,5 +1,8 @@
-const app = angular.module('DrumCircleApp', ['ui.router', 'ngMaterial']);
-
+const app = angular.module('DrumCircleApp', [
+    'ui.router',
+    'ngMaterial',
+    angularDragula(angular),
+]);
 
 //Components ----------------------------------------------------
 const components = [
@@ -20,8 +23,8 @@ for (let i = 0; i < components.length; i++) {
 //Controllers ----------------------------------------------------
 const controllers = [
     require('../components/browse/browse.controller'),
-    require('../components/browse/browse.tabs.controller'),
     require('../components/home/home.controller'),
+    require('../components/kit/kit.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -33,6 +36,7 @@ for (let i = 0; i < controllers.length; i++) {
 const services = [
     require('../services/home.service'),
     require('../services/browse.service'),
+    require('../services/kit.service'),
 ];
 
 for (let i = 0; i < services.length; i++) {

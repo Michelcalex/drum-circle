@@ -9,7 +9,7 @@
         <div id="nav-links">
             <ul ng-if="$ctrl.loggedIn">
                 <li><a ui-sref="browse">Browse</a></li>
-                <li><a ui-sref="kit">Kit</a></li>
+                <li><a ui-sref="kit" >Kit</a></li>
                 <li><form action="/logout" method="post"><button type="submit">Logout</button></form></li>
             </ul>
             <ul ng-if="!$ctrl.loggedIn">

@@ -66,20 +66,6 @@ module.exports = {
 
 },{}],3:[function(require,module,exports){
 module.exports = {
-    name: 'TabsController',
-    func: function($scope) {
-        $scope.tab = 1;
-        $scope.setTab = function(newTab){
-            $scope.tab = newTab;
-        };
-
-        $scope.isSet = function(tabNum){
-            return $scope.tab === tabNum;
-        };
-    }
-};
-},{}],4:[function(require,module,exports){
-module.exports = {
     name: 'headerSection',
     object: {
         templateUrl: 'components/header/header.view.html',
@@ -88,7 +74,7 @@ module.exports = {
         }
     },
 };
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 module.exports = {
     name: 'home',
     object: {
@@ -97,7 +83,7 @@ module.exports = {
         templateUrl: 'components/home/home.view.html',
     },
 };
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 module.exports = {
     name: 'HomeController',
     func: function($scope, HomeService) {
@@ -109,13 +95,28 @@ module.exports = {
 };
 
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = {
     name: 'kit',
     object: {
+        controller: 'KitController',
+        controllerAs: '$ctrl',
         templateUrl: 'components/kit/kit.view.html',
     },
 };
+},{}],7:[function(require,module,exports){
+module.exports = {
+    name: 'KitController',
+    func: function($scope, KitService, dragulaService) {
+        $scope.favoriteList = KitService.getFavoriteList();
+
+        dragulaService.options($scope, 'first-bag', {
+            copy: true
+        });
+    },
+};
+
+
 },{}],8:[function(require,module,exports){
 module.exports = {
     name: 'loginForm',
@@ -138,8 +139,11 @@ module.exports = {
     },
 };
 },{}],11:[function(require,module,exports){
-const app = angular.module('DrumCircleApp', ['ui.router', 'ngMaterial']);
-
+const app = angular.module('DrumCircleApp', [
+    'ui.router',
+    'ngMaterial',
+    angularDragula(angular),
+]);
 
 //Components ----------------------------------------------------
 const components = [
@@ -160,8 +164,8 @@ for (let i = 0; i < components.length; i++) {
 //Controllers ----------------------------------------------------
 const controllers = [
     require('../components/browse/browse.controller'),
-    require('../components/browse/browse.tabs.controller'),
     require('../components/home/home.controller'),
+    require('../components/kit/kit.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -173,6 +177,7 @@ for (let i = 0; i < controllers.length; i++) {
 const services = [
     require('../services/home.service'),
     require('../services/browse.service'),
+    require('../services/kit.service'),
 ];
 
 for (let i = 0; i < services.length; i++) {
@@ -229,12 +234,13 @@ app.config(function ($stateProvider) {
         url: '/',
     });
 });
-},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/browse/browse.tabs.controller":3,"../components/header/header.component":4,"../components/home/home.component":5,"../components/home/home.controller":6,"../components/kit/kit.component":7,"../components/login/login.component":8,"../components/signup/signup.component":9,"../components/start/start.component":10,"../services/browse.service":12,"../services/home.service":13}],12:[function(require,module,exports){
+},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/header/header.component":3,"../components/home/home.component":4,"../components/home/home.controller":5,"../components/kit/kit.component":6,"../components/kit/kit.controller":7,"../components/login/login.component":8,"../components/signup/signup.component":9,"../components/start/start.component":10,"../services/browse.service":12,"../services/home.service":13,"../services/kit.service":14}],12:[function(require,module,exports){
 module.exports = {
     name: 'BrowseService',
     func: function ($state, $http) {
         const sounds = [];
         const wads = [];
+        const favoriteSounds = [];
 
         $http.get('/sounds').then(function(soundResponse) {
             angular.copy(soundResponse.data, sounds);
@@ -274,6 +280,8 @@ module.exports = {
                     id: sound.id,
                 });
                 sound.isFavorite = true;
+                favoriteSounds.push(sound);
+                console.log(favoriteSounds);
             }, 
 
             markUnFavorite(sound) {
@@ -281,6 +289,12 @@ module.exports = {
                     id: sound.id,
                 })
                 sound.isFavorite = false;
+                for(let i=0; i < favoriteSounds.length; i++) {
+                    if(favoriteSounds[i] === sound) {
+                        console.log('remove from array')
+                    }
+                }
+                
             }
         }; 
     },
@@ -301,4 +315,25 @@ module.exports = {
         }
     }
 }
+},{}],14:[function(require,module,exports){
+module.exports = {
+    name: 'KitService',
+    func: function ($state, $http) {
+        const favoriteList =[];
+
+        $http.get('/favorites').then(function(favResponse) {
+            angular.copy(favResponse.data, favoriteList)
+        });
+
+        console.log(favoriteList);
+
+        return {
+            getFavoriteList() {
+                return favoriteList;
+            }
+        }
+    
+    },
+};
+
 },{}]},{},[11]);
