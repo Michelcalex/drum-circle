@@ -344,6 +344,7 @@ module.exports = {
             },
 
             playKitSounds(index) {
+                console.log(wads[index]);
                 wads[index].play();
             },
         }
