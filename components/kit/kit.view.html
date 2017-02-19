@@ -1,25 +1,33 @@
 <section id="kit">
     <h1 class="row">Kit Kat</h1>
     <div class="wrapper">
-
-        <div id="left-defaults" class="container" dragula='"first-bag"'>
-            <div>element one</div>
-            <div>element two</div>
-            <div>element three</div>
-            <div>element four</div>
+        <div id="left-defaults" class="small-8 columns">
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
         </div>
-        <div id="right-defaults" class="container" dragula='"first-bag"'>
-            <div>element five</div>
-            <div>element six</div>
-            <div>element seven</div>
-            <div>element eight</div>
+        <div id="right-defaults" class="small-4 columns" dragula='"first-bag"'>
+            <h2>Favorites</h2>
+             <div ng-repeat="fav in favoriteList">
+                <p>Category: {{ fav.category }}</p>
+                <p>Name: {{ fav.name }}</p>    
+            </div>
         </div>
     </div>
-
-
-
-
-
+</section>
     <!--<section id="wad-btns" class="small-8 columns">
         <h2>Play play play</h2>
         <button class="pad" id="sound1"></button>
@@ -39,11 +47,4 @@
         <button class="pad" id="sound15"></button>
         <button class="pad" id="sound16"></button>
     </section>-->
-    <section id="fav-sounds" class="small-4 columns">
-        <h2>Favorites</h2>
-        <div ng-repeat="fav in favoriteList">
-            <p>Category: {{ fav.category }}</p>
-            <p>Name: {{ fav.name }}</p>    
-        </div>
-    </section>
 </section>

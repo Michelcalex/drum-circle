@@ -60,10 +60,13 @@ md-tabs {
 .pad {
   width: 150px;
   height: 150px;
-  background-color: lightblue; }
+  background-color: lightblue;
+  margin: 20px; }
 
 #left-defaults {
-  border: 1px solid green; }
+  border: 1px solid green;
+  display: flex;
+  flex-wrap: wrap; }
 
 #right-defaults {
   border: 1px solid purple; }

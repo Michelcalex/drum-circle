@@ -111,7 +111,7 @@ module.exports = {
         $scope.favoriteList = KitService.getFavoriteList();
 
         dragulaService.options($scope, 'first-bag', {
-            copy: true
+            copy: false
         });
     },
 };

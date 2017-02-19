@@ -13,10 +13,13 @@
     width:150px;
     height: 150px;
     background-color: lightblue;
+    margin: 20px;
 }
 
 #left-defaults {
     border: 1px solid green;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
