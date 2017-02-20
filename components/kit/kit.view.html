@@ -22,8 +22,8 @@
         <div id="right-defaults" class="small-3 columns" dragula='"first-bag"'>
             <h2>Favorites</h2>
              <div id="fav-sounds" ng-repeat="fav in favoriteList" ng-click="playFavorites(fav.index)">
-                <p>Category: {{ fav.category }}</p>
-                <p>Name: {{ fav.name }}</p>    
+                <!--<p>Category: {{ fav.category }}</p>-->
+                <p>{{ fav.name }}</p>    
             </div>
         </div>
     </div>

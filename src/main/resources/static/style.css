@@ -119,7 +119,7 @@ md-tabs {
 .pad {
   width: 150px;
   height: 150px;
-  background-color: lightblue;
+  background-image: linear-gradient(to top right, #1DAE83, #F5F2EE);
   margin: 10px auto;
   border-radius: 5px;
   box-shadow: 5px 8px #0D4656; }
