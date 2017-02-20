@@ -124,16 +124,16 @@ md-tabs {
   border-radius: 5px;
   box-shadow: 5px 8px #0D4656; }
 
-#left-defaults {
+#right-defaults {
   display: flex;
   flex-wrap: wrap;
   background-color: #333333;
   padding: 5px; }
 
-#right-defaults {
+#left-defaults {
   background-color: #333333;
   color: white; }
-  #right-defaults h2 {
+  #left-defaults h2 {
     text-align: center;
     border-bottom: 1px solid white; }
 
