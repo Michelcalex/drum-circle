@@ -7,26 +7,11 @@
         height: 500px;
     }
 
-    #blurb {
-        background-color: #0D4656;
-        color: #F5F2EE;
-        margin: 0;
-        font-family: $primary-font-type;
-        text-align: center;
-        padding: 20px;
-
-        p {
-            margin: 0 auto;
-            width: 75%;
-        }
-
-        span {
-            font-style: italic;
-        }
+    span {
+        font-style: italic;
     }
 
     #forms {
-        background-color: #F5F2EE;
         padding: 9.5%;
         align-items: center;
 

@@ -47,13 +47,13 @@ module.exports = {
         $scope.filterSounds('All');
 
         let tabs = [
-            {title: 'All' },
-            {title: 'Kick' },
-            {title: 'Snare' },
-            {title: 'Tom' },
-            {title: 'Hihat' },
-            {title: 'Cymbal' },
-            {title: 'Percussion' },
+            {title: 'All', src: '../../assets/all.png'},
+            {title: 'Kick', src: '../../assets/kick.png' },
+            {title: 'Snare', src: '../../assets/snare.png' },
+            {title: 'Tom', src: '../../assets/tom.png' },
+            {title: 'Hihat', src: '../../assets/hihat.png' },
+            {title: 'Cymbal', src: '../../assets/cymbal.png' },
+            {title: 'Percussion', src: '../../assets/percussion.png' },
         ], 
         selected = null,
         previous = null;
