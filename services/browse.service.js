@@ -13,6 +13,7 @@ module.exports = {
                     source: sounds[i].filePath,
                 }));
             };
+            
             $http.get('/favorites').then(function(favoriteResponse){
                 sounds.forEach(function(sound){
                     const findFavorite = function(id) {

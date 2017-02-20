@@ -1,6 +1,8 @@
 const app = angular.module('DrumCircleApp', [
     'ui.router',
     'ngMaterial',
+    'ngAnimate', 
+    'toastr',
     angularDragula(angular),
 ]);
 
@@ -26,6 +28,7 @@ const controllers = [
     require('../components/home/home.controller'),
     require('../components/kit/kit.controller'),
     require('../components/start/start.controller'),
+    require('../components/signup/signup.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
