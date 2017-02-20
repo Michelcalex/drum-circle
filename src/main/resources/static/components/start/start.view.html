@@ -4,11 +4,21 @@
     <section id="blurb" class="row">
         <p class="small-8 small-centered columns">Drum Circle, a portal into a world of sound. 
             Explore our vast library of drum sounds, choose your favorites, and start playing. 
-            And don't worry, sound is encouraged in this library. Sign up to create an account, 
+            And don't worry, noise is encouraged in this library. Sign up to create an account, 
             or log in to get started.
         </p>
     </section>
-    <login-form></login-form>
-    <signup-form></signup-form>
-
+    <section id="forms" layout="column">
+        <h4>Login/Signup here</h4>
+        <md-content class="md-padding">
+            <md-tabs md-selected="selectedIndex">
+                <md-tab ng-disabled="loginDisabled" label ="Login">
+                     <login-form></login-form>
+                </md-tab>
+                <md-tab ng-disabled="signupDisabled" label ="Signup">
+                  <signup-form></signup-form>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+    </section>
 </section>

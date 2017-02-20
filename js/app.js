@@ -25,6 +25,7 @@ const controllers = [
     require('../components/browse/browse.controller'),
     require('../components/home/home.controller'),
     require('../components/kit/kit.controller'),
+    require('../components/start/start.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
