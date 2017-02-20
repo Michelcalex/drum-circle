@@ -1,6 +1,6 @@
 module.exports = {
     name: 'BrowseController',
-    func: function($scope, BrowseService) {
+    func: function($scope, BrowseService, KitService) {
         $scope.sounds = BrowseService.showAllSounds();
         $scope.testPlay = function playSound(index) {
             BrowseService.previewSounds(index);
@@ -8,11 +8,11 @@ module.exports = {
 
 //favorite and unfavorite sounds
         $scope.favorite = function(sound) {
-            BrowseService.markFavorite(sound);
+            KitService.markFavorite(sound);
         };
 
         $scope.unfavorite = function(sound) {
-            BrowseService.markUnFavorite(sound);
+            KitService.markUnFavorite(sound);
         }
 
 
