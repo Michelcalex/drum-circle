@@ -139,22 +139,31 @@ module.exports = {
 },{}],10:[function(require,module,exports){
 module.exports = {
     name: 'SignupController',
-    func: function($scope, $mdDialog) {
-        $scope.status = ' ';
-        $scope.customFullscreen = false;
+    func: function($scope, toastr, HomeService) {
 
-         $scope.showAlert = function(ev) {
-            $mdDialog.show(
-            $mdDialog.alert()
-                .parent(angular.element(document.querySelector('#popupContainer')))
-                .clickOutsideToClose(true)
-                .title('Awesomesauce')
-                .textContent('You can now login with your username and password')
-                .ariaLabel('Succesfully Signedup')
-                .ok('Got it!')
-                .targetEvent(ev)
-            );
-        };
+        //Angular submit ----------------------
+        // $scope.sendSignup = function(){
+        //     HomeService.sendSignup($scope.username, $scope.password);
+        // } 
+        
+        
+        //Toastr alert - only if Angular way-----------------
+        //toastr.success('Hello world!', 'Toastr fun!');
+        // $scope.status = ' ';
+        // $scope.customFullscreen = false;
+
+        //  $scope.showAlert = function(ev) {
+        //     $mdDialog.show(
+        //     $mdDialog.alert()
+        //         .parent(angular.element(document.querySelector('#popupContainer')))
+        //         .clickOutsideToClose(true)
+        //         .title('Awesomesauce')
+        //         .textContent('You can now login with your username and password')
+        //         .ariaLabel('Succesfully Signedup')
+        //         .ok('Got it!')
+        //         .targetEvent(ev)
+        //     );
+        // };
     }, 
 };
 
@@ -172,7 +181,7 @@ module.exports = {
 },{}],12:[function(require,module,exports){
 module.exports = {
     name: 'StartController',
-    func: function($scope) {
+    func: function($scope, HomeService) {
         selected = null,
         previous = null;
         $scope.selectedIndex = 0;
@@ -185,6 +194,8 @@ module.exports = {
 const app = angular.module('DrumCircleApp', [
     'ui.router',
     'ngMaterial',
+    'ngAnimate', 
+    'toastr',
     angularDragula(angular),
 ]);
 
@@ -295,6 +306,7 @@ module.exports = {
                     source: sounds[i].filePath,
                 }));
             };
+            
             $http.get('/favorites').then(function(favoriteResponse){
                 sounds.forEach(function(sound){
                     const findFavorite = function(id) {
@@ -335,8 +347,30 @@ module.exports = {
                     transformResponse: undefined,
                 }).then(function (response) {
                     return response.data;  
+                    console.log(response.data);
                 });
             },
+
+
+            //Angular way to submit forms-----------------------------------
+            // sendSignup(username, password) {
+            //     $http.post('/sign-up', {
+            //         username: username,
+            //         password: password,
+            //     }).then(function(response) {
+            //         console.log('POST successful!');
+            //     });
+            // },
+
+            // sendLogin() {
+            //     $http.post('https://drumcircle1.herokuapp.com/login', {
+            //         username: $scope.username,
+            //         password: $scope.password
+            //     }).then(function(response) {
+            //         console.log('POST successful!');
+            //     });
+            // }, 
+            
         }
     }
 }
@@ -362,9 +396,6 @@ module.exports = {
                 source: sound.filePath,
             }));
         }
-
-        console.log(favoriteList);
-        console.log(wads);
 
         return {
             getFavoriteList() {

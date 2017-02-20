@@ -20,9 +20,6 @@ module.exports = {
             }));
         }
 
-        console.log(favoriteList);
-        console.log(wads);
-
         return {
             getFavoriteList() {
                 return favoriteList;
