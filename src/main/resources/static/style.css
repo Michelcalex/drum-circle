@@ -101,28 +101,36 @@ md-tabs {
   padding: 25px;
   text-align: center; }
 
-#kit h1 {
-  border: 1px solid red; }
-
-#wad-btns {
-  border: 1px solid green; }
+#kit {
+  font-family: "Play", sans-serif;
+  background-color: #333333;
+  padding-top: 40px; }
 
 #fav-sounds {
-  border: 1px solid blue; }
+  border-bottom: 1px solid white;
+  padding: 2px;
+  margin-bottom: 2px; }
 
 .pad {
   width: 150px;
   height: 150px;
   background-color: lightblue;
-  margin: 20px; }
+  margin: 10px auto;
+  border-radius: 5px;
+  box-shadow: 5px 8px #0D4656; }
 
 #left-defaults {
-  border: 1px solid green;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  background-color: #333333;
+  padding: 5px; }
 
 #right-defaults {
-  border: 1px solid purple; }
+  background-color: #333333;
+  color: white; }
+  #right-defaults h2 {
+    text-align: center;
+    border-bottom: 1px solid white; }
 
 footer {
   background-color: #0D4656;

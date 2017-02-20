@@ -1,7 +1,7 @@
 <section id="kit">
-    <h1 class="row">Kit Kat</h1>
+    <!--<h1 class="row">Kit</h1>-->
     <div class="wrapper">
-        <div id="left-defaults" class="small-8 columns">
+        <div id="left-defaults" class="small-9 columns">
             <div class="pad" dragula='"first-bag"'></div>
             <div class="pad" dragula='"first-bag"'></div>
             <div class="pad" dragula='"first-bag"'></div>
@@ -19,9 +19,9 @@
             <div class="pad" dragula='"first-bag"'></div>
             <div class="pad" dragula='"first-bag"'></div>
         </div>
-        <div id="right-defaults" class="small-4 columns" dragula='"first-bag"'>
+        <div id="right-defaults" class="small-3 columns" dragula='"first-bag"'>
             <h2>Favorites</h2>
-             <div ng-repeat="fav in favoriteList" ng-click="playFavorites(fav.index)">
+             <div id="fav-sounds" ng-repeat="fav in favoriteList" ng-click="playFavorites(fav.index)">
                 <p>Category: {{ fav.category }}</p>
                 <p>Name: {{ fav.name }}</p>    
             </div>
