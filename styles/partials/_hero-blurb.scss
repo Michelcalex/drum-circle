@@ -1,12 +1,76 @@
-#hero {
-    background-image: url('../assets/drumcircle-hero.jpg');
-    background-size: cover;
-    background-position: center center;
-    height: 400px;
+#welcome-section {
 
-}
+    #hero {
+        background-image: url('../assets/drumcircle-hero.jpg');
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+    }
 
-#blurb {
-    background-color: #6FC5D9;
-    margin: 0;
+    #blurb {
+        background-color: #333333;
+        color: #F5F2EE;
+        margin: 0;
+        font-family: $primary-font-type;
+        text-align: center;
+        padding: 20px;
+
+        p {
+            margin: 0 auto;
+            width: 75%;
+        }
+
+        span {
+            font-style: italic;
+        }
+    }
+
+    #forms {
+        background-color: #F5F2EE;
+        padding: 9.5%;
+        align-items: center;
+
+        md-content {
+            width: 60%;
+            height: 300px;
+            overflow: hidden;
+            background-color: #0D4656;
+            color: white;
+
+            md-pagination-wrapper {
+                width: 100% !important;
+
+                md-tab-item {
+                    width: 50%;
+                }
+
+                .md-tab.md-active {
+                    background-color: #1DAE83;
+                }
+
+                .md-tab {
+                    color: white;
+                }
+
+                md-ink-bar {
+                    color: #8ED6C1;
+                    background-color: #8ED6C1;
+                }
+            }
+                
+            form {
+                margin-top: 16px;
+
+                button {
+                    width: 100%;
+                    height: 48px;
+                    background-color: #1DAE83;
+                }
+            }
+        }
+
+        .md-padding {
+            padding: 35px;
+        }
+    }
 }

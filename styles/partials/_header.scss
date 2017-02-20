@@ -1,10 +1,12 @@
 header {
+    background-color: #F5F2EE;
 
     nav {
+        height: 100px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 2%;
+        padding: 0 3%;
 
         #nav-logo {
             display: flex;
@@ -13,6 +15,14 @@ header {
             img {
                 height: 70px;
             }
+
+            h1 {
+                margin-bottom: 0px;
+                margin-left: 12px;
+                font-family: $logo-font-type;
+                color: $logo-font-color;
+                text-transform: uppercase;
+            }
         }
 
         #nav-links {
@@ -20,6 +30,7 @@ header {
             ul {
                 display: flex;
                 padding: 0;
+                margin: 0;
 
                 li {
                     list-style: none;
