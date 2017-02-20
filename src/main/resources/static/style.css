@@ -1,31 +1,80 @@
-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2%; }
-  header nav #nav-logo {
+header {
+  background-color: #F5F2EE; }
+  header nav {
+    height: 100px;
     display: flex;
-    align-items: center; }
-    header nav #nav-logo img {
-      height: 70px; }
-  header nav #nav-links ul {
-    display: flex;
-    padding: 0; }
-    header nav #nav-links ul li {
-      list-style: none;
-      padding: 10px;
-      margin: 5px;
-      border-radius: 5px; }
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3%; }
+    header nav #nav-logo {
+      display: flex;
+      align-items: center; }
+      header nav #nav-logo img {
+        height: 70px; }
+      header nav #nav-logo h1 {
+        margin-bottom: 0px;
+        margin-left: 12px;
+        font-family: "Joti One", cursive;
+        color: #0D4656;
+        text-transform: uppercase; }
+    header nav #nav-links ul {
+      display: flex;
+      padding: 0;
+      margin: 0; }
+      header nav #nav-links ul li {
+        list-style: none;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 5px; }
 
-#hero {
+#welcome-section #hero {
   background-image: url("../assets/drumcircle-hero.jpg");
   background-size: cover;
   background-position: center center;
-  height: 400px; }
+  height: 500px; }
 
-#blurb {
-  background-color: #6FC5D9;
-  margin: 0; }
+#welcome-section #blurb {
+  background-color: #333333;
+  color: #F5F2EE;
+  margin: 0;
+  font-family: "Play", sans-serif;
+  text-align: center;
+  padding: 20px; }
+  #welcome-section #blurb p {
+    margin: 0 auto;
+    width: 75%; }
+  #welcome-section #blurb span {
+    font-style: italic; }
+
+#welcome-section #forms {
+  background-color: #F5F2EE;
+  padding: 9.5%;
+  align-items: center; }
+  #welcome-section #forms md-content {
+    width: 60%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #0D4656;
+    color: white; }
+    #welcome-section #forms md-content md-pagination-wrapper {
+      width: 100% !important; }
+      #welcome-section #forms md-content md-pagination-wrapper md-tab-item {
+        width: 50%; }
+      #welcome-section #forms md-content md-pagination-wrapper .md-tab.md-active {
+        background-color: #1DAE83; }
+      #welcome-section #forms md-content md-pagination-wrapper .md-tab {
+        color: white; }
+      #welcome-section #forms md-content md-pagination-wrapper md-ink-bar {
+        color: #8ED6C1;
+        background-color: #8ED6C1; }
+    #welcome-section #forms md-content form {
+      margin-top: 16px; }
+      #welcome-section #forms md-content form button {
+        width: 100%;
+        height: 48px;
+        background-color: #1DAE83; }
+  #welcome-section #forms .md-padding {
+    padding: 35px; }
 
 #log-in {
   margin: 5% 0; }
@@ -47,6 +96,10 @@ header nav {
 
 md-tabs {
   height: 600px; }
+
+#tabs-container {
+  padding: 25px;
+  text-align: center; }
 
 #kit h1 {
   border: 1px solid red; }

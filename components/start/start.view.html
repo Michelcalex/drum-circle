@@ -2,13 +2,19 @@
 <section id="welcome-section" class="row">
     <section id ="hero"></section>
     <section id="blurb" class="row">
-        <p class="small-8 small-centered columns">Drum Circle, a portal into a world of sound. 
-            Explore our vast library of drum sounds, choose your favorites, and start playing. 
-            And don't worry, noise is encouraged in this library. Sign up to create an account, 
-            or log in to get started.
-        </p>
+        <p>Drum Circle, a portal into a world of sound. Explore our vast library of drum sounds, choose your favorites, and start playing. And don't worry, noise is encouraged in this library.
+        <br><span>Sign up to create an account, or log in to get started.</span></p>
     </section>
-    <login-form></login-form>
-    <signup-form></signup-form>
-
+    <section id="forms" layout="column">
+        <md-content class="md-padding">
+            <md-tabs md-selected="selectedIndex">
+                <md-tab ng-disabled="loginDisabled" label ="Log in">
+                     <login-form></login-form>
+                </md-tab>
+                <md-tab ng-disabled="signupDisabled" label ="Sign up">
+                  <signup-form></signup-form>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+    </section>
 </section>

@@ -1,7 +1,14 @@
-// @import '../node_modules/foundation-sites/scss/foundation';
+//TODO: clean up fonts that are not in use for load time!
 
-// @include foundation-global-styles;
-// @include foundation-grid;
+
+$logo-font-type: 'Joti One', cursive;
+//Alternative fonts for logo: 
+    // font-family: 'Barrio', cursive;
+    // font-family: 'Metal Mania', cursive;
+    // font-family: 'Joti One', cursive;
+    // font-family: 'Slackey', cursive;
+$logo-font-color: #0D4656;
+$primary-font-type: 'Play', sans-serif;
 
 
 //Partial Imports -------------------------------------------------
@@ -16,6 +23,8 @@
 
 
 //Global Variables-------------------------------------------------
+
 .row {
     max-width: 100%;
 }
+

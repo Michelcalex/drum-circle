@@ -138,10 +138,24 @@ module.exports = {
 module.exports = {
     name: 'start',
     object: {
+        controller: 'StartController',
+        controllerAs: '$ctrl',
         templateUrl: 'components/start/start.view.html',
     },
 };
 },{}],11:[function(require,module,exports){
+module.exports = {
+    name: 'StartController',
+    func: function($scope) {
+        selected = null,
+        previous = null;
+        $scope.selectedIndex = 0;
+    }, 
+};
+
+
+
+},{}],12:[function(require,module,exports){
 const app = angular.module('DrumCircleApp', [
     'ui.router',
     'ngMaterial',
@@ -169,6 +183,7 @@ const controllers = [
     require('../components/browse/browse.controller'),
     require('../components/home/home.controller'),
     require('../components/kit/kit.controller'),
+    require('../components/start/start.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -237,7 +252,7 @@ app.config(function ($stateProvider) {
         url: '/',
     });
 });
-},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/header/header.component":3,"../components/home/home.component":4,"../components/home/home.controller":5,"../components/kit/kit.component":6,"../components/kit/kit.controller":7,"../components/login/login.component":8,"../components/signup/signup.component":9,"../components/start/start.component":10,"../services/browse.service":12,"../services/home.service":13,"../services/kit.service":14}],12:[function(require,module,exports){
+},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/header/header.component":3,"../components/home/home.component":4,"../components/home/home.controller":5,"../components/kit/kit.component":6,"../components/kit/kit.controller":7,"../components/login/login.component":8,"../components/signup/signup.component":9,"../components/start/start.component":10,"../components/start/start.controller":11,"../services/browse.service":13,"../services/home.service":14,"../services/kit.service":15}],13:[function(require,module,exports){
 module.exports = {
     name: 'BrowseService',
     func: function ($state, $http) {
@@ -303,7 +318,7 @@ module.exports = {
     },
 };
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 module.exports = {
     name: 'HomeService',
     func: function ($http, $state) {
@@ -318,7 +333,7 @@ module.exports = {
         }
     }
 }
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 module.exports = {
     name: 'KitService',
     func: function ($state, $http) {
@@ -351,4 +366,4 @@ module.exports = {
     },
 };
 
-},{}]},{},[11]);
+},{}]},{},[12]);
