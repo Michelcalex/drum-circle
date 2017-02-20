@@ -34,7 +34,7 @@ header {
   height: 500px; }
 
 #welcome-section #blurb {
-  background-color: #333333;
+  background-color: #0D4656;
   color: #F5F2EE;
   margin: 0;
   font-family: "Play", sans-serif;
@@ -54,7 +54,7 @@ header {
     width: 60%;
     height: 300px;
     overflow: hidden;
-    background-color: #0D4656;
+    background-color: #333333;
     color: white; }
     #welcome-section #forms md-content md-pagination-wrapper {
       width: 100% !important; }
