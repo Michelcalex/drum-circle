@@ -1,28 +1,50 @@
-#kit h1 {
-    border: 1px solid red;
+#kit { 
+    font-family: $primary-font-type;
+    background-color: #333333;
+    padding-top: 40px;
+
+    // h1 {
+    //     background-color: #1DAE83;
+    //     color: white;
+    //     padding-left: 20px;
+    //     margin: 0px;
+    // }
 }
-#wad-btns {
-    border: 1px solid green;
-}
+// #wad-btns {
+    
+// }
 
 #fav-sounds {
-    border: 1px solid blue;
+    border-bottom: 1px solid white;
+    padding: 2px;
+    margin-bottom: 2px;
+    
 }
 
 .pad {
     width:150px;
     height: 150px;
-    background-color: lightblue;
-    margin: 20px;
+    background-image:
+        linear-gradient(to top right, #1DAE83, #F5F2EE);
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow: 5px 8px #0D4656;
 }
-
-#left-defaults {
-    border: 1px solid green;
-    display: flex;
-    flex-wrap: wrap;
-}
-
 
 #right-defaults {
-    border: 1px solid purple;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #333333;
+    padding: 5px;
+}
+
+
+#left-defaults {
+    background-color: #333333;
+    color: white;
+
+    h2 {
+        text-align: center;
+        border-bottom: 1px solid white;
+    }
 }
