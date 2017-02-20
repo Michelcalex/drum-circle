@@ -1,8 +1,10 @@
-<section id="kit">
-    <!--<h1 class="row">Kit</h1>-->
+<section id="kit-container">
+    <section class="row page-overview">
+        <h3>Play your favorite sounds on our virtual midi controller</h3>
+    </section>
     <div class="wrapper">
         <div id="left-defaults" class="small-3 columns" dragula='"first-bag"'>
-            <h2>Favorites</h2>
+            <h2 moves="disable">Favorites</h2>
              <div id="fav-sounds" ng-repeat="fav in favoriteList" ng-click="playFavorites(fav.index)">
                 <!--<p>Category: {{ fav.category }}</p>-->
                 <p>{{ fav.name }}</p>    

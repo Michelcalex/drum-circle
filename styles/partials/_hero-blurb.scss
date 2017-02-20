@@ -65,4 +65,25 @@
             padding: 35px;
         }
     }
+
+    #welcome-container {
+        padding: 9.5%;
+        align-items: center;
+
+        #welcome-content {
+            text-align: center;
+            width: 60%;
+            height: 300px;
+            overflow: hidden;
+            background-color: #333333;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h4 {
+                font-style: italic;
+            }
+        }
+    }   
 }
