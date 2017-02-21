@@ -49,14 +49,12 @@ public class HomeController {
             model.addAttribute("user", user);
             return "index";
         } else {
-            if (session.getAttribute("loginError") != null) {
-                model.addAttribute("loginError", session.getAttribute("loginError"));
-                session.removeAttribute("loginError");
+            if (session.getAttribute("error") != null) {
+                model.addAttribute("error", session.getAttribute("error"));
+                session.removeAttribute("error");
             }
-            if (session.getAttribute("signupError") != null)  {
-                model.addAttribute("signupError", session.getAttribute("signupError"));
-                session.removeAttribute("signupError");
-            }
+
+
             return "start";
         }
     }
@@ -68,7 +66,7 @@ public class HomeController {
         if (user != null && PasswordStorage.verifyPassword(password, user.getPassword())) {
             session.setAttribute("user", user.getId());
         } else {
-            session.setAttribute("loginError", true);
+            session.setAttribute("error", "You entered an invalid password.");
         }
         return "redirect:/";
     }
@@ -91,7 +89,7 @@ public class HomeController {
                 e.printStackTrace();
             }
         } else {
-            session.setAttribute("error", true);
+            session.setAttribute("error", "Username already exists.");
         }
         return "redirect:/";
     }
