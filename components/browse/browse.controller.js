@@ -1,6 +1,6 @@
 module.exports = {
     name: 'BrowseController',
-    func: function($scope, BrowseService, KitService) {
+    func: function($scope, BrowseService, KitService, HomeService) {
         $scope.sounds = BrowseService.showAllSounds();
         $scope.testPlay = function playSound(index) {
             BrowseService.previewSounds(index);
@@ -15,7 +15,9 @@ module.exports = {
             KitService.markUnFavorite(sound);
         }
 
-
+        HomeService.getUser().then(function (name) {
+            $scope.username = name; // if username is undefined, nothing will render.
+        });
 
 
 //filter sounds and tab functionality 

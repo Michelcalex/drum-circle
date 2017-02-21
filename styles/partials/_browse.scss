@@ -58,13 +58,34 @@
 
                     #tabs-container {
                         padding: 25px;
-                        text-align: center;
+                        // background-color: lightgrey;
 
-                        #play-btn {
-                            background-image: url('../assets/play-button.png'); 
-                            background-repeat: no-repeat;
-                            height: 35px;
-                            background-size: contain;
+                        div {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-bottom: 1px solid #1DAE83;
+                            margin: 10px;
+
+                            #play-btn {
+                                background-image: url('../assets/play-button.png'); 
+                                background-repeat: no-repeat;
+                                height: 35px;
+                                background-size: contain;
+                            }
+
+                            p {
+                                color: #F5F2EE;
+                                margin: 0;
+                            }
+
+                            md-button {
+                                padding: 0px;
+                            }
+
+                            img.ng-scope {
+                                height: 35px !important;
+                            }
                         }
                     }
                 }

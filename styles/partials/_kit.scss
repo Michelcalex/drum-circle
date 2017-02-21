@@ -1,59 +1,34 @@
 #kit-container {
 
     .wrapper {
-        background-color: #333333;
-        
+        color: white;
+
+        #left-defaults {
+            background-color: #333333;
+
+            #fav-sounds {
+                border-bottom: 1px solid #1DAE83;
+                margin: 10px;
+
+                p {
+                    margin:0;
+                }
+            }
+        }
+
+        #right-defaults {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 5px;
+
+            .pad {
+                width:150px;
+                height: 150px;
+                background-image: linear-gradient(to top right, #1DAE83, #F5F2EE);
+                margin: 10px auto;
+                border-radius: 5px;
+                box-shadow: 5px 8px #0D4656;
+            }
+        } 
     }
-}
-
-
-
-
-// #kit { 
-
-//     font-family: $primary-font-type;
-//     background-color: #333333;
-//     padding-top: 40px;
-
-    // h1 {
-    //     background-color: #1DAE83;
-    //     color: white;
-    //     padding-left: 20px;
-    //     margin: 0px;
-    // }
-//}
-// #wad-btns {
-    
-// }
-
-#fav-sounds {
-    border-bottom: 1px solid white;
-    padding: 2px;
-    margin-bottom: 2px;
-    
-}
-
-.pad {
-    width:150px;
-    height: 150px;
-    background-image:
-        linear-gradient(to top right, #1DAE83, #F5F2EE);
-    margin: 10px auto;
-    border-radius: 5px;
-    box-shadow: 5px 8px #0D4656;
-}
-
-#right-defaults {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #333333;
-    padding: 5px;
-}
-
-
-#left-defaults {
-    background-color: #333333;
-    color: white;
-
-    
 }
