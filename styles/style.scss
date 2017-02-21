@@ -2,12 +2,14 @@ $logo-font-type: 'Joti One', cursive;
 $logo-font-color: #0D4656;
 $primary-font-type: 'Play', sans-serif;
 
+//$size-small: 375px;
+$size-medium: 376px;
+$size-large: 767px;
+$size-x-large: 900px;
 
-
-
-// .row {
-//     max-width: 100%;
-// }
+.row {
+    max-width: 100%;
+}
 
 body {
     background-color: #F5F2EE;
@@ -19,7 +21,11 @@ body {
     margin: 0 !important;
     font-family: $primary-font-type;
     text-align: center;
-    padding: 40px 30px;
+    padding: 20px 5px;
+
+    @media screen and (min-width: $size-medium) {
+        padding: 40px 30px;
+    }
 }
 
  h3 {
