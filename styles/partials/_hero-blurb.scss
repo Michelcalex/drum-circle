@@ -4,7 +4,19 @@
         background-image: url('../assets/drumcircle-hero.jpg');
         background-size: cover;
         background-position: center center;
-        height: 500px;
+        height: 220px;
+
+        @media screen and (min-width: $size-large) {
+            height: 500px;
+        }
+    }
+
+    h3 {
+        font-size: 0.8rem;
+
+        @media screen and (min-width: $size-large) {
+            font-size: 1rem;
+        }
     }
 
     span {
@@ -16,17 +28,53 @@
         align-items: center;
 
         md-content {
-            width: 60%;
-            height: 300px;
+            width: 100%;
+            //height: 300px;
             overflow: hidden;
             background-color: #333333;
             color: white;
+
+            @media screen and (min-width: $size-medium) {
+                width: 75%;
+                height: 300px;
+            }
+
+            @media screen and (min-width: $size-x-large) {
+                width: 50%;
+            }
+
+            md-tabs {
+                min-height: 190px;
+
+                @media screen and (min-width: $size-medium) {
+                    min-height: 0px;
+                }
+            }
+
+            md-tab-content {
+                top: -9px;
+                height: 165px;
+
+                @media screen and (min-width: $size-medium) {
+                    top: 0px;
+                }
+            }
+
+            // md-tabs-content-wrapper {
+            //     height: 165px;
+
+            //     @media screen and (min-width: $size-medium) {
+            //         //position: static;
+            //     }
+            // }
+
 
             md-pagination-wrapper {
                 width: 100% !important;
 
                 md-tab-item {
                     width: 50%;
+                    text-transform: capitalize;
                 }
 
                 .md-tab.md-active {
@@ -35,26 +83,54 @@
 
                 .md-tab {
                     color: white;
+                    font-size: 11px;
+                    padding: 8px 24px;
+
+                    @media screen and (min-width: $size-medium) {
+                        font-size: 14px;
+                        padding: 12px 24px;
+                    }
                 }
 
                 md-ink-bar {
                     color: #8ED6C1;
                     background-color: #8ED6C1;
+                    bottom: 6px;
+
+                    @media screen and (min-width: $size-medium) {
+                        bottom: 0px;
+                    }
                 }
             }
                 
             form {
                 margin-top: 16px;
 
+                input {
+                    height: 2rem;
+                    font-size: 0.8rem;
+
+                    @media screen and (min-width: $size-medium) {
+                        height: 2.4375rem;
+                        font-size: 1rem;
+                    }
+                }
+
                 button {
                     width: 100%;
-                    height: 48px;
                     background-color: #1DAE83;
+                    padding: 14px 24px;
+                    font-size: 11px;
+                    font-weight: 600;
+
+                    @media screen and (min-width: $size-medium) {
+                        font-size: 14px;
+                        font-weight: normal;
+                    }
                 }
 
                 .md-button {
                     width: 100%;
-                    height: 48px;
                     background-color: #1DAE83;
                     margin: 0;
                 }
@@ -62,7 +138,11 @@
         }
 
         .md-padding {
-            padding: 35px;
+            padding: 30px;
+
+            @media screen and (min-width: $size-large) {
+                padding: 35px;
+            }
         }
     }
 

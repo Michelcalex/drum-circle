@@ -22,6 +22,11 @@ header {
                 font-family: $logo-font-type;
                 color: $logo-font-color;
                 text-transform: uppercase;
+                font-size: 1.5rem;
+
+                @media screen and (min-width: $size-large) {
+                    font-size: 2.4rem;
+                }
             }
         }
 
@@ -31,6 +36,15 @@ header {
                 display: flex;
                 padding: 0;
                 margin: 0;
+                width: 159px;
+
+                @media screen and (min-width: $size-medium) {
+                    display: flex;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                
 
                 li {
                     list-style: none;
