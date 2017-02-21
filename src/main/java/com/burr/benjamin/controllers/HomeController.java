@@ -41,29 +41,32 @@ public class HomeController {
     @CrossOrigin
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String home(HttpSession session, Model model) {
-        // the answer to the ultimate question of life, the universe, and everything
 
         Integer userId = (Integer) session.getAttribute("user");
 
         if (userId != null) {
-
             User user = users.findOne(userId);
             model.addAttribute("user", user);
             return "index";
         } else {
+            if (session.getAttribute("error") != null) {
+                model.addAttribute("error", session.getAttribute("error"));
+                session.removeAttribute("error");
+            }
+
+
             return "start";
         }
     }
 
     @CrossOrigin
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public String login(HttpSession session, String username, String password) throws Exception {
+    public String login(Model model, HttpSession session, String username, String password) throws Exception {
         User user = users.findByUsername(username);
-
         if (user != null && PasswordStorage.verifyPassword(password, user.getPassword())) {
             session.setAttribute("user", user.getId());
         } else {
-
+            session.setAttribute("error", "You entered an invalid password.");
         }
         return "redirect:/";
     }
@@ -76,15 +79,17 @@ public class HomeController {
 
     @CrossOrigin
     @RequestMapping(path = "/sign-up", method = RequestMethod.POST)
-    public String signUp(HttpSession session, String username, String password) {
-        users.findByUsername(username);
-        if (username == null ) {
+    public String signUp(HttpSession session, Model model, String username, String password) throws Exception{
+        User user = users.findByUsername(username);
+        if (user == null) {
             try {
-                User user = new User(username, PasswordStorage.createHash(password));
+                user = new User(username, PasswordStorage.createHash(password));
                 users.save(user);
             } catch (PasswordStorage.CannotPerformOperationException e) {
                 e.printStackTrace();
             }
+        } else {
+            session.setAttribute("error", "Username already exists.");
         }
         return "redirect:/";
     }
@@ -139,9 +144,10 @@ public class HomeController {
         }
     }
 
-    public ModelAndView error (HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView error () throws Exception {
         ModelAndView model = new ModelAndView();
         model.addObject("error", true);
+
 
         return model;
     }
