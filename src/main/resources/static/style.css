@@ -79,7 +79,9 @@ header {
 
 #welcome-section #forms {
   padding: 7.5%;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 50px;
+  background-color: #F5F2EE; }
   #welcome-section #forms md-content {
     width: 100%;
     overflow: hidden;
@@ -266,5 +268,8 @@ footer {
   position: fixed;
   left: 0px;
   bottom: 0px;
-  height: 100px;
+  height: 50px;
   padding: 20px; }
+  @media screen and (min-width: 376px) {
+    footer {
+      height: 100px; } }

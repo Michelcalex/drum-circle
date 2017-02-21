@@ -4,6 +4,10 @@ footer {
     position: fixed;
     left: 0px;
     bottom: 0px;
-    height: 100px;
+    height: 50px;
     padding: 20px;
+
+    @media screen and (min-width: $size-medium) {
+        height: 100px;
+    }
 }
