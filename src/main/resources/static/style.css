@@ -82,6 +82,9 @@ header {
   align-items: center;
   margin-bottom: 50px;
   background-color: #F5F2EE; }
+  @media screen and (min-width: 376px) {
+    #welcome-section #forms {
+      margin-bottom: 75px; } }
   #welcome-section #forms md-content {
     width: 100%;
     overflow: hidden;
@@ -95,10 +98,11 @@ header {
       #welcome-section #forms md-content {
         width: 50%; } }
     #welcome-section #forms md-content md-tabs {
-      min-height: 190px; }
+      min-height: 190px;
+      margin-top: 12px; }
       @media screen and (min-width: 376px) {
         #welcome-section #forms md-content md-tabs {
-          min-height: 0px; } }
+          min-height: 220px; } }
     #welcome-section #forms md-content md-tab-content {
       top: -9px;
       height: 165px; }
@@ -128,7 +132,7 @@ header {
           #welcome-section #forms md-content md-pagination-wrapper md-ink-bar {
             bottom: 0px; } }
     #welcome-section #forms md-content form {
-      margin-top: 16px; }
+      margin-top: 14px; }
       #welcome-section #forms md-content form input {
         height: 2rem;
         font-size: 0.8rem; }
@@ -272,4 +276,4 @@ footer {
   padding: 20px; }
   @media screen and (min-width: 376px) {
     footer {
-      height: 100px; } }
+      height: 75px; } }
