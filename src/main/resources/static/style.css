@@ -21,7 +21,7 @@ h3 {
   font-size: 0.8em; }
   @media screen and (min-width: 376px) {
     h3 {
-      font-size: 1.1rem; } }
+      font-size: 1rem; } }
 
 a {
   color: #0D4656; }
@@ -56,10 +56,11 @@ header {
       display: flex;
       padding: 0;
       margin: 0;
-      width: 156px; }
+      width: 150px; }
       @media screen and (min-width: 376px) {
         header nav #nav-links ul {
-          display: flex; } }
+          display: flex;
+          width: 200px; } }
       header nav #nav-links ul li {
         list-style: none;
         padding: 5px;
@@ -86,13 +87,7 @@ header {
       height: 350px; } }
   @media screen and (min-width: 900px) {
     #welcome-section #hero {
-      height: 500px; } }
-
-#welcome-section h3 {
-  font-size: 0.8rem; }
-  @media screen and (min-width: 767px) {
-    #welcome-section h3 {
-      font-size: 1rem; } }
+      height: 525px; } }
 
 #welcome-section span {
   font-style: italic; }
@@ -190,7 +185,8 @@ header {
   justify-content: center; }
   @media screen and (min-width: 376px) {
     #welcome-section #welcome-container {
-      height: 485px; } }
+      height: 485px;
+      padding-bottom: 75px; } }
   #welcome-section #welcome-container #welcome-content {
     text-align: center;
     width: 70%;
@@ -200,6 +196,12 @@ header {
       font-style: italic; }
     #welcome-section #welcome-container #welcome-content img {
       width: 14%; }
+      @media screen and (min-width: 376px) {
+        #welcome-section #welcome-container #welcome-content img {
+          width: 10%; } }
+      @media screen and (min-width: 900px) {
+        #welcome-section #welcome-container #welcome-content img {
+          width: 8%; } }
 
 #browse-container md-content {
   width: 80%;

@@ -1,12 +1,18 @@
+//Global styles
 $logo-font-type: 'Joti One', cursive;
 $logo-font-color: #0D4656;
 $primary-font-type: 'Play', sans-serif;
+
+
+
 
 //Screen sizes for media quieres 
 $size-medium: 376px;
 $size-large: 767px;
 $size-x-large: 900px;
 
+
+//Global classes
 .row {
     max-width: 100%;
 }
@@ -34,7 +40,7 @@ body {
     font-size: 0.8em;
 
     @media screen and (min-width: $size-medium) {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
 
@@ -47,8 +53,6 @@ a:hover {
 }
 
 
-
-
 //Partial Imports -------------------------------------------------
 @import 'partials/header';
 @import 'partials/hero-blurb';
@@ -57,7 +61,3 @@ a:hover {
 @import 'partials/kit';
 @import 'partials/footer';
 
-
-
-
-//Global Variables-------------------------------------------------
