@@ -36,19 +36,35 @@ header {
                 display: flex;
                 padding: 0;
                 margin: 0;
-                width: 159px;
+                width: 156px;
 
                 @media screen and (min-width: $size-medium) {
                     display: flex;
-                    padding: 0;
-                    margin: 0;
+                    // padding: 0;
+                    // margin: 0;
+                    //width: 159px
                 }
 
                 li {
                     list-style: none;
-                    padding: 10px;
+                    padding: 5px;
                     margin: 5px;
                     border-radius: 5px;
+                    font-size: 0.8rem;
+
+                    @media screen and (min-width: $size-medium) {
+                        padding: 10px;
+                        margin: 5px;
+                        font-size: 1rem;
+                    }
+                }
+
+                button {
+                    color: #0D4656;
+                }
+
+                button:hover {
+                    color: #6FC5D9;
                 }
             }
         }
