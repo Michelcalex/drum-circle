@@ -12,8 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
@@ -60,6 +62,8 @@ public class HomeController {
 
         if (user != null && PasswordStorage.verifyPassword(password, user.getPassword())) {
             session.setAttribute("user", user.getId());
+        } else {
+
         }
         return "redirect:/";
     }
@@ -73,12 +77,14 @@ public class HomeController {
     @CrossOrigin
     @RequestMapping(path = "/sign-up", method = RequestMethod.POST)
     public String signUp(HttpSession session, String username, String password) {
-
-        try {
-            User user = new User(username, PasswordStorage.createHash(password));
-            users.save(user);
-        } catch (PasswordStorage.CannotPerformOperationException e) {
-            e.printStackTrace();
+        users.findByUsername(username);
+        if (username == null ) {
+            try {
+                User user = new User(username, PasswordStorage.createHash(password));
+                users.save(user);
+            } catch (PasswordStorage.CannotPerformOperationException e) {
+                e.printStackTrace();
+            }
         }
         return "redirect:/";
     }
@@ -133,4 +139,10 @@ public class HomeController {
         }
     }
 
+    public ModelAndView error (HttpServletRequest request, HttpServletResponse response) throws Exception {
+        ModelAndView model = new ModelAndView();
+        model.addObject("error", true);
+
+        return model;
+    }
 }
