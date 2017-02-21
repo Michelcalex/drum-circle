@@ -6,7 +6,11 @@
         background-position: center center;
         height: 220px;
 
-        @media screen and (min-width: $size-large) {
+        @media screen and (min-width: $size-medium) {
+            height: 350px;
+        }
+
+        @media screen and (min-width: $size-x-large) {
             height: 500px;
         }
     }
