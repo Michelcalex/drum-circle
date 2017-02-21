@@ -261,24 +261,56 @@ header {
 
 #kit-container .wrapper {
   color: white; }
+  #kit-container .wrapper h2 {
+    margin: 0 auto;
+    background-color: #333333;
+    text-align: center; }
+    @media screen and (min-width: 376px) {
+      #kit-container .wrapper h2 {
+        font-size: 2em;
+        text-align: left;
+        margin: 0px;
+        padding-left: 10px;
+        width: 25%; } }
   #kit-container .wrapper #left-defaults {
-    background-color: #333333; }
+    background-color: #333333;
+    height: 120px;
+    overflow-y: scroll; }
+    #kit-container .wrapper #left-defaults div {
+      width: 60%; }
     #kit-container .wrapper #left-defaults #fav-sounds {
       border-bottom: 1px solid #1DAE83;
       margin: 10px; }
       #kit-container .wrapper #left-defaults #fav-sounds p {
+        font-size: .8em;
         margin: 0; }
+    @media screen and (min-width: 376px) {
+      #kit-container .wrapper #left-defaults {
+        height: 800px; }
+        #kit-container .wrapper #left-defaults div {
+          width: 88%; }
+        #kit-container .wrapper #left-defaults p {
+          font-size: 1em; } }
   #kit-container .wrapper #right-defaults {
     display: flex;
     flex-wrap: wrap;
-    padding: 5px; }
+    padding: 5px;
+    padding-bottom: 80px;
+    background-color: #F5F2EE; }
     #kit-container .wrapper #right-defaults .pad {
-      width: 150px;
-      height: 150px;
+      width: 80px;
+      height: 80px;
       background-image: linear-gradient(to top right, #1DAE83, #F5F2EE);
       margin: 10px auto;
       border-radius: 5px;
       box-shadow: 5px 8px #0D4656; }
+      @media screen and (min-width: 376px) {
+        #kit-container .wrapper #right-defaults .pad {
+          width: 120px;
+          height: 120px; } }
+    @media screen and (min-width: 376px) {
+      #kit-container .wrapper #right-defaults {
+        padding-top: 55px; } }
 
 footer {
   background-color: #0D4656;
@@ -287,7 +319,8 @@ footer {
   left: 0px;
   bottom: 0px;
   height: 50px;
-  padding: 20px; }
+  padding: 20px;
+  margin-top: 20px; }
   @media screen and (min-width: 376px) {
     footer {
       height: 75px; } }
