@@ -3,16 +3,51 @@
     .wrapper {
         color: white;
 
+        h2 {
+            margin: 0 auto;
+            background-color: #333333;
+            text-align: center;
+
+            @media screen and (min-width: $size-medium) {
+                font-size: 2em;
+                text-align: left;
+                margin: 0px;
+                padding-left: 10px;
+                width: 25%;
+            }
+        }        
+
         #left-defaults {
             background-color: #333333;
+            height: 120px;
+            overflow-y: scroll;
+
+
+            div {
+                width: 60%;
+            }            
 
             #fav-sounds {
                 border-bottom: 1px solid #1DAE83;
                 margin: 10px;
 
                 p {
+                    font-size: .8em;
                     margin:0;
                 }
+            }
+
+            @media screen and (min-width: $size-medium) {
+                height: 100%;
+                
+                div {
+                    width: 88%;
+                }
+
+                p {
+                    font-size: 1em;
+                }
+
             }
         }
 
@@ -20,15 +55,27 @@
             display: flex;
             flex-wrap: wrap;
             padding: 5px;
+            margin-bottom: 100px;
+            background-color: #F5F2EE;
 
             .pad {
-                width:150px;
-                height: 150px;
+                width: 80px;
+                height: 80px;
                 background-image: linear-gradient(to top right, #1DAE83, #F5F2EE);
                 margin: 10px auto;
                 border-radius: 5px;
                 box-shadow: 5px 8px #0D4656;
+
+                @media screen and (min-width: $size-medium) {
+                    width:120px;
+                    height: 120px;
+                }
+                
             }
+
+            @media screen and (min-width: $size-medium) {
+
+            }            
         } 
     }
 }

@@ -3,14 +3,14 @@
         <h3>Play your favorite sounds on our virtual midi controller</h3>
     </section>
     <div class="wrapper">
-        <div id="left-defaults" class="small-3 columns" dragula='"first-bag"'>
-            <h2>Favorites</h2>
+        <h2>Favorites</h2>
+        <div id="left-defaults" class="small-12 medium-3 large-3 columns" dragula='"first-bag"'>
              <div id="fav-sounds" data-target="{{ fav.index }}" ng-repeat="fav in favoriteList" ng-click="playFavorites(fav.index)">
                 <!--<input type="text" ng-keypress="play(fav.index)"/>-->
                 <p>{{ fav.name }}</p>    
             </div>
         </div>
-        <div id="right-defaults" class="small-9 columns">
+        <div id="right-defaults" class="small-12 medium-9 large-9 columns">
             <button data-slot="0" class="pad" dragula='"first-bag"' ng-keypress="play(0)" ng-click="play(0)"></button>
             <button data-slot="1" class="pad" dragula='"first-bag"' ng-keypress="play(1)" ng-click="play(1)"></button>
             <button data-slot="2" class="pad" dragula='"first-bag"' ng-keypress="play(2)" ng-click="play(2)"></button>

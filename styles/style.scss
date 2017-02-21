@@ -21,17 +21,21 @@ body {
     margin: 0 !important;
     font-family: $primary-font-type;
     text-align: center;
-    padding: 20px 5px;
+    padding: 15px 5px;
 
     @media screen and (min-width: $size-medium) {
         padding: 40px 30px;
     }
 }
 
- h3 {
+h3 {
     margin: 0 auto;
     width: 80%;
-    font-size: 1.1em;
+    font-size: 0.8em;
+
+    @media screen and (min-width: $size-medium) {
+        font-size: 1.1rem;
+    }
 }
 
 
