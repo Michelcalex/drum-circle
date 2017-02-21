@@ -6,16 +6,12 @@
         background-position: center center;
         height: 220px;
 
-        @media screen and (min-width: $size-large) {
-            height: 500px;
+        @media screen and (min-width: $size-medium) {
+            height: 350px;
         }
-    }
 
-    h3 {
-        font-size: 0.8rem;
-
-        @media screen and (min-width: $size-large) {
-            font-size: 1rem;
+        @media screen and (min-width: $size-x-large) {
+            height: 525px;
         }
     }
 
@@ -29,9 +25,12 @@
         margin-bottom: 50px;
         background-color: #F5F2EE;
 
+        @media screen and (min-width: $size-medium) {
+            margin-bottom: 75px;
+        }
+
         md-content {
             width: 100%;
-            //height: 300px;
             overflow: hidden;
             background-color: #333333;
             color: white;
@@ -47,9 +46,10 @@
 
             md-tabs {
                 min-height: 190px;
+                margin-top: 12px;
 
                 @media screen and (min-width: $size-medium) {
-                    min-height: 0px;
+                   min-height: 220px; 
                 }
             }
 
@@ -61,15 +61,6 @@
                     top: 0px;
                 }
             }
-
-            // md-tabs-content-wrapper {
-            //     height: 165px;
-
-            //     @media screen and (min-width: $size-medium) {
-            //         //position: static;
-            //     }
-            // }
-
 
             md-pagination-wrapper {
                 width: 100% !important;
@@ -106,7 +97,7 @@
             }
                 
             form {
-                margin-top: 16px;
+                margin-top: 14px;
 
                 input {
                     height: 2rem;
@@ -151,13 +142,16 @@
     #welcome-container {
         background-image: url('../assets/welcome-image.jpg');
         background-size: cover;
-        height: 485px;
-        padding-bottom: 50px;
+        height: 200px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
 
+        @media screen and (min-width: $size-medium) {
+            height: 485px;
+            padding-bottom: 75px;
+        }
 
         #welcome-content {
             text-align: center;
@@ -167,6 +161,18 @@
 
             h4 {
                 font-style: italic;
+            }
+
+            img {
+                width: 14%;
+
+                @media screen and (min-width: $size-medium) {
+                    width: 10%;
+                }
+
+                @media screen and (min-width: $size-x-large) {
+                    width: 8%;
+                }
             }
         }
     }   

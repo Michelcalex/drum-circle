@@ -13,7 +13,7 @@ body {
   padding: 15px 5px; }
   @media screen and (min-width: 376px) {
     .page-overview {
-      padding: 40px 30px; } }
+      padding: 25px 15px; } }
 
 h3 {
   margin: 0 auto;
@@ -21,7 +21,13 @@ h3 {
   font-size: 0.8em; }
   @media screen and (min-width: 376px) {
     h3 {
-      font-size: 1.1rem; } }
+      font-size: 1rem; } }
+
+a {
+  color: #0D4656; }
+
+a:hover {
+  color: #6FC5D9; }
 
 header {
   background-color: #F5F2EE; }
@@ -50,32 +56,38 @@ header {
       display: flex;
       padding: 0;
       margin: 0;
-      width: 159px; }
+      width: 150px; }
       @media screen and (min-width: 376px) {
         header nav #nav-links ul {
           display: flex;
-          padding: 0;
-          margin: 0; } }
+          width: 200px; } }
       header nav #nav-links ul li {
         list-style: none;
-        padding: 10px;
+        padding: 5px;
         margin: 5px;
-        border-radius: 5px; }
+        border-radius: 5px;
+        font-size: 0.8rem; }
+        @media screen and (min-width: 376px) {
+          header nav #nav-links ul li {
+            padding: 10px;
+            margin: 5px;
+            font-size: 1rem; } }
+      header nav #nav-links ul button {
+        color: #0D4656; }
+      header nav #nav-links ul button:hover {
+        color: #6FC5D9; }
 
 #welcome-section #hero {
   background-image: url("../assets/drumcircle-hero.jpg");
   background-size: cover;
   background-position: center center;
   height: 220px; }
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 376px) {
     #welcome-section #hero {
-      height: 500px; } }
-
-#welcome-section h3 {
-  font-size: 0.8rem; }
-  @media screen and (min-width: 767px) {
-    #welcome-section h3 {
-      font-size: 1rem; } }
+      height: 350px; } }
+  @media screen and (min-width: 900px) {
+    #welcome-section #hero {
+      height: 525px; } }
 
 #welcome-section span {
   font-style: italic; }
@@ -85,6 +97,9 @@ header {
   align-items: center;
   margin-bottom: 50px;
   background-color: #F5F2EE; }
+  @media screen and (min-width: 376px) {
+    #welcome-section #forms {
+      margin-bottom: 75px; } }
   #welcome-section #forms md-content {
     width: 100%;
     overflow: hidden;
@@ -98,10 +113,11 @@ header {
       #welcome-section #forms md-content {
         width: 50%; } }
     #welcome-section #forms md-content md-tabs {
-      min-height: 190px; }
+      min-height: 190px;
+      margin-top: 12px; }
       @media screen and (min-width: 376px) {
         #welcome-section #forms md-content md-tabs {
-          min-height: 0px; } }
+          min-height: 220px; } }
     #welcome-section #forms md-content md-tab-content {
       top: -9px;
       height: 165px; }
@@ -131,7 +147,7 @@ header {
           #welcome-section #forms md-content md-pagination-wrapper md-ink-bar {
             bottom: 0px; } }
     #welcome-section #forms md-content form {
-      margin-top: 16px; }
+      margin-top: 14px; }
       #welcome-section #forms md-content form input {
         height: 2rem;
         font-size: 0.8rem; }
@@ -162,12 +178,15 @@ header {
 #welcome-section #welcome-container {
   background-image: url("../assets/welcome-image.jpg");
   background-size: cover;
-  height: 485px;
-  padding-bottom: 50px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; }
+  @media screen and (min-width: 376px) {
+    #welcome-section #welcome-container {
+      height: 485px;
+      padding-bottom: 75px; } }
   #welcome-section #welcome-container #welcome-content {
     text-align: center;
     width: 70%;
@@ -175,18 +194,14 @@ header {
     color: white; }
     #welcome-section #welcome-container #welcome-content h4 {
       font-style: italic; }
-
-#log-in {
-  margin: 5% 0; }
-  #log-in #userlogin {
-    text-align: center;
-    padding: 2%; }
-    #log-in #userlogin button {
-      background-color: #0D4656;
-      color: #fff;
-      padding: 8px 16px; }
-  #log-in input {
-    border: 1px solid black; }
+    #welcome-section #welcome-container #welcome-content img {
+      width: 14%; }
+      @media screen and (min-width: 376px) {
+        #welcome-section #welcome-container #welcome-content img {
+          width: 10%; } }
+      @media screen and (min-width: 900px) {
+        #welcome-section #welcome-container #welcome-content img {
+          width: 8%; } }
 
 #browse-container md-content {
   width: 80%;
@@ -246,53 +261,24 @@ header {
 
 #kit-container .wrapper {
   color: white; }
-  #kit-container .wrapper h2 {
-    margin: 0 auto;
-    background-color: #333333;
-    text-align: center; }
-    @media screen and (min-width: 376px) {
-      #kit-container .wrapper h2 {
-        font-size: 2em;
-        text-align: left;
-        margin: 0px;
-        padding-left: 10px;
-        width: 25%; } }
   #kit-container .wrapper #left-defaults {
-    background-color: #333333;
-    height: 120px;
-    overflow-y: scroll; }
-    #kit-container .wrapper #left-defaults div {
-      width: 60%; }
+    background-color: #333333; }
     #kit-container .wrapper #left-defaults #fav-sounds {
       border-bottom: 1px solid #1DAE83;
       margin: 10px; }
       #kit-container .wrapper #left-defaults #fav-sounds p {
-        font-size: .8em;
         margin: 0; }
-    @media screen and (min-width: 376px) {
-      #kit-container .wrapper #left-defaults {
-        height: 100%; }
-        #kit-container .wrapper #left-defaults div {
-          width: 88%; }
-        #kit-container .wrapper #left-defaults p {
-          font-size: 1em; } }
   #kit-container .wrapper #right-defaults {
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
-    margin-bottom: 100px;
-    background-color: #F5F2EE; }
+    padding: 5px; }
     #kit-container .wrapper #right-defaults .pad {
-      width: 80px;
-      height: 80px;
+      width: 150px;
+      height: 150px;
       background-image: linear-gradient(to top right, #1DAE83, #F5F2EE);
       margin: 10px auto;
       border-radius: 5px;
       box-shadow: 5px 8px #0D4656; }
-      @media screen and (min-width: 376px) {
-        #kit-container .wrapper #right-defaults .pad {
-          width: 120px;
-          height: 120px; } }
 
 footer {
   background-color: #0D4656;
@@ -301,8 +287,7 @@ footer {
   left: 0px;
   bottom: 0px;
   height: 50px;
-  padding: 20px;
-  margin-top: 20px; }
+  padding: 20px; }
   @media screen and (min-width: 376px) {
     footer {
-      height: 100px; } }
+      height: 75px; } }
