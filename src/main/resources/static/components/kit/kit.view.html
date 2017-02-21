@@ -1,30 +1,32 @@
-<section id="kit">
-    <h1 class="row">Kit Kat</h1>
+<section id="kit-container">
+    <section class="row page-overview">
+        <h3>Play your favorite sounds on our virtual midi controller</h3>
+    </section>
     <div class="wrapper">
-        <div id="left-defaults" class="small-8 columns">
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-            <div class="pad" dragula='"first-bag"'></div>
-        </div>
-        <div id="right-defaults" class="small-4 columns" dragula='"first-bag"'>
+        <div id="left-defaults" class="small-3 columns" dragula='"first-bag"'>
             <h2>Favorites</h2>
-             <div ng-repeat="fav in favoriteList" ng-click="playFavorites(fav.index)">
-                <p>Category: {{ fav.category }}</p>
-                <p>Name: {{ fav.name }}</p>    
+             <div id="fav-sounds" ng-repeat="fav in favoriteList" ng-click="playFavorites(fav.index)">
+                <!--<p>Category: {{ fav.category }}</p>-->
+                <p>{{ fav.name }}</p>    
             </div>
+        </div>
+        <div id="right-defaults" class="small-9 columns">
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
+            <div class="pad" dragula='"first-bag"'></div>
         </div>
     </div>
 </section>

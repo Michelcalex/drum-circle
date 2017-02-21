@@ -1,15 +1,95 @@
-#play-btn {
-    background-image: url('../assets/play-button.png'); 
-    background-repeat: no-repeat;
-    height: 35px;
-    background-size: contain;
-}
+#browse-container {
 
-md-tabs {
-    height: 600px;
-}
+    md-content {
+        width: 80%;
+        height: 900px;
+        overflow: hidden;
+        background-color: #333333;
+        color: white;
+        margin: 5% auto;
 
-#tabs-container {
-    padding: 25px;
-    text-align: center;
+        md-tabs {
+            height: 900px;
+
+            md-tabs-wrapper {
+                height: 75px;
+
+                .md-tab {
+                    color: white;
+                    font-size: 9px;
+                }
+
+                .md-tab.md-active {
+                    background-color: #1DAE83;
+                }
+               
+
+                md-tabs-canvas {
+                    height: 75px;
+
+                    md-pagination-wrapper {
+                        width: 100% !important;
+                        height: 75px;
+
+                        md-tab-item {
+                            width: 14.28%;
+                            height: 75px;
+
+                            p {
+                                color: white;
+                                margin: 3px 0 0;
+                            }
+                        }
+
+                        md-ink-bar {
+                            color: #8ED6C1;
+                            background-color: #8ED6C1;
+                        }
+                    }
+                }
+            }
+
+            md-tabs-content-wrapper {
+                margin-bottom: 5%;
+                top: 60px;
+
+                md-tab-content {
+                    top: 30px;
+
+                    #tabs-container {
+                        padding: 25px;
+                        // background-color: lightgrey;
+
+                        div {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-bottom: 1px solid #1DAE83;
+                            margin: 10px;
+
+                            #play-btn {
+                                background-image: url('../assets/play-button.png'); 
+                                background-repeat: no-repeat;
+                                height: 35px;
+                                background-size: contain;
+                            }
+
+                            p {
+                                color: #F5F2EE;
+                                margin: 0;
+                            }
+
+                            md-button {
+                                padding: 0px;
+                            }
+
+                            img.ng-scope {
+                                height: 35px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -13,7 +13,7 @@ module.exports = {
 },{}],2:[function(require,module,exports){
 module.exports = {
     name: 'BrowseController',
-    func: function($scope, BrowseService) {
+    func: function($scope, BrowseService, KitService, HomeService) {
         $scope.sounds = BrowseService.showAllSounds();
         $scope.testPlay = function playSound(index) {
             BrowseService.previewSounds(index);
@@ -21,14 +21,16 @@ module.exports = {
 
 //favorite and unfavorite sounds
         $scope.favorite = function(sound) {
-            BrowseService.markFavorite(sound);
+            KitService.markFavorite(sound);
         };
 
         $scope.unfavorite = function(sound) {
-            BrowseService.markUnFavorite(sound);
+            KitService.markUnFavorite(sound);
         }
 
-
+        HomeService.getUser().then(function (name) {
+            $scope.username = name; // if username is undefined, nothing will render.
+        });
 
 
 //filter sounds and tab functionality 
@@ -47,13 +49,13 @@ module.exports = {
         $scope.filterSounds('All');
 
         let tabs = [
-            {title: 'All' },
-            {title: 'Kick' },
-            {title: 'Snare' },
-            {title: 'Tom' },
-            {title: 'Hihat' },
-            {title: 'Cymbal' },
-            {title: 'Percussion' },
+            {title: 'All', src: '../../assets/all.png'},
+            {title: 'Kick', src: '../../assets/kick.png' },
+            {title: 'Snare', src: '../../assets/snare.png' },
+            {title: 'Tom', src: '../../assets/tom.png' },
+            {title: 'Hihat', src: '../../assets/hihat.png' },
+            {title: 'Cymbal', src: '../../assets/cymbal.png' },
+            {title: 'Percussion', src: '../../assets/percussion.png' },
         ], 
         selected = null,
         previous = null;
@@ -131,10 +133,45 @@ module.exports = {
 module.exports = {
     name: 'signupForm',
     object: {
+        controller: 'SignupController',
+        controllerAs: '$ctrl',
         templateUrl: 'components/signup/signup.view.html',
     },
 };
 },{}],10:[function(require,module,exports){
+module.exports = {
+    name: 'SignupController',
+    func: function($scope, toastr, HomeService) {
+
+        //Angular submit ----------------------
+        // $scope.sendSignup = function(){
+        //     HomeService.sendSignup($scope.username, $scope.password);
+        // } 
+        
+        
+        //Toastr alert - only if Angular way-----------------
+        //toastr.success('Hello world!', 'Toastr fun!');
+        // $scope.status = ' ';
+        // $scope.customFullscreen = false;
+
+        //  $scope.showAlert = function(ev) {
+        //     $mdDialog.show(
+        //     $mdDialog.alert()
+        //         .parent(angular.element(document.querySelector('#popupContainer')))
+        //         .clickOutsideToClose(true)
+        //         .title('Awesomesauce')
+        //         .textContent('You can now login with your username and password')
+        //         .ariaLabel('Succesfully Signedup')
+        //         .ok('Got it!')
+        //         .targetEvent(ev)
+        //     );
+        // };
+    }, 
+};
+
+
+
+},{}],11:[function(require,module,exports){
 module.exports = {
     name: 'start',
     object: {
@@ -143,10 +180,10 @@ module.exports = {
         templateUrl: 'components/start/start.view.html',
     },
 };
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 module.exports = {
     name: 'StartController',
-    func: function($scope) {
+    func: function($scope, HomeService) {
         selected = null,
         previous = null;
         $scope.selectedIndex = 0;
@@ -155,10 +192,12 @@ module.exports = {
 
 
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 const app = angular.module('DrumCircleApp', [
     'ui.router',
     'ngMaterial',
+    'ngAnimate', 
+    'toastr',
     angularDragula(angular),
 ]);
 
@@ -184,6 +223,7 @@ const controllers = [
     require('../components/home/home.controller'),
     require('../components/kit/kit.controller'),
     require('../components/start/start.controller'),
+    require('../components/signup/signup.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -252,13 +292,13 @@ app.config(function ($stateProvider) {
         url: '/',
     });
 });
-},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/header/header.component":3,"../components/home/home.component":4,"../components/home/home.controller":5,"../components/kit/kit.component":6,"../components/kit/kit.controller":7,"../components/login/login.component":8,"../components/signup/signup.component":9,"../components/start/start.component":10,"../components/start/start.controller":11,"../services/browse.service":13,"../services/home.service":14,"../services/kit.service":15}],13:[function(require,module,exports){
+},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/header/header.component":3,"../components/home/home.component":4,"../components/home/home.controller":5,"../components/kit/kit.component":6,"../components/kit/kit.controller":7,"../components/login/login.component":8,"../components/signup/signup.component":9,"../components/signup/signup.controller":10,"../components/start/start.component":11,"../components/start/start.controller":12,"../services/browse.service":14,"../services/home.service":15,"../services/kit.service":16}],14:[function(require,module,exports){
 module.exports = {
     name: 'BrowseService',
     func: function ($state, $http) {
         const sounds = [];
         const wads = [];
-        const favoriteSounds = [];
+        // const favoriteSounds = [];
 
         $http.get('/sounds').then(function(soundResponse) {
             angular.copy(soundResponse.data, sounds);
@@ -268,6 +308,7 @@ module.exports = {
                     source: sounds[i].filePath,
                 }));
             };
+            
             $http.get('/favorites').then(function(favoriteResponse){
                 sounds.forEach(function(sound){
                     const findFavorite = function(id) {
@@ -293,32 +334,12 @@ module.exports = {
                 wads[index].play();
             },
 
-            markFavorite(sound) {
-                $http.post('/favorites/' + sound.id, {
-                    id: sound.id,
-                });
-                sound.isFavorite = true;
-                favoriteSounds.push(sound);
-                console.log(favoriteSounds);
-            }, 
 
-            markUnFavorite(sound) {
-                $http.post('/unfavorite/' + sound.id, {
-                    id: sound.id,
-                })
-                sound.isFavorite = false;
-                for(let i=0; i < favoriteSounds.length; i++) {
-                    if(favoriteSounds[i] === sound) {
-                        console.log('remove from array')
-                    }
-                }
-                
-            }
         }; 
     },
 };
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 module.exports = {
     name: 'HomeService',
     func: function ($http, $state) {
@@ -328,30 +349,55 @@ module.exports = {
                     transformResponse: undefined,
                 }).then(function (response) {
                     return response.data;  
+                    console.log(response.data);
                 });
             },
+
+
+            //Angular way to submit forms-----------------------------------
+            // sendSignup(username, password) {
+            //     $http.post('/sign-up', {
+            //         username: username,
+            //         password: password,
+            //     }).then(function(response) {
+            //         console.log('POST successful!');
+            //     });
+            // },
+
+            // sendLogin() {
+            //     $http.post('https://drumcircle1.herokuapp.com/login', {
+            //         username: $scope.username,
+            //         password: $scope.password
+            //     }).then(function(response) {
+            //         console.log('POST successful!');
+            //     });
+            // }, 
+            
         }
     }
 }
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 module.exports = {
     name: 'KitService',
     func: function ($state, $http) {
-        const favoriteList =[];
+        const favoriteList = [];
         const wads = [];
 
-        $http.get('/favorites').then(function(favResponse) {
+        $http.get('/favorites').then(function (favResponse) {
             angular.copy(favResponse.data, favoriteList);
             for (let i = 0; i < favoriteList.length; i++) {
-                favoriteList[i].index = i;
-                wads.push(new Wad({
-                    source: favoriteList[i].filePath,
-                }));
+                addWad(favoriteList[i]);
             };
         });
 
-        console.log(favoriteList);
-        console.log(wads);
+        /* Add a new Wad from a sound object */
+        function addWad(sound) {
+            sound.index = wads.length;
+
+            wads.push(new Wad({
+                source: sound.filePath,
+            }));
+        }
 
         return {
             getFavoriteList() {
@@ -362,9 +408,33 @@ module.exports = {
                 console.log(wads[index]);
                 wads[index].play();
             },
+
+            markFavorite(sound) {
+                $http.post('/favorites/' + sound.id, {
+                    id: sound.id,
+                });
+                sound.isFavorite = true;
+                favoriteList.push(sound);
+                addWad(sound);
+
+                console.log(favoriteList);
+            },
+
+            markUnFavorite(sound) {
+                $http.post('/unfavorite/' + sound.id, {
+                    id: sound.id,
+                })
+                sound.isFavorite = false;
+                for (let i = 0; i < favoriteList.length; i++) {
+                    if (favoriteList[i] === sound) {
+                        favoriteList.splice(i,1);
+                    }
+                }
+
+            }
         }
-    
+
     },
 };
 
-},{}]},{},[12]);
+},{}]},{},[13]);

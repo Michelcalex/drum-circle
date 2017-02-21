@@ -1,6 +1,6 @@
 module.exports = {
     name: 'BrowseController',
-    func: function($scope, BrowseService) {
+    func: function($scope, BrowseService, KitService, HomeService) {
         $scope.sounds = BrowseService.showAllSounds();
         $scope.testPlay = function playSound(index) {
             BrowseService.previewSounds(index);
@@ -8,14 +8,16 @@ module.exports = {
 
 //favorite and unfavorite sounds
         $scope.favorite = function(sound) {
-            BrowseService.markFavorite(sound);
+            KitService.markFavorite(sound);
         };
 
         $scope.unfavorite = function(sound) {
-            BrowseService.markUnFavorite(sound);
+            KitService.markUnFavorite(sound);
         }
 
-
+        HomeService.getUser().then(function (name) {
+            $scope.username = name; // if username is undefined, nothing will render.
+        });
 
 
 //filter sounds and tab functionality 
@@ -34,13 +36,13 @@ module.exports = {
         $scope.filterSounds('All');
 
         let tabs = [
-            {title: 'All' },
-            {title: 'Kick' },
-            {title: 'Snare' },
-            {title: 'Tom' },
-            {title: 'Hihat' },
-            {title: 'Cymbal' },
-            {title: 'Percussion' },
+            {title: 'All', src: '../../assets/all.png'},
+            {title: 'Kick', src: '../../assets/kick.png' },
+            {title: 'Snare', src: '../../assets/snare.png' },
+            {title: 'Tom', src: '../../assets/tom.png' },
+            {title: 'Hihat', src: '../../assets/hihat.png' },
+            {title: 'Cymbal', src: '../../assets/cymbal.png' },
+            {title: 'Percussion', src: '../../assets/percussion.png' },
         ], 
         selected = null,
         previous = null;

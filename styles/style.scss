@@ -3,6 +3,32 @@ $logo-font-color: #0D4656;
 $primary-font-type: 'Play', sans-serif;
 
 
+
+
+// .row {
+//     max-width: 100%;
+// }
+
+body {
+    background-color: #F5F2EE;
+}
+
+.page-overview {
+    background-color: #0D4656;
+    color: #F5F2EE;
+    margin: 0 !important;
+    font-family: $primary-font-type;
+    text-align: center;
+    padding: 20px;
+}
+
+ h3 {
+        margin: 0 auto;
+    width: 80%;
+    font-size: 1.1em;
+}
+
+
 //Partial Imports -------------------------------------------------
 @import 'partials/header';
 @import 'partials/hero-blurb';
@@ -15,8 +41,3 @@ $primary-font-type: 'Play', sans-serif;
 
 
 //Global Variables-------------------------------------------------
-
-.row {
-    max-width: 100%;
-}
-

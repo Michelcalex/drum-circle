@@ -3,7 +3,7 @@ module.exports = {
     func: function ($state, $http) {
         const sounds = [];
         const wads = [];
-        const favoriteSounds = [];
+        // const favoriteSounds = [];
 
         $http.get('/sounds').then(function(soundResponse) {
             angular.copy(soundResponse.data, sounds);
@@ -13,6 +13,7 @@ module.exports = {
                     source: sounds[i].filePath,
                 }));
             };
+            
             $http.get('/favorites').then(function(favoriteResponse){
                 sounds.forEach(function(sound){
                     const findFavorite = function(id) {
@@ -38,27 +39,7 @@ module.exports = {
                 wads[index].play();
             },
 
-            markFavorite(sound) {
-                $http.post('/favorites/' + sound.id, {
-                    id: sound.id,
-                });
-                sound.isFavorite = true;
-                favoriteSounds.push(sound);
-                console.log(favoriteSounds);
-            }, 
 
-            markUnFavorite(sound) {
-                $http.post('/unfavorite/' + sound.id, {
-                    id: sound.id,
-                })
-                sound.isFavorite = false;
-                for(let i=0; i < favoriteSounds.length; i++) {
-                    if(favoriteSounds[i] === sound) {
-                        console.log('remove from array')
-                    }
-                }
-                
-            }
         }; 
     },
 };
