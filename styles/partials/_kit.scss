@@ -63,16 +63,17 @@
                 width: 80px;
                 height: 80px;
                 background-image: linear-gradient(to top right, #1DAE83, #F5F2EE);
+                color: #0D4656;
                 margin: 10px auto;
                 border-radius: 5px;
-                box-shadow: 5px 8px #0D4656;
+                box-shadow: 5px 8px #333333;
 
                 @media screen and (min-width: $size-medium) {
                     width:120px;
                     height: 120px;
                 }
 
-                @media screen and (min-width: $size-large) {
+                @media screen and (min-width: $size-x-large) {
                     width: 150px;
                     height: 150px;
                     margin: 20px;
@@ -85,7 +86,7 @@
                 padding-top: 55px;
             }
 
-            @media screen and (min-width: $size-large) {
+            @media screen and (min-width: $size-x-large) {
                 padding-top: 0px;
             }            
         } 
