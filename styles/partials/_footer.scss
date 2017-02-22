@@ -5,16 +5,22 @@ footer {
     left: 0px;
     bottom: 0px;
     height: 50px;
-    padding: 20px;
+    padding: 12px;
     margin-top: 20px;
+    text-align: center;
 
     @media screen and (min-width: $size-medium) {
         height: 75px;
+        padding: 20px;
     }
 
     p {
         color: #6FC5D9;
         margin: 0;
-        font-size: 0.7rem;
+        font-size: 0.4rem;
+
+         @media screen and (min-width: $size-medium) {
+            font-size: 0.7rem;
+        }
     }
 }
