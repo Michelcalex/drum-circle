@@ -1,6 +1,6 @@
 module.exports = {
     name: 'KitController',
-    func: function($scope, KitService, dragulaService, $document, $state) {
+    func: function($scope, KitService, dragulaService, $document, $state, $window) {
         // playList[0] is the index of the sound that should be played when 0 is clicked
         const playList = [];
 
@@ -81,6 +81,10 @@ module.exports = {
         dragulaService.options($scope, 'first-bag', {
             copy: false
         });
+
+         $scope.reloadRoute = function () {
+             $window.location.reload();
+         };
     },
 };
 
