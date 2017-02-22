@@ -2,6 +2,8 @@
 
     .wrapper {
         color: white;
+        width:100%;
+        background-color: #F5F2EE;
 
         #kit-heading {
             width: 100%;
@@ -10,10 +12,26 @@
             justify-content: space-between;
             padding: 10px;
 
+            @media screen and (min-width: $size-medium) {
+                width: 25%;
+            }
+
+            // @media screen and (min-width: $size-x-large) {
+            //     width: 20%;
+            // }
+
 
             h2 {
                 font-family: $primary-font-type;
                 padding-left: 15px;
+
+                @media screen and (min-width: $size-medium) {
+                    font-size: 1.7em;
+                    text-align: left;
+                    margin: 0px;
+                    padding-left: 10px;
+                    width: 25%;
+                }
             } 
 
             #trash-image {
@@ -22,17 +40,35 @@
                 background-position: center center;
                 width: 8%;
                 height: 25px;
+
+                @media screen and (min-width: $size-medium) {
+                    margin: 7px;
+                    width: 13%;
+                }
+
+                @media screen and (min-width: $size-x-large) {
+                    width: 10%;
+                    height: 30px;
+                }
             }
         }
 
         #left-defaults {
             background-color: #333333;
-            height: 120px;
             overflow-y: scroll;
+            width: 25%;
+            width: 100%;
+            height: 100px;
+            padding-right: 80px;
+   
 
-            div {
-                width: 60%;
-            }            
+            @media screen and (min-width: $size-medium) {
+                background-color: #333333;
+                width: 25%; 
+                height: 700px;
+                padding-right: 0px;
+
+            } 
 
             #fav-sounds {
                 border-bottom: 1px solid #1DAE83;
@@ -48,16 +84,37 @@
         #right-defaults {
             background-color: #F5F2EE;
             width: 100%;
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px 0px;
+
+            @media screen and (min-width: $size-medium) {
+                margin-bottom: 120px;
+                width: 75%;
+            }
 
             .pad {
-                width: 80px;
-                height: 80px;
+                width: 65px;
+                height: 65px;
                 background-image: linear-gradient(to top right, #1DAE83, #F5F2EE);
                 color: #0D4656;
                 border-radius: 5px;
                 box-shadow: 5px 8px #333333;
-                font-size: .7em;               
-            }   
-        } 
+                font-size: .7em;      
+                margin: 5px;     
+
+                @media screen and (min-width: $size-medium) {
+                    width: 100px;
+                    height: 100px;
+                    margin: 10px;
+                }
+
+                @media screen and (min-width: $size-x-large) {
+                    width: 120px;
+                    height: 120px;
+                    margin: 15px;  
+                } 
+            } 
+        }
     }
 }

@@ -20,7 +20,8 @@ body {
   color: #0D4656; }
 
 .row {
-  max-width: 100%; }
+  max-width: 100%;
+  margin: 0 !important; }
 
 .page-overview {
   background-color: #0D4656;
@@ -28,7 +29,7 @@ body {
   margin: 0 !important;
   text-align: center;
   padding: 15px 5px; }
-  @media screen and (min-width: 23.5em) {
+  @media screen and (min-width: 25.876em) {
     .page-overview {
       padding: 25px 15px; } }
 
@@ -37,7 +38,7 @@ h3 {
   width: 80%;
   font-size: 0.8em;
   font-family: "Play", sans-serif; }
-  @media screen and (min-width: 23.5em) {
+  @media screen and (min-width: 25.876em) {
     h3 {
       font-size: 1rem; } }
 
@@ -67,7 +68,7 @@ header {
         color: #0D4656;
         text-transform: uppercase;
         font-size: 1.5rem; }
-        @media screen and (min-width: 47.93em) {
+        @media screen and (min-width: 64em) {
           header nav #nav-logo h1 {
             font-size: 2.4rem; } }
     header nav #nav-links ul {
@@ -75,7 +76,7 @@ header {
       padding: 0;
       margin: 0;
       width: 150px; }
-      @media screen and (min-width: 23.5em) {
+      @media screen and (min-width: 25.876em) {
         header nav #nav-links ul {
           display: flex;
           width: 200px; } }
@@ -85,7 +86,7 @@ header {
         margin: 5px;
         border-radius: 5px;
         font-size: 0.8rem; }
-        @media screen and (min-width: 23.5em) {
+        @media screen and (min-width: 25.876em) {
           header nav #nav-links ul li {
             padding: 10px;
             margin: 5px;
@@ -101,10 +102,10 @@ header {
   background-size: cover;
   background-position: center center;
   height: 220px; }
-  @media screen and (min-width: 23.5em) {
+  @media screen and (min-width: 25.876em) {
     #welcome-section #hero {
       height: 350px; } }
-  @media screen and (min-width: 56.25em) {
+  @media screen and (min-width: 64em) {
     #welcome-section #hero {
       height: 525px; } }
 
@@ -116,7 +117,7 @@ header {
   align-items: center;
   margin-bottom: 50px;
   background-color: #F5F2EE; }
-  @media screen and (min-width: 23.5em) {
+  @media screen and (min-width: 25.876em) {
     #welcome-section #forms {
       margin-bottom: 75px; } }
   #welcome-section #forms md-content {
@@ -124,24 +125,24 @@ header {
     overflow: hidden;
     background-color: #333333;
     color: white; }
-    @media screen and (min-width: 23.5em) {
+    @media screen and (min-width: 25.876em) {
       #welcome-section #forms md-content {
         width: 75%;
         height: 300px; } }
-    @media screen and (min-width: 56.25em) {
+    @media screen and (min-width: 64em) {
       #welcome-section #forms md-content {
         width: 50%; } }
     #welcome-section #forms md-content md-tabs {
       min-height: 190px;
       margin-top: 12px; }
-      @media screen and (min-width: 23.5em) {
+      @media screen and (min-width: 25.876em) {
         #welcome-section #forms md-content md-tabs {
           min-height: 220px; } }
     #welcome-section #forms md-content md-tab-content {
       top: -9px;
       height: 165px;
       overflow: hidden; }
-      @media screen and (min-width: 23.5em) {
+      @media screen and (min-width: 25.876em) {
         #welcome-section #forms md-content md-tab-content {
           top: 0px; } }
     #welcome-section #forms md-content md-pagination-wrapper {
@@ -155,7 +156,7 @@ header {
         color: white;
         font-size: 11px;
         padding: 8px 24px; }
-        @media screen and (min-width: 23.5em) {
+        @media screen and (min-width: 25.876em) {
           #welcome-section #forms md-content md-pagination-wrapper .md-tab {
             font-size: 14px;
             padding: 12px 24px; } }
@@ -163,7 +164,7 @@ header {
         color: #8ED6C1;
         background-color: #8ED6C1;
         bottom: 6px; }
-        @media screen and (min-width: 23.5em) {
+        @media screen and (min-width: 25.876em) {
           #welcome-section #forms md-content md-pagination-wrapper md-ink-bar {
             bottom: 0px; } }
     #welcome-section #forms md-content form {
@@ -172,7 +173,7 @@ header {
         height: 2rem;
         font-size: 0.8rem;
         background-color: #333333; }
-        @media screen and (min-width: 23.5em) {
+        @media screen and (min-width: 25.876em) {
           #welcome-section #forms md-content form input {
             height: 2.4375rem;
             font-size: 1rem; } }
@@ -190,7 +191,7 @@ header {
         font-size: 11px;
         font-weight: 600;
         font-family: "Play", sans-serif; }
-        @media screen and (min-width: 23.5em) {
+        @media screen and (min-width: 25.876em) {
           #welcome-section #forms md-content form button {
             font-size: 14px;
             font-weight: normal; } }
@@ -200,7 +201,7 @@ header {
         margin: 0; }
   #welcome-section #forms .md-padding {
     padding: 30px; }
-    @media screen and (min-width: 47.93em) {
+    @media screen and (min-width: 64em) {
       #welcome-section #forms .md-padding {
         padding: 35px; } }
 
@@ -211,8 +212,9 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
-  @media screen and (min-width: 23.5em) {
+  justify-content: center;
+  margin-bottom: 50px; }
+  @media screen and (min-width: 25.876em) {
     #welcome-section #welcome-container {
       height: 485px;
       padding-bottom: 75px; } }
@@ -228,17 +230,17 @@ header {
       font-family: "Play", sans-serif; }
     #welcome-section #welcome-container #welcome-content img {
       width: 14%; }
-      @media screen and (min-width: 23.5em) {
+      @media screen and (min-width: 25.876em) {
         #welcome-section #welcome-container #welcome-content img {
           width: 10%; } }
-      @media screen and (min-width: 56.25em) {
+      @media screen and (min-width: 64em) {
         #welcome-section #welcome-container #welcome-content img {
           width: 8%; } }
 
 #browse-container {
   background-color: #F5F2EE;
   padding-bottom: 50px; }
-  @media screen and (min-width: 23.5em) {
+  @media screen and (min-width: 25.876em) {
     #browse-container {
       padding-bottom: 75px; } }
   #browse-container md-content {
@@ -248,33 +250,33 @@ header {
     background-color: #333333;
     color: white;
     margin: 5% auto; }
-    @media screen and (min-width: 23.5em) {
+    @media screen and (min-width: 25.876em) {
       #browse-container md-content {
         width: 80%;
         height: 700px;
         padding: 25px; } }
-    @media screen and (min-width: 56.25em) {
+    @media screen and (min-width: 64em) {
       #browse-container md-content {
         width: 50%;
         height: 700px; } }
     #browse-container md-content md-tabs {
       height: 415px; }
-      @media screen and (min-width: 23.5em) {
+      @media screen and (min-width: 25.876em) {
         #browse-container md-content md-tabs {
           height: 700px; } }
       #browse-container md-content md-tabs md-tabs-wrapper {
         height: 50px; }
-        @media screen and (min-width: 23.5em) {
+        @media screen and (min-width: 25.876em) {
           #browse-container md-content md-tabs md-tabs-wrapper {
             height: 80px; } }
-        @media screen and (min-width: 56.25em) {
+        @media screen and (min-width: 64em) {
           #browse-container md-content md-tabs md-tabs-wrapper {
             height: 110px; } }
         #browse-container md-content md-tabs md-tabs-wrapper .md-tab {
           color: white;
           font-size: 9px;
           padding: 6px; }
-          @media screen and (min-width: 23.5em) {
+          @media screen and (min-width: 25.876em) {
             #browse-container md-content md-tabs md-tabs-wrapper .md-tab {
               padding: 10px; } }
         #browse-container md-content md-tabs md-tabs-wrapper .md-tab.md-active {
@@ -282,37 +284,37 @@ header {
         #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas {
           height: 50px;
           margin: 0px !important; }
-          @media screen and (min-width: 23.5em) {
+          @media screen and (min-width: 25.876em) {
             #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas {
               height: 80px;
               margin: 0 32px; } }
-          @media screen and (min-width: 56.25em) {
+          @media screen and (min-width: 64em) {
             #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas {
               height: 95px; } }
           #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper {
             width: 100% !important;
             height: 50px; }
-            @media screen and (min-width: 23.5em) {
+            @media screen and (min-width: 25.876em) {
               #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper {
                 height: 80px; } }
-            @media screen and (min-width: 56.25em) {
+            @media screen and (min-width: 64em) {
               #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper {
                 height: 95px; } }
             #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item {
               width: 14.20%;
               height: 50px; }
-              @media screen and (min-width: 23.5em) {
+              @media screen and (min-width: 25.876em) {
                 #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item {
                   height: 80px;
                   width: 14.28%; } }
-              @media screen and (min-width: 56.25em) {
+              @media screen and (min-width: 64em) {
                 #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item {
                   height: 95px; } }
               #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item p {
                 color: white;
                 margin: 3px 0 0;
                 font-size: 0.35rem; }
-                @media screen and (min-width: 23.5em) {
+                @media screen and (min-width: 25.876em) {
                   #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item p {
                     font-size: 8px; } }
             #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-ink-bar {
@@ -320,21 +322,21 @@ header {
               background-color: #8ED6C1; }
       #browse-container md-content md-tabs md-tabs-content-wrapper {
         margin-bottom: 5%; }
-        @media screen and (min-width: 23.5em) {
+        @media screen and (min-width: 25.876em) {
           #browse-container md-content md-tabs md-tabs-content-wrapper {
             top: 60px;
             margin-bottom: 8%; } }
-        @media screen and (min-width: 47.93em) {
+        @media screen and (min-width: 64em) {
           #browse-container md-content md-tabs md-tabs-content-wrapper {
             top: 70px; } }
         #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content {
           top: 10px; }
-          @media screen and (min-width: 23.5em) {
+          @media screen and (min-width: 25.876em) {
             #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content {
               top: 35px; } }
           #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container {
             padding: 0px 10px 10px; }
-            @media screen and (min-width: 23.5em) {
+            @media screen and (min-width: 25.876em) {
               #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container {
                 padding: 0px 25px 25px; } }
             #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div {
@@ -352,7 +354,7 @@ header {
                 color: #F5F2EE;
                 margin: 0;
                 font-size: 12px; }
-                @media screen and (min-width: 23.5em) {
+                @media screen and (min-width: 25.876em) {
                   #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div p {
                     font-size: 16px; } }
               #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div md-button {
@@ -361,28 +363,55 @@ header {
                 height: 35px !important; }
 
 #kit-container .wrapper {
-  color: white; }
+  color: white;
+  width: 100%;
+  background-color: #F5F2EE; }
   #kit-container .wrapper #kit-heading {
     width: 100%;
     background-color: #333333;
     display: flex;
     justify-content: space-between;
     padding: 10px; }
+    @media screen and (min-width: 25.876em) {
+      #kit-container .wrapper #kit-heading {
+        width: 25%; } }
     #kit-container .wrapper #kit-heading h2 {
       font-family: "Play", sans-serif;
       padding-left: 15px; }
+      @media screen and (min-width: 25.876em) {
+        #kit-container .wrapper #kit-heading h2 {
+          font-size: 1.7em;
+          text-align: left;
+          margin: 0px;
+          padding-left: 10px;
+          width: 25%; } }
     #kit-container .wrapper #kit-heading #trash-image {
       background-image: url("../assets/trash.png");
       background-size: cover;
       background-position: center center;
       width: 8%;
       height: 25px; }
+      @media screen and (min-width: 25.876em) {
+        #kit-container .wrapper #kit-heading #trash-image {
+          margin: 7px;
+          width: 13%; } }
+      @media screen and (min-width: 64em) {
+        #kit-container .wrapper #kit-heading #trash-image {
+          width: 10%;
+          height: 30px; } }
   #kit-container .wrapper #left-defaults {
     background-color: #333333;
-    height: 120px;
-    overflow-y: scroll; }
-    #kit-container .wrapper #left-defaults div {
-      width: 60%; }
+    overflow-y: scroll;
+    width: 25%;
+    width: 100%;
+    height: 100px;
+    padding-right: 80px; }
+    @media screen and (min-width: 25.876em) {
+      #kit-container .wrapper #left-defaults {
+        background-color: #333333;
+        width: 25%;
+        height: 700px;
+        padding-right: 0px; } }
     #kit-container .wrapper #left-defaults #fav-sounds {
       border-bottom: 1px solid #1DAE83;
       margin: 10px; }
@@ -391,15 +420,33 @@ header {
         margin: 0; }
   #kit-container .wrapper #right-defaults {
     background-color: #F5F2EE;
-    width: 100%; }
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 20px 0px; }
+    @media screen and (min-width: 25.876em) {
+      #kit-container .wrapper #right-defaults {
+        margin-bottom: 120px;
+        width: 75%; } }
     #kit-container .wrapper #right-defaults .pad {
-      width: 80px;
-      height: 80px;
+      width: 65px;
+      height: 65px;
       background-image: linear-gradient(to top right, #1DAE83, #F5F2EE);
       color: #0D4656;
       border-radius: 5px;
       box-shadow: 5px 8px #333333;
-      font-size: .7em; }
+      font-size: .7em;
+      margin: 5px; }
+      @media screen and (min-width: 25.876em) {
+        #kit-container .wrapper #right-defaults .pad {
+          width: 100px;
+          height: 100px;
+          margin: 10px; } }
+      @media screen and (min-width: 64em) {
+        #kit-container .wrapper #right-defaults .pad {
+          width: 120px;
+          height: 120px;
+          margin: 15px; } }
 
 footer {
   background-color: #0D4656;
@@ -411,7 +458,7 @@ footer {
   padding: 12px;
   margin-top: 20px;
   text-align: center; }
-  @media screen and (min-width: 23.5em) {
+  @media screen and (min-width: 25.876em) {
     footer {
       height: 75px;
       padding: 20px; } }
@@ -419,6 +466,6 @@ footer {
     color: #6FC5D9;
     margin: 0;
     font-size: 0.4rem; }
-    @media screen and (min-width: 23.5em) {
+    @media screen and (min-width: 25.876em) {
       footer p {
         font-size: 0.7rem; } }

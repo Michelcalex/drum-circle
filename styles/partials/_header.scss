@@ -24,7 +24,7 @@ header {
                 text-transform: uppercase;
                 font-size: 1.5rem;
 
-                @media screen and (min-width: $size-large) {
+                @media screen and (min-width: $size-x-large) {
                     font-size: 2.4rem;
                 }
             }
