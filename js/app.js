@@ -1,8 +1,7 @@
 const app = angular.module('DrumCircleApp', [
     'ui.router',
     'ngMaterial',
-    'ngAnimate', 
-    'toastr',
+    'ngAnimate',
     angularDragula(angular),
 ]);
 

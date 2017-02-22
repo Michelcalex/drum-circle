@@ -18,6 +18,9 @@
             {{#error}}
                 <span class="error"><i class="fa fa-exclamation-circle error-icon" aria-hidden="true"></i> {{.}}</span>
             {{/error}}
+            {{#success}}
+                <span class="success">{{.}}</span>
+            {{/success}}
         <ui-view>
             <start></start>
         </ui-view>
