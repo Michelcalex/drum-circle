@@ -26,7 +26,7 @@ module.exports = {
             },
 
             playKitSounds(index) {
-                console.log(wads[index]);
+                // console.log(wads[index]);
                 wads[index].play();
             },
 
@@ -38,7 +38,7 @@ module.exports = {
                 favoriteList.push(sound);
                 addWad(sound);
 
-                console.log(favoriteList);
+                // console.log(favoriteList);
             },
 
             markUnFavorite(sound) {
