@@ -114,8 +114,8 @@
                 }
 
                 @media screen and (min-width: $size-x-large) {
-                    width: 145px;
-                    height: 145px;
+                    width: 120px;
+                    height: 120px;
                     margin: 20px;
                     margin-left: 45px;
                     font-size: 1.1em;
@@ -129,6 +129,8 @@
                 }
 
                 @media screen and (min-width: $size-xx-large) {
+                    width: 140px;
+                    height: 140px;
                     margin-left: 56px;
                     margin-right: 56px;
                 }

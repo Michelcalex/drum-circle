@@ -102,12 +102,34 @@
                 input {
                     height: 2rem;
                     font-size: 0.8rem;
+                    background-color: #333333;
 
                     @media screen and (min-width: $size-medium) {
                         height: 2.4375rem;
                         font-size: 1rem;
                     }
                 }
+
+                .user-lock {
+                    float: right;
+                    margin-right: 16px;
+                    margin-top: -41px;
+                    position: relative;
+                    z-index: 2;
+                    color:#1DAE83;
+                }
+
+                
+
+                // .user {
+                //         background: url(../assets/user.png) no-repeat scroll 7px 7px;
+                //         padding-left: 30px;
+                //     }
+
+                //     .lock {
+                //         background-image: url('../assets/lock.png');
+                //         background-repeat: no-repeat;
+                //     }
 
                 button {
                     width: 100%;
