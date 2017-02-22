@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Drum Circle",
   "main": "gulpfile.js",
+  "dependencies": {
+    "foundation-sites": "^6.3.0"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-browser": "^3.0.4",
