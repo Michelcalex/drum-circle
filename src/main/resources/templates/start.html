@@ -15,6 +15,9 @@
 </head>
 <body ng-app="DrumCircleApp">
     <main>
+        {{#error}}
+        <span class="error">{{.}}</span>
+        {{/error}}
         <header-section logged-in="false"></header-section>
         <ui-view>
             <start></start>
