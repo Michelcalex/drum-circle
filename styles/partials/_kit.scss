@@ -38,7 +38,7 @@
             }
 
             @media screen and (min-width: $size-medium) {
-                height: 100%;
+                height: 800px;
                 
                 div {
                     width: 88%;
@@ -55,7 +55,8 @@
             display: flex;
             flex-wrap: wrap;
             padding: 5px;
-            margin-bottom: 100px;
+            padding-bottom: 80px;
+            // margin-bottom: 100px;
             background-color: #F5F2EE;
 
             .pad {
@@ -74,7 +75,7 @@
             }
 
             @media screen and (min-width: $size-medium) {
-
+                padding-top: 55px;
             }            
         } 
     }

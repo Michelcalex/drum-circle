@@ -203,127 +203,61 @@ header {
         #welcome-section #welcome-container #welcome-content img {
           width: 8%; } }
 
-#browse-container {
-  background-color: #F5F2EE; }
-  @media screen and (min-width: 900px) {
-    #browse-container {
-      padding-bottom: 75px; } }
-  #browse-container md-content {
-    width: 95%;
-    height: 415px;
-    overflow: hidden;
-    background-color: #333333;
-    color: white;
-    margin: 5% auto; }
-    @media screen and (min-width: 376px) {
-      #browse-container md-content {
-        width: 80%;
-        height: 700px; } }
-    @media screen and (min-width: 900px) {
-      #browse-container md-content {
-        width: 50%;
-        height: 700px; } }
-    #browse-container md-content md-tabs {
-      height: 415px; }
-      @media screen and (min-width: 376px) {
-        #browse-container md-content md-tabs {
-          height: 700px; } }
-      #browse-container md-content md-tabs md-tabs-wrapper {
-        height: 50px; }
-        @media screen and (min-width: 376px) {
-          #browse-container md-content md-tabs md-tabs-wrapper {
-            height: 80px; } }
-        @media screen and (min-width: 900px) {
-          #browse-container md-content md-tabs md-tabs-wrapper {
-            height: 90px; } }
-        #browse-container md-content md-tabs md-tabs-wrapper .md-tab {
-          color: white;
-          font-size: 9px;
-          padding: 6px; }
-          @media screen and (min-width: 376px) {
-            #browse-container md-content md-tabs md-tabs-wrapper .md-tab {
-              padding: 10px; } }
-          @media screen and (min-width: 376px) {
-            #browse-container md-content md-tabs md-tabs-wrapper .md-tab {
-              padding: 20px 27px 27px; } }
-        #browse-container md-content md-tabs md-tabs-wrapper .md-tab.md-active {
-          background-color: #1DAE83; }
-        #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas {
-          height: 50px;
-          margin: 0px !important; }
-          @media screen and (min-width: 376px) {
-            #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas {
-              height: 80px;
-              margin: 0 32px; } }
-          @media screen and (min-width: 900px) {
-            #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas {
-              height: 90px; } }
-          #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper {
-            width: 100% !important;
-            height: 50px; }
-            @media screen and (min-width: 376px) {
-              #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper {
-                height: 80px; } }
-            @media screen and (min-width: 900px) {
-              #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper {
-                height: 90px; } }
-            #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item {
-              width: 14.20%;
-              height: 50px; }
-              @media screen and (min-width: 376px) {
-                #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item {
-                  height: 80px;
-                  width: 14.28%; } }
-              @media screen and (min-width: 900px) {
-                #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item {
-                  height: 90px; } }
-              #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item p {
-                color: white;
-                margin: 3px 0 0;
-                font-size: 0.35rem; }
-                @media screen and (min-width: 376px) {
-                  #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item p {
-                    font-size: 8px; } }
-            #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-ink-bar {
-              color: #8ED6C1;
-              background-color: #8ED6C1; }
-      #browse-container md-content md-tabs md-tabs-content-wrapper {
-        margin-bottom: 5%; }
-        @media screen and (min-width: 376px) {
-          #browse-container md-content md-tabs md-tabs-content-wrapper {
-            top: 60px; } }
-        #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content {
-          top: 10px; }
-          @media screen and (min-width: 376px) {
-            #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content {
-              top: 35px; } }
-          #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container {
-            padding: 10px; }
-            @media screen and (min-width: 376px) {
-              #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container {
-                padding: 25px; } }
-            #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              border-bottom: 1px solid #1DAE83;
-              margin: 10px; }
-              #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div #play-btn {
-                background-image: url("../assets/play-button.png");
-                background-repeat: no-repeat;
-                height: 35px;
-                background-size: contain; }
-              #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div p {
-                color: #F5F2EE;
-                margin: 0;
-                font-size: 12px; }
-                @media screen and (min-width: 376px) {
-                  #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div p {
-                    font-size: 16px; } }
-              #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div md-button {
-                padding: 0px; }
-              #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div img.ng-scope {
-                height: 35px !important; }
+#browse-container md-content {
+  width: 80%;
+  height: 900px;
+  overflow: hidden;
+  background-color: #333333;
+  color: white;
+  margin: 5% auto; }
+  #browse-container md-content md-tabs {
+    height: 900px; }
+    #browse-container md-content md-tabs md-tabs-wrapper {
+      height: 75px; }
+      #browse-container md-content md-tabs md-tabs-wrapper .md-tab {
+        color: white;
+        font-size: 9px; }
+      #browse-container md-content md-tabs md-tabs-wrapper .md-tab.md-active {
+        background-color: #1DAE83; }
+      #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas {
+        height: 75px; }
+        #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper {
+          width: 100% !important;
+          height: 75px; }
+          #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item {
+            width: 14.28%;
+            height: 75px; }
+            #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item p {
+              color: white;
+              margin: 3px 0 0; }
+          #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-ink-bar {
+            color: #8ED6C1;
+            background-color: #8ED6C1; }
+    #browse-container md-content md-tabs md-tabs-content-wrapper {
+      margin-bottom: 5%;
+      top: 60px; }
+      #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content {
+        top: 30px; }
+        #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container {
+          padding: 25px; }
+          #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #1DAE83;
+            margin: 10px; }
+            #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div #play-btn {
+              background-image: url("../assets/play-button.png");
+              background-repeat: no-repeat;
+              height: 35px;
+              background-size: contain; }
+            #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div p {
+              color: #F5F2EE;
+              margin: 0; }
+            #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div md-button {
+              padding: 0px; }
+            #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div img.ng-scope {
+              height: 35px !important; }
 
 #kit-container .wrapper {
   color: white; }
@@ -352,7 +286,7 @@ header {
         margin: 0; }
     @media screen and (min-width: 376px) {
       #kit-container .wrapper #left-defaults {
-        height: 100%; }
+        height: 800px; }
         #kit-container .wrapper #left-defaults div {
           width: 88%; }
         #kit-container .wrapper #left-defaults p {
@@ -361,7 +295,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     padding: 5px;
-    margin-bottom: 100px;
+    padding-bottom: 80px;
     background-color: #F5F2EE; }
     #kit-container .wrapper #right-defaults .pad {
       width: 80px;
@@ -374,6 +308,9 @@ header {
         #kit-container .wrapper #right-defaults .pad {
           width: 120px;
           height: 120px; } }
+    @media screen and (min-width: 376px) {
+      #kit-container .wrapper #right-defaults {
+        padding-top: 55px; } }
 
 footer {
   background-color: #0D4656;
