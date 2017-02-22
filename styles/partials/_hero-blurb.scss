@@ -115,6 +115,7 @@
                     padding: 14px 24px;
                     font-size: 11px;
                     font-weight: 600;
+                    font-family: $primary-font-type;
 
                     @media screen and (min-width: $size-medium) {
                         font-size: 14px;
@@ -159,8 +160,13 @@
             overflow: hidden;
             color: white;
 
+            h1 {
+                font-family: $primary-font-type;
+            }
+
             h4 {
                 font-style: italic;
+                font-family: $primary-font-type;
             }
 
             img {
