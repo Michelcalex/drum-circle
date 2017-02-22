@@ -1,22 +1,63 @@
 #browse-container {
+    background-color: #F5F2EE;
+
+     @media screen and (min-width: $size-x-large) {
+        padding-bottom: 75px;
+    }
 
     md-content {
-        width: 80%;
-        height: 900px;
+        width: 95%;
+        height: 415px;
         overflow: hidden;
         background-color: #333333;
         color: white;
         margin: 5% auto;
 
+        @media screen and (min-width: $size-medium) {
+            width: 80%;
+            height: 700px;
+        }
+
+        @media screen and (min-width: $size-x-large) {
+            width: 50%;
+            height: 700px;
+        }
+
         md-tabs {
-            height: 900px;
+            height: 415px;
+
+            @media screen and (min-width: $size-medium) {
+                height: 700px;
+            }
+
+            // @media screen and (min-width: $size-x-large) {
+            //     height: 700px;
+            // }
 
             md-tabs-wrapper {
-                height: 75px;
+                height: 50px;
+
+                @media screen and (min-width: $size-medium) {
+                    height: 80px;
+                }
+
+                @media screen and (min-width: $size-x-large) {
+                    height: 90px;
+                }
 
                 .md-tab {
                     color: white;
                     font-size: 9px;
+                    //inserting here: 
+                    padding: 6px;
+
+                    @media screen and(min-width: $size-medium) {
+                        padding: 10px;
+                    }
+
+                    @media screen and (min-width:$size-medium) {
+                        padding: 20px 27px 27px;
+                    }
                 }
 
                 .md-tab.md-active {
@@ -25,19 +66,52 @@
                
 
                 md-tabs-canvas {
-                    height: 75px;
+                    height: 50px;
+                    margin: 0px !important;
+
+                    @media screen and (min-width: $size-medium) {
+                        height: 80px;
+                        margin: 0 32px;
+                    }
+
+                    @media screen and (min-width: $size-x-large) {
+                        height: 90px;
+                    }
 
                     md-pagination-wrapper {
                         width: 100% !important;
-                        height: 75px;
+                        height: 50px;
+
+                        @media screen and (min-width: $size-medium) {
+                            height: 80px;
+                        }
+                        
+                        @media screen and (min-width: $size-x-large) {
+                            height: 90px;
+                        }
 
                         md-tab-item {
-                            width: 14.28%;
-                            height: 75px;
+                            width: 14.20%;
+                            height: 50px;
+
+                            @media screen and (min-width: $size-medium) {
+                                height: 80px;
+                                width: 14.28%;
+                            }
+
+                            @media screen and (min-width: $size-x-large) {
+                                height: 90px;
+                            }
 
                             p {
                                 color: white;
                                 margin: 3px 0 0;
+                                //inserting
+                                font-size: 0.35rem;
+
+                                @media screen and (min-width: $size-medium) {
+                                    font-size: 8px;
+                                }
                             }
                         }
 
@@ -51,14 +125,25 @@
 
             md-tabs-content-wrapper {
                 margin-bottom: 5%;
-                top: 60px;
+                
+                @media screen and (min-width: $size-medium) {
+                    top: 60px;
+                }
 
                 md-tab-content {
-                    top: 30px;
+                    top: 10px;
+
+                    @media screen and (min-width: $size-medium) {
+                        top: 35px;
+                    }
 
                     #tabs-container {
-                        padding: 25px;
+                        padding: 10px;
                         // background-color: lightgrey;
+
+                        @media screen and (min-width: $size-medium) {
+                            padding: 25px;
+                        }
 
                         div {
                             display: flex;
@@ -77,6 +162,11 @@
                             p {
                                 color: #F5F2EE;
                                 margin: 0;
+                                font-size: 12px;
+
+                                @media screen and (min-width: $size-medium) {
+                                    font-size: 16px;
+                                }
                             }
 
                             md-button {
@@ -93,3 +183,8 @@
         }
     }
 }
+
+// TODO: 
+
+// md-tab - lineheight: 24px to 0px for mobile
+// p- take out margin for p 
