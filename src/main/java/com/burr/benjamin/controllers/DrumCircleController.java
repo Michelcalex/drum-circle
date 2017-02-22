@@ -4,22 +4,13 @@ import com.burr.benjamin.Services.SoundRepository;
 import com.burr.benjamin.Services.UserRepository;
 import com.burr.benjamin.entities.Sound;
 import com.burr.benjamin.entities.User;
-import com.burr.benjamin.utilities.PasswordStorage;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
-import org.springframework.util.FileSystemUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 

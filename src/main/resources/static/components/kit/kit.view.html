@@ -3,7 +3,11 @@
         <h3>Drag and drop sounds from your favorites list onto the pads and you're ready to play. What happens next is in your hands...'buh dum tss!'</h3>
     </section>
     <div class="wrapper">
-        <h2>Favorites</h2>
+        <div id="kit-heading">
+            <h2>Favorites</h2>
+            <div id="trash-image" ng-click="reloadRoute()"></div>
+        </div>
+        
         <div id="left-defaults" class="small-12 medium-3 large-3 columns" dragula='"first-bag"'>
              <div id="fav-sounds" data-target="{{ fav.index }}" ng-repeat="fav in favoriteList">
                 <!--<input type="text" ng-keypress="play(fav.index)"/>-->
