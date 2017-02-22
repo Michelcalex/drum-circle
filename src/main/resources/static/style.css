@@ -368,43 +368,19 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px; }
-    @media screen and (min-width: 23.5em) {
-      #kit-container .wrapper #kit-heading {
-        width: 25%; } }
-    @media screen and (min-width: 56.25em) {
-      #kit-container .wrapper #kit-heading {
-        width: 20%; } }
     #kit-container .wrapper #kit-heading h2 {
       font-family: "Play", sans-serif;
       padding-left: 15px; }
-      @media screen and (min-width: 23.5em) {
-        #kit-container .wrapper #kit-heading h2 {
-          font-size: 1.7em;
-          text-align: left;
-          margin: 0px;
-          padding-left: 10px;
-          width: 25%; } }
     #kit-container .wrapper #kit-heading #trash-image {
       background-image: url("../assets/trash.png");
       background-size: cover;
       background-position: center center;
       width: 8%;
       height: 25px; }
-      @media screen and (min-width: 23.5em) {
-        #kit-container .wrapper #kit-heading #trash-image {
-          margin: 7px;
-          width: 13%; } }
-      @media screen and (min-width: 56.25em) {
-        #kit-container .wrapper #kit-heading #trash-image {
-          width: 10%;
-          height: 30px; } }
   #kit-container .wrapper #left-defaults {
     background-color: #333333;
     height: 120px;
     overflow-y: scroll; }
-    @media screen and (min-width: 56.25em) {
-      #kit-container .wrapper #left-defaults {
-        width: 20%; } }
     #kit-container .wrapper #left-defaults div {
       width: 60%; }
     #kit-container .wrapper #left-defaults #fav-sounds {
@@ -413,59 +389,17 @@ header {
       #kit-container .wrapper #left-defaults #fav-sounds p {
         font-size: .8em;
         margin: 0; }
-    @media screen and (min-width: 23.5em) {
-      #kit-container .wrapper #left-defaults {
-        height: 800px; }
-        #kit-container .wrapper #left-defaults div {
-          width: 88%; }
-        #kit-container .wrapper #left-defaults p {
-          font-size: 1em; } }
   #kit-container .wrapper #right-defaults {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 5px;
-    padding-bottom: 80px;
-    justify-content: center;
-    background-color: #F5F2EE; }
+    background-color: #F5F2EE;
+    width: 100%; }
     #kit-container .wrapper #right-defaults .pad {
       width: 80px;
       height: 80px;
       background-image: linear-gradient(to top right, #1DAE83, #F5F2EE);
       color: #0D4656;
-      margin: 10px auto;
       border-radius: 5px;
       box-shadow: 5px 8px #333333;
       font-size: .7em; }
-      @media screen and (min-width: 23.5em) {
-        #kit-container .wrapper #right-defaults .pad {
-          width: 120px;
-          height: 120px;
-          font-size: 0.9em; } }
-      @media screen and (min-width: 56.25em) {
-        #kit-container .wrapper #right-defaults .pad {
-          width: 120px;
-          height: 120px;
-          margin: 20px;
-          margin-left: 45px;
-          font-size: 1.1em; } }
-      @media screen and (min-width: 56.31em) and (max-width: 74.93em) {
-        #kit-container .wrapper #right-defaults .pad {
-          width: 125px;
-          height: 125px;
-          margin: 20px 27px;
-          font-size: 1.1em; } }
-      @media screen and (min-width: 75em) {
-        #kit-container .wrapper #right-defaults .pad {
-          width: 140px;
-          height: 140px;
-          margin-left: 56px;
-          margin-right: 56px; } }
-    @media screen and (min-width: 23.5em) {
-      #kit-container .wrapper #right-defaults {
-        padding-top: 55px; } }
-    @media screen and (min-width: 56.25em) {
-      #kit-container .wrapper #right-defaults {
-        padding-top: 0px; } }
 
 footer {
   background-color: #0D4656;
