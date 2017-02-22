@@ -7,9 +7,24 @@ $primary-font-type: 'Play', sans-serif;
 
 
 //Screen sizes for media quieres 
-$size-medium: 376px;
-$size-large: 767px;
-$size-x-large: 900px;
+$size-medium: 23.5em; //375px
+$size-large: 47.93em; //767px
+$size-x-large: 56.25em; //900px;
+$size-xx-large: 75em; //1200px;
+
+//Examples: 
+/* Large and up */
+//@media screen and (min-width: 64em) {}
+
+/* Large only */
+//@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+
+html {
+    background-color: #F5F2EE;
+}
+
+
 
 
 //Global classes
@@ -19,13 +34,14 @@ $size-x-large: 900px;
 
 body {
     background-color: #F5F2EE;
+    font-family: $primary-font-type;
 }
 
 .page-overview {
     background-color: #0D4656;
     color: #F5F2EE;
     margin: 0 !important;
-    font-family: $primary-font-type;
+    //font-family: $primary-font-type;
     text-align: center;
     padding: 15px 5px;
 
@@ -38,6 +54,7 @@ body {
     margin: 0 auto;
     width: 80%;
     font-size: 0.8em;
+    font-family: $primary-font-type;
 
     @media screen and (min-width: $size-medium) {
         font-size: 1rem;

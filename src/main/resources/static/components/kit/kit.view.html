@@ -1,11 +1,11 @@
 <section id="kit-container">
     <section class="row page-overview">
-        <h3>Play your favorite sounds on our virtual midi controller</h3>
+        <h3>Drag and drop sounds from your favorites list onto the pads and you're ready to play. What happens next is in your hands...'buh dum tss!'</h3>
     </section>
     <div class="wrapper">
         <h2>Favorites</h2>
         <div id="left-defaults" class="small-12 medium-3 large-3 columns" dragula='"first-bag"'>
-             <div id="fav-sounds" data-target="{{ fav.index }}" ng-repeat="fav in favoriteList" ng-click="playFavorites(fav.index)">
+             <div id="fav-sounds" data-target="{{ fav.index }}" ng-repeat="fav in favoriteList">
                 <!--<input type="text" ng-keypress="play(fav.index)"/>-->
                 <p>{{ fav.name }}</p>    
             </div>

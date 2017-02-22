@@ -1,6 +1,6 @@
 <section id="browse-container" layout="column">
     <section class="row page-overview">
-        <h3>Browse through our soundbanks to customize your kit</h3>
+        <h3>Browse through our library and choose your favorite sounds by pressing the heart icon. Once you're through here move over to the 'Kit' page to begin playing.</h3>
     </section>
     <md-content class="md-padding">
         <md-tabs md-selected="selectedIndex">
@@ -15,7 +15,7 @@
                         <div ng-repeat="sound in showSounds">
                             <p class="small-8 columns">{{ sound.name }}</p>
                             <input type="image" src="assets/play-button.png" id="play-btn" ng-click="testPlay(sound.index)" layout-sm="column">
-                            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap class="small-2 columns">
+                            <section layout="row" layout-sm="column" layout-align="center center">
                                 <!--<md-button ng-click="unfavorite(sound)" ng-show="sound.isFavorite" class="md-icon-button md-accent" aria-label="Favorite">-->
                                 <span ng-if="username">
                                     <md-button ng-click="unfavorite(sound)" ng-show="sound.isFavorite" aria-label="Favorite">

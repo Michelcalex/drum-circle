@@ -7,6 +7,7 @@
             margin: 0 auto;
             background-color: #333333;
             text-align: center;
+            font-family: $primary-font-type;
 
             @media screen and (min-width: $size-medium) {
                 font-size: 2em;
@@ -57,25 +58,57 @@
             padding: 5px;
             padding-bottom: 80px;
             // margin-bottom: 100px;
-            background-color: #F5F2EE;
+            // background-color: #F5F2EE;
+            background-color: pink;
+
+            // @media screen and (min-width: 48em) and (max-width: $size-x-large) {
+            //     width: 60%;
+            //     background-color: purple;
+            // }
+
+            //  @media screen and (min-width: 56.31em) and (max-width: $size-xx-large) {
+            //     width: 60%;
+            //     background-color: yellow;
+            // }
+
+
+            // @media screen and (min-width: $size-x-large) and (max-width: 75.06em) {
+            //     width: 60%;
+            //     background-color: red;
+            // }
 
             .pad {
                 width: 80px;
                 height: 80px;
                 background-image: linear-gradient(to top right, #1DAE83, #F5F2EE);
+                color: #0D4656;
                 margin: 10px auto;
                 border-radius: 5px;
-                box-shadow: 5px 8px #0D4656;
+                box-shadow: 5px 8px #333333;
+                font-size: .7em;
 
-                @media screen and (min-width: $size-medium) {
-                    width:120px;
-                    height: 120px;
-                }
+            //     @media screen and (min-width: $size-medium) {
+            //         width:120px;
+            //         height: 120px;
+            //         font-size: .9em;
+            //     }
+
+            //     @media screen and (min-width: $size-x-large) and (max-width: 81.18em) {
+            //         width: 120px;
+            //         height: 120px;
+            //         // margin: 20px;
+            //         // margin-left: 45px;
+            //         font-size: 1.1em;
+            //     }
                 
-            }
+            // }
 
-            @media screen and (min-width: $size-medium) {
-                padding-top: 55px;
+            // @media screen and (min-width: $size-medium) {
+            //     padding-top: 55px;
+            // }
+
+            // @media screen and (min-width: $size-x-large) {
+            //     padding-top: 0px;
             }            
         } 
     }

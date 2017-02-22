@@ -11,4 +11,10 @@ footer {
     @media screen and (min-width: $size-medium) {
         height: 75px;
     }
+
+    p {
+        color: #6FC5D9;
+        margin: 0;
+        font-size: 0.7rem;
+    }
 }
