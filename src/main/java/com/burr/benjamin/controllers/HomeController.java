@@ -40,11 +40,12 @@ public class HomeController {
 
         Integer userId = (Integer) session.getAttribute("user");
 
+        model.addAttribute("success", session.getAttribute("success"));
+        session.removeAttribute("success");
         if (userId != null) {
             User user = users.findOne(userId);
             model.addAttribute("user", user);
-            model.addAttribute("success", session.getAttribute("success"));
-            session.removeAttribute("success");
+
             return "index";
         } else {
             if (session.getAttribute("error") != null) {
@@ -64,8 +65,6 @@ public class HomeController {
         if (user != null && PasswordStorage.verifyPassword(password, user.getPassword())) {
             session.setAttribute("user", user.getId());
             session.setAttribute("success", "Login Successful.");
-            model.addAttribute("success", session.getAttribute("success"));
-            session.removeAttribute("success");
         } else {
             session.setAttribute("error", "You entered an invalid username or password.");
         }
@@ -87,8 +86,6 @@ public class HomeController {
                 user = new User(username, PasswordStorage.createHash(password));
                 users.save(user);
                 session.setAttribute("success", "Sign up successful. Please Login.");
-                model.addAttribute("success", session.getAttribute("success"));
-                session.removeAttribute("success");
             } catch (PasswordStorage.CannotPerformOperationException e) {
                 e.printStackTrace();
             }
