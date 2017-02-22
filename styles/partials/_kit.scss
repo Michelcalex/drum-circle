@@ -14,6 +14,10 @@
                 width: 25%;
             }
 
+            @media screen and (min-width: $size-x-large) {
+                width: 20%;
+            }
+
             h2 {
                 font-family: $primary-font-type;
                 padding-left: 15px;
@@ -50,6 +54,10 @@
             background-color: #333333;
             height: 120px;
             overflow-y: scroll;
+
+            @media screen and (min-width: $size-x-large) {
+                width: 20%;
+            }
 
 
             div {
@@ -106,8 +114,8 @@
                 }
 
                 @media screen and (min-width: $size-x-large) {
-                    width: 150px;
-                    height: 150px;
+                    width: 145px;
+                    height: 145px;
                     margin: 20px;
                     margin-left: 45px;
                     font-size: 1.1em;
@@ -121,8 +129,8 @@
                 }
 
                 @media screen and (min-width: $size-xx-large) {
-                    margin-left: 62px;
-                    margin-right: 62px;
+                    margin-left: 56px;
+                    margin-right: 56px;
                 }
             }
 
