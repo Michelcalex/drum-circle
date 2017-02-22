@@ -3,12 +3,23 @@
 html {
   background-color: #F5F2EE; }
 
-.row {
-  max-width: 100%; }
-
 body {
   background-color: #F5F2EE;
   font-family: "Play", sans-serif; }
+
+.error {
+  color: #0D4656;
+  background-color: #6FC5D9;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.error-icon {
+  color: #0D4656; }
+
+.row {
+  max-width: 100%; }
 
 .page-overview {
   background-color: #0D4656;
@@ -127,7 +138,8 @@ header {
           min-height: 220px; } }
     #welcome-section #forms md-content md-tab-content {
       top: -9px;
-      height: 165px; }
+      height: 165px;
+      overflow: hidden; }
       @media screen and (min-width: 23.5em) {
         #welcome-section #forms md-content md-tab-content {
           top: 0px; } }

@@ -16,6 +16,9 @@
 <body ng-app="DrumCircleApp">
     <main>
         <header-section logged-in="false"></header-section>
+            {{#error}}
+                <span class="error"><i class="fa fa-exclamation-circle error-icon" aria-hidden="true"></i> {{.}}</span>
+            {{/error}}
         <ui-view>
             <start></start>
         </ui-view>

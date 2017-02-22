@@ -20,21 +20,34 @@ $size-xx-large: 75em; //1200px;
 //@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
 
 
+//Global classes
 html {
    background-color: #F5F2EE;
-}
-
-
-
-
-//Global classes
-.row {
-    max-width: 100%;
 }
 
 body {
     background-color: #F5F2EE;
     font-family: $primary-font-type;
+}
+
+
+
+.error {
+    color:#0D4656;
+    background-color: #6FC5D9;
+    padding:15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.error-icon {
+    color: #0D4656;
+}
+
+.row {
+    max-width: 100%;
 }
 
 .page-overview {
@@ -72,7 +85,6 @@ a:hover {
 //Partial Imports -------------------------------------------------
 @import 'partials/header';
 @import 'partials/hero-blurb';
-@import 'partials/login';
 @import 'partials/browse';
 @import 'partials/kit';
 @import 'partials/footer';
