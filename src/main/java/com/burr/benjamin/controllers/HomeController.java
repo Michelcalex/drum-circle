@@ -15,15 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by Ben on 2/13/17.
@@ -47,8 +43,6 @@ public class HomeController {
         if (userId != null) {
             User user = users.findOne(userId);
             model.addAttribute("user", user);
-            model.addAttribute("success", session.getAttribute("success"));
-            session.removeAttribute("success");
             return "index";
         } else {
             if (session.getAttribute("error") != null) {
@@ -68,6 +62,8 @@ public class HomeController {
         if (user != null && PasswordStorage.verifyPassword(password, user.getPassword())) {
             session.setAttribute("user", user.getId());
             session.setAttribute("success", "Login Successful.");
+            model.addAttribute("success", session.getAttribute("success"));
+            session.removeAttribute("success");
         } else {
             session.setAttribute("error", "You entered an invalid password.");
         }
@@ -89,6 +85,8 @@ public class HomeController {
                 user = new User(username, PasswordStorage.createHash(password));
                 users.save(user);
                 session.setAttribute("success", "Sign up successful. Please Login.");
+                model.addAttribute("success", session.getAttribute("success"));
+                session.removeAttribute("success");
             } catch (PasswordStorage.CannotPerformOperationException e) {
                 e.printStackTrace();
             }
