@@ -43,6 +43,8 @@ public class HomeController {
         if (userId != null) {
             User user = users.findOne(userId);
             model.addAttribute("user", user);
+            model.addAttribute("success", session.getAttribute("success"));
+            session.removeAttribute("success");
             return "index";
         } else {
             if (session.getAttribute("error") != null) {
@@ -65,7 +67,7 @@ public class HomeController {
             model.addAttribute("success", session.getAttribute("success"));
             session.removeAttribute("success");
         } else {
-            session.setAttribute("error", "You entered an invalid password.");
+            session.setAttribute("error", "You entered an invalid username or password.");
         }
         return "redirect:/";
     }

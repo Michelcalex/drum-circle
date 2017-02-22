@@ -16,9 +16,9 @@
 <body ng-app="DrumCircleApp">
     <main>
         <header-section logged-in="true"></header-section>
-        {{#error}}
-            <span class="error">{{.}}</span>
-        {{/error}}
+        {{#success}}
+        <span class="success">{{.}}</span>
+        {{/success}}
         <ui-view>
             <home></home>
         </ui-view>
