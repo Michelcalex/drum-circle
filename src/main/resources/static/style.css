@@ -20,7 +20,8 @@ body {
   color: #0D4656; }
 
 .row {
-  max-width: 100%; }
+  max-width: 100%;
+  margin: 0 !important; }
 
 .page-overview {
   background-color: #0D4656;
@@ -361,28 +362,55 @@ header {
                 height: 35px !important; }
 
 #kit-container .wrapper {
-  color: white; }
+  color: white;
+  width: 100%;
+  background-color: #F5F2EE; }
   #kit-container .wrapper #kit-heading {
     width: 100%;
     background-color: #333333;
     display: flex;
     justify-content: space-between;
     padding: 10px; }
+    @media screen and (min-width: 23.5em) {
+      #kit-container .wrapper #kit-heading {
+        width: 25%; } }
     #kit-container .wrapper #kit-heading h2 {
       font-family: "Play", sans-serif;
       padding-left: 15px; }
+      @media screen and (min-width: 23.5em) {
+        #kit-container .wrapper #kit-heading h2 {
+          font-size: 1.7em;
+          text-align: left;
+          margin: 0px;
+          padding-left: 10px;
+          width: 25%; } }
     #kit-container .wrapper #kit-heading #trash-image {
       background-image: url("../assets/trash.png");
       background-size: cover;
       background-position: center center;
       width: 8%;
       height: 25px; }
+      @media screen and (min-width: 23.5em) {
+        #kit-container .wrapper #kit-heading #trash-image {
+          margin: 7px;
+          width: 13%; } }
+      @media screen and (min-width: 56.25em) {
+        #kit-container .wrapper #kit-heading #trash-image {
+          width: 10%;
+          height: 30px; } }
   #kit-container .wrapper #left-defaults {
     background-color: #333333;
-    height: 120px;
-    overflow-y: scroll; }
-    #kit-container .wrapper #left-defaults div {
-      width: 60%; }
+    overflow-y: scroll;
+    width: 25%;
+    width: 100%;
+    height: 100px;
+    padding-right: 80px; }
+    @media screen and (min-width: 23.5em) {
+      #kit-container .wrapper #left-defaults {
+        background-color: #333333;
+        width: 25%;
+        height: 700px;
+        padding-right: 0px; } }
     #kit-container .wrapper #left-defaults #fav-sounds {
       border-bottom: 1px solid #1DAE83;
       margin: 10px; }
@@ -391,15 +419,33 @@ header {
         margin: 0; }
   #kit-container .wrapper #right-defaults {
     background-color: #F5F2EE;
-    width: 100%; }
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 20px 0px; }
+    @media screen and (min-width: 23.5em) {
+      #kit-container .wrapper #right-defaults {
+        margin-bottom: 120px;
+        width: 75%; } }
     #kit-container .wrapper #right-defaults .pad {
-      width: 80px;
-      height: 80px;
+      width: 75px;
+      height: 75px;
       background-image: linear-gradient(to top right, #1DAE83, #F5F2EE);
       color: #0D4656;
       border-radius: 5px;
       box-shadow: 5px 8px #333333;
-      font-size: .7em; }
+      font-size: .7em;
+      margin: 5px; }
+      @media screen and (min-width: 23.5em) {
+        #kit-container .wrapper #right-defaults .pad {
+          width: 100px;
+          height: 100px;
+          margin: 10px; } }
+      @media screen and (min-width: 56.25em) {
+        #kit-container .wrapper #right-defaults .pad {
+          width: 120px;
+          height: 120px;
+          margin: 15px; } }
 
 footer {
   background-color: #0D4656;
