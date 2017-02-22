@@ -1,12 +1,13 @@
 #browse-container {
     background-color: #F5F2EE;
+    padding-bottom: 50px;
 
-     @media screen and (min-width: $size-x-large) {
+     @media screen and (min-width: $size-medium) {
         padding-bottom: 75px;
     }
 
     md-content {
-        width: 95%;
+        width: 90%;
         height: 415px;
         overflow: hidden;
         background-color: #333333;
@@ -16,6 +17,7 @@
         @media screen and (min-width: $size-medium) {
             width: 80%;
             height: 700px;
+            padding: 25px;
         }
 
         @media screen and (min-width: $size-x-large) {
@@ -30,10 +32,6 @@
                 height: 700px;
             }
 
-            // @media screen and (min-width: $size-x-large) {
-            //     height: 700px;
-            // }
-
             md-tabs-wrapper {
                 height: 50px;
 
@@ -42,21 +40,16 @@
                 }
 
                 @media screen and (min-width: $size-x-large) {
-                    height: 90px;
+                    height: 110px;
                 }
 
                 .md-tab {
                     color: white;
                     font-size: 9px;
-                    //inserting here: 
                     padding: 6px;
 
                     @media screen and(min-width: $size-medium) {
                         padding: 10px;
-                    }
-
-                    @media screen and (min-width:$size-medium) {
-                        padding: 20px 27px 27px;
                     }
                 }
 
@@ -106,7 +99,6 @@
                             p {
                                 color: white;
                                 margin: 3px 0 0;
-                                //inserting
                                 font-size: 0.35rem;
 
                                 @media screen and (min-width: $size-medium) {
@@ -128,6 +120,11 @@
                 
                 @media screen and (min-width: $size-medium) {
                     top: 60px;
+                    margin-bottom: 8%;
+                }
+
+                @media screen and (min-width: $size-large) {
+                    top: 70px;
                 }
 
                 md-tab-content {
@@ -138,11 +135,10 @@
                     }
 
                     #tabs-container {
-                        padding: 10px;
-                        // background-color: lightgrey;
+                        padding: 0px 10px 10px;
 
                         @media screen and (min-width: $size-medium) {
-                            padding: 25px;
+                            padding: 0px 25px 25px;
                         }
 
                         div {
@@ -183,8 +179,3 @@
         }
     }
 }
-
-// TODO: 
-
-// md-tab - lineheight: 24px to 0px for mobile
-// p- take out margin for p 

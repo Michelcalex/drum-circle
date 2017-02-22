@@ -2,13 +2,13 @@
   max-width: 100%; }
 
 body {
-  background-color: #F5F2EE; }
+  background-color: #F5F2EE;
+  font-family: "Play", sans-serif; }
 
 .page-overview {
   background-color: #0D4656;
   color: #F5F2EE;
   margin: 0 !important;
-  font-family: "Play", sans-serif;
   text-align: center;
   padding: 15px 5px; }
   @media screen and (min-width: 376px) {
@@ -18,7 +18,8 @@ body {
 h3 {
   margin: 0 auto;
   width: 80%;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  font-family: "Play", sans-serif; }
   @media screen and (min-width: 376px) {
     h3 {
       font-size: 1rem; } }
@@ -73,7 +74,8 @@ header {
             margin: 5px;
             font-size: 1rem; } }
       header nav #nav-links ul button {
-        color: #0D4656; }
+        color: #0D4656;
+        font-family: "Play", sans-serif; }
       header nav #nav-links ul button:hover {
         color: #6FC5D9; }
 
@@ -160,7 +162,8 @@ header {
         background-color: #1DAE83;
         padding: 14px 24px;
         font-size: 11px;
-        font-weight: 600; }
+        font-weight: 600;
+        font-family: "Play", sans-serif; }
         @media screen and (min-width: 376px) {
           #welcome-section #forms md-content form button {
             font-size: 14px;
@@ -192,8 +195,11 @@ header {
     width: 70%;
     overflow: hidden;
     color: white; }
+    #welcome-section #welcome-container #welcome-content h1 {
+      font-family: "Play", sans-serif; }
     #welcome-section #welcome-container #welcome-content h4 {
-      font-style: italic; }
+      font-style: italic;
+      font-family: "Play", sans-serif; }
     #welcome-section #welcome-container #welcome-content img {
       width: 14%; }
       @media screen and (min-width: 376px) {
@@ -204,12 +210,13 @@ header {
           width: 8%; } }
 
 #browse-container {
-  background-color: #F5F2EE; }
-  @media screen and (min-width: 900px) {
+  background-color: #F5F2EE;
+  padding-bottom: 50px; }
+  @media screen and (min-width: 376px) {
     #browse-container {
       padding-bottom: 75px; } }
   #browse-container md-content {
-    width: 95%;
+    width: 90%;
     height: 415px;
     overflow: hidden;
     background-color: #333333;
@@ -218,7 +225,8 @@ header {
     @media screen and (min-width: 376px) {
       #browse-container md-content {
         width: 80%;
-        height: 700px; } }
+        height: 700px;
+        padding: 25px; } }
     @media screen and (min-width: 900px) {
       #browse-container md-content {
         width: 50%;
@@ -235,7 +243,7 @@ header {
             height: 80px; } }
         @media screen and (min-width: 900px) {
           #browse-container md-content md-tabs md-tabs-wrapper {
-            height: 90px; } }
+            height: 110px; } }
         #browse-container md-content md-tabs md-tabs-wrapper .md-tab {
           color: white;
           font-size: 9px;
@@ -243,9 +251,6 @@ header {
           @media screen and (min-width: 376px) {
             #browse-container md-content md-tabs md-tabs-wrapper .md-tab {
               padding: 10px; } }
-          @media screen and (min-width: 376px) {
-            #browse-container md-content md-tabs md-tabs-wrapper .md-tab {
-              padding: 20px 27px 27px; } }
         #browse-container md-content md-tabs md-tabs-wrapper .md-tab.md-active {
           background-color: #1DAE83; }
         #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas {
@@ -291,17 +296,21 @@ header {
         margin-bottom: 5%; }
         @media screen and (min-width: 376px) {
           #browse-container md-content md-tabs md-tabs-content-wrapper {
-            top: 60px; } }
+            top: 60px;
+            margin-bottom: 8%; } }
+        @media screen and (min-width: 767px) {
+          #browse-container md-content md-tabs md-tabs-content-wrapper {
+            top: 70px; } }
         #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content {
           top: 10px; }
           @media screen and (min-width: 376px) {
             #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content {
               top: 35px; } }
           #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container {
-            padding: 10px; }
+            padding: 0px 10px 10px; }
             @media screen and (min-width: 376px) {
               #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container {
-                padding: 25px; } }
+                padding: 0px 25px 25px; } }
             #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div {
               display: flex;
               justify-content: center;
@@ -330,7 +339,8 @@ header {
   #kit-container .wrapper h2 {
     margin: 0 auto;
     background-color: #333333;
-    text-align: center; }
+    text-align: center;
+    font-family: "Play", sans-serif; }
     @media screen and (min-width: 376px) {
       #kit-container .wrapper h2 {
         font-size: 2em;
@@ -399,3 +409,7 @@ footer {
   @media screen and (min-width: 376px) {
     footer {
       height: 75px; } }
+  footer p {
+    color: #6FC5D9;
+    margin: 0;
+    font-size: 0.7rem; }

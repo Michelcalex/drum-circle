@@ -15,7 +15,7 @@
                         <div ng-repeat="sound in showSounds">
                             <p class="small-8 columns">{{ sound.name }}</p>
                             <input type="image" src="assets/play-button.png" id="play-btn" ng-click="testPlay(sound.index)" layout-sm="column">
-                            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap class="small-2 columns">
+                            <section layout="row" layout-sm="column" layout-align="center center">
                                 <!--<md-button ng-click="unfavorite(sound)" ng-show="sound.isFavorite" class="md-icon-button md-accent" aria-label="Favorite">-->
                                 <span ng-if="username">
                                     <md-button ng-click="unfavorite(sound)" ng-show="sound.isFavorite" aria-label="Favorite">
