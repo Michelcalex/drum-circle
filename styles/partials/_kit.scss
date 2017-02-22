@@ -71,11 +71,22 @@
                     width:120px;
                     height: 120px;
                 }
+
+                @media screen and (min-width: $size-large) {
+                    width: 150px;
+                    height: 150px;
+                    margin: 20px;
+                    margin-left: 45px;
+                }
                 
             }
 
             @media screen and (min-width: $size-medium) {
                 padding-top: 55px;
+            }
+
+            @media screen and (min-width: $size-large) {
+                padding-top: 0px;
             }            
         } 
     }
