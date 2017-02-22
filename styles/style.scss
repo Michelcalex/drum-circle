@@ -7,9 +7,9 @@ $primary-font-type: 'Play', sans-serif;
 
 
 //Screen sizes for media quieres 
-$size-medium: 23.5em; //375px
-$size-large: 47.93em; //767px
-$size-x-large: 56.25em; //900px;
+$size-medium: 25.876em; //375px - 414px
+$size-large: 47.93em; //767px 
+$size-x-large: 64em; //900px; - 1024
 $size-xx-large: 75em; //1200px;
 
 //Examples: 
@@ -30,8 +30,6 @@ body {
     font-family: $primary-font-type;
 }
 
-
-
 .error {
     color:#0D4656;
     background-color: #6FC5D9;
@@ -48,6 +46,7 @@ body {
 
 .row {
     max-width: 100%;
+    margin: 0 !important;
 }
 
 .page-overview {

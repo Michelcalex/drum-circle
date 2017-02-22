@@ -157,7 +157,7 @@
         .md-padding {
             padding: 30px;
 
-            @media screen and (min-width: $size-large) {
+            @media screen and (min-width: $size-x-large) {
                 padding: 35px;
             }
         }
@@ -171,6 +171,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-bottom: 50px;
 
         @media screen and (min-width: $size-medium) {
             height: 485px;

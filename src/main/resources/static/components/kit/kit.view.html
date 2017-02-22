@@ -2,55 +2,41 @@
     <section class="row page-overview">
         <h3>Drag and drop sounds from your favorites list onto the pads and you're ready to play. What happens next is in your hands...'buh dum tss!'</h3>
     </section>
-    <div class="wrapper">
+    <div class="wrapper row">
         <div id="kit-heading">
             <h2>Favorites</h2>
             <div id="trash-image" ng-click="reloadRoute()"></div>
         </div>
-        
-        <div id="left-defaults" class="small-12 medium-3 large-3 columns" dragula='"first-bag"'>
+        <div id="left-defaults" class="small-4 medium-4 large-4 columns" dragula='"first-bag"'>
              <div id="fav-sounds" data-target="{{ fav.index }}" ng-repeat="fav in favoriteList">
-                <!--<input type="text" ng-keypress="play(fav.index)"/>-->
                 <p>{{ fav.name }}</p>    
             </div>
         </div>
-        <div id="right-defaults" class="small-12 medium-9 large-9 columns">
-            <button data-slot="0" class="pad" dragula='"first-bag"' ng-keypress="play(0)" ng-click="play(0)"></button>
-            <button data-slot="1" class="pad" dragula='"first-bag"' ng-keypress="play(1)" ng-click="play(1)"></button>
-            <button data-slot="2" class="pad" dragula='"first-bag"' ng-keypress="play(2)" ng-click="play(2)"></button>
-            <button data-slot="3" class="pad" dragula='"first-bag"' ng-keypress="play(3)" ng-click="play(3)"></button>
-            <button data-slot="4" class="pad" dragula='"first-bag"' ng-keypress="play(4)" ng-click="play(4)"></button>
-            <button data-slot="5" class="pad" dragula='"first-bag"' ng-keypress="play(5)" ng-click="play(5)"></button>
-            <button data-slot="6" class="pad" dragula='"first-bag"' ng-keypress="play(6)" ng-click="play(6)"></button>
-            <button data-slot="7" class="pad" dragula='"first-bag"' ng-keypress="play(7)" ng-click="play(7)"></button>
-            <button data-slot="8" class="pad" dragula='"first-bag"' ng-keypress="play(8)" ng-click="play(8)"></button>
-            <button data-slot="9" class="pad" dragula='"first-bag"' ng-keypress="play(9)" ng-click="play(9)"></button>
-            <button data-slot="10" class="pad" dragula='"first-bag"' ng-keypress="play(10)" ng-click="play(10)"></button>
-            <button data-slot="11" class="pad" dragula='"first-bag"' ng-keypress="play(11)" ng-click="play(11)"></button>
-            <button data-slot="12" class="pad" dragula='"first-bag"' ng-keypress="play(12)" ng-click="play(12)"></button>
-            <button data-slot="13" class="pad" dragula='"first-bag"' ng-keypress="play(13)" ng-click="play(13)"></button>
-            <button data-slot="14" class="pad" dragula='"first-bag"' ng-keypress="play(14)" ng-click="play(14)"></button>
-            <button data-slot="15" class="pad" dragula='"first-bag"' ng-keypress="play(15)" ng-click="play(15)"></button>
+        <div id="right-defaults" class="small-4 medium-4 large-4 columns">
+            <div class="row">
+                <button data-slot="0" class="pad" dragula='"first-bag"' ng-keypress="play(0)" ng-click="play(0)"></button>
+                <button data-slot="1" class="pad" dragula='"first-bag"' ng-keypress="play(1)" ng-click="play(1)"></button>
+                <button data-slot="2" class="pad" dragula='"first-bag"' ng-keypress="play(2)" ng-click="play(2)"></button>
+                <button data-slot="3" class="pad" dragula='"first-bag"' ng-keypress="play(3)" ng-click="play(3)"></button>
+            </div>
+            <div class="row">
+                <button data-slot="4" class="pad" dragula='"first-bag"' ng-keypress="play(4)" ng-click="play(4)"></button>
+                <button data-slot="5" class="pad" dragula='"first-bag"' ng-keypress="play(5)" ng-click="play(5)"></button>
+                <button data-slot="6" class="pad" dragula='"first-bag"' ng-keypress="play(6)" ng-click="play(6)"></button>
+                <button data-slot="7" class="pad" dragula='"first-bag"' ng-keypress="play(7)" ng-click="play(7)"></button>
+            </div>
+            <div class="row">   
+                <button data-slot="8" class="pad" dragula='"first-bag"' ng-keypress="play(8)" ng-click="play(8)"></button>
+                <button data-slot="9" class="pad" dragula='"first-bag"' ng-keypress="play(9)" ng-click="play(9)"></button>
+                <button data-slot="10" class="pad" dragula='"first-bag"' ng-keypress="play(10)" ng-click="play(10)"></button>
+                <button data-slot="11" class="pad" dragula='"first-bag"' ng-keypress="play(11)" ng-click="play(11)"></button>
+            </div>
+            <div class="row">
+                <button data-slot="12" class="pad" dragula='"first-bag"' ng-keypress="play(12)" ng-click="play(12)"></button>
+                <button data-slot="13" class="pad" dragula='"first-bag"' ng-keypress="play(13)" ng-click="play(13)"></button>
+                <button data-slot="14" class="pad" dragula='"first-bag"' ng-keypress="play(14)" ng-click="play(14)"></button>
+                <button data-slot="15" class="pad" dragula='"first-bag"' ng-keypress="play(15)" ng-click="play(15)"></button>
+            </div>
         </div>
     </div>
-</section>
-    <!--<section id="wad-btns" class="small-8 columns">
-        <h2>Play play play</h2>
-        <button class="pad" id="sound1"></button>
-        <button class="pad" id="sound2"></button>
-        <button class="pad" id="sound3"></button>
-        <button class="pad" id="sound4"></button>
-        <button class="pad" id="sound5"></button>
-        <button class="pad" id="sound6"></button>
-        <button class="pad" id="sound7"></button>
-        <button class="pad" id="sound8"></button>
-        <button class="pad" id="sound9"></button>
-        <button class="pad" id="sound10"></button>
-        <button class="pad" id="sound11"></button>
-        <button class="pad" id="sound12"></button>
-        <button class="pad" id="sound13"></button>
-        <button class="pad" id="sound14"></button>
-        <button class="pad" id="sound15"></button>
-        <button class="pad" id="sound16"></button>
-    </section>-->
 </section>
