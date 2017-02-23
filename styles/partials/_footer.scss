@@ -17,10 +17,10 @@ footer {
     p {
         color: $secondary-highlight-color;
         margin: 0;
-        font-size: 0.4rem;
+        font-size: 0.3rem;
 
          @media screen and (min-width: $size-medium) {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
         }
     }
 }

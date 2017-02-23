@@ -116,8 +116,8 @@ header {
     #hero {
       height: 525px; } }
 
-span {
-  font-style: italic; }
+#blurb span {
+  font-weight: bold; }
 
 #forms {
   padding: 7.5%;
@@ -235,6 +235,8 @@ span {
     #welcome-container #welcome-content h4 {
       font-style: italic;
       font-family: "Play", sans-serif; }
+    #welcome-container #welcome-content span {
+      font-style: italic; }
     #welcome-container #welcome-content img {
       width: 14%; }
       @media screen and (min-width: 25.876em) {
@@ -425,9 +427,9 @@ span {
     #kit-container .wrapper #left-defaults #fav-sounds {
       border-bottom: 1px solid #1DAE83;
       margin: 10px; }
-    #kit-container .wrapper #left-defaults p .ng-binding {
-      font-size: .8em;
-      margin-bottom: 0px; }
+      #kit-container .wrapper #left-defaults #fav-sounds p {
+        font-size: .8em;
+        margin-bottom: 0; }
   #kit-container .wrapper #right-defaults {
     background-color: #F5F2EE;
     width: 100%;
@@ -476,7 +478,7 @@ footer {
   footer p {
     color: #6FC5D9;
     margin: 0;
-    font-size: 0.4rem; }
+    font-size: 0.3rem; }
     @media screen and (min-width: 25.876em) {
       footer p {
-        font-size: 0.7rem; } }
+        font-size: 0.6rem; } }

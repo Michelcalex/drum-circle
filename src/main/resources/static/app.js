@@ -37,7 +37,6 @@ module.exports = {
         $scope.showSounds = [];
 
         $scope.filterSounds = function (category) {
-            // console.log(`Filtering ${category}`)
             $scope.showSounds = [];
             for (let i = 0; i < $scope.sounds.length; i++) {
                 if (category === $scope.sounds[i].category || category === 'All') {
@@ -89,7 +88,6 @@ module.exports = {
 module.exports = {
     name: 'HomeController',
     func: function($scope, HomeService) {
-       console.log ('hey');
        HomeService.getUser().then(function (name) {
         $scope.name = name;
        });
@@ -184,13 +182,6 @@ module.exports = {
 
             playList[slotNum] = parseInt(soundIndex);
         });
-
-        // TODO LATER ---------------------------------------
-        // $scope.$on('first-bag.out', function (el, container){
-        //     console.log(el);
-        //     console.log(container);
-            
-        // });
 
         dragulaService.options($scope, 'first-bag', {
             copy: false
@@ -330,7 +321,6 @@ module.exports = {
     func: function ($state, $http) {
         const sounds = [];
         const wads = [];
-        // const favoriteSounds = [];
 
         $http.get('/sounds').then(function(soundResponse) {
             angular.copy(soundResponse.data, sounds);
@@ -365,8 +355,6 @@ module.exports = {
             previewSounds(index) {
                 wads[index].play();
             },
-
-
         }; 
     },
 };
@@ -416,7 +404,6 @@ module.exports = {
             },
 
             playKitSounds(index) {
-                // console.log(wads[index]);
                 wads[index].play();
             },
 
@@ -427,8 +414,6 @@ module.exports = {
                 sound.isFavorite = true;
                 favoriteList.push(sound);
                 addWad(sound);
-
-                // console.log(favoriteList);
             },
 
             markUnFavorite(sound) {
@@ -441,10 +426,8 @@ module.exports = {
                         favoriteList.splice(i,1);
                     }
                 }
-
             }
         }
-
     },
 };
 
