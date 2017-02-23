@@ -9,24 +9,29 @@ mobile, tablet, and laptop allowing users access from multiple platforms.
 Demo can be found at https://drumcircle1.herokuapp.com/
  
  
-# CDNjs used for Drum Circle 
- <ul> 
-  <li>//cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/css/foundation.css</li>
-  <li>//cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css</li>
-  <li>//cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js</li>
-  <li>/cdnjs.cloudflare.com/ajax/libs/angular-dragula/1.2.8/angular-dragula.min.jss</li>
-  <li>//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js</li>
+# Dependencies
+ <ul>
+ <li>Heroku</li>
+ <li>Postgres</li>
+ <li>Gulp</li>
  </ul>
  
 # Install
- <a href="https://www.npmjs.com/package/gulp-install">Gulp</a>
- <code>npm install gulp</code>
+1. Install Postgres. The best way to do this on OSX is to find Postgres.app and install it. 
+2. Create database named drum circle 
+ 1. Run psql in terminal <code>psql</code>
+ 2. Create and name the database <code>CREATE DATABASE drumcircle;</code>
+3. Clone project 
+4. Npm install inside project directory
+ 1. <code>npm install </code>
+5. Create 'Procfile.local' file in project repository
+ 1. Place the following code in your file: <code>web: ./gradlew bootRun</code>
+6. Create '.env' file in the root of your project repository. NOTE: this file should <em>not</em> be in source control. The contents of this file will give heroku local environment variables to use. 
+ 1. <code>JDBC_DATABASE_URL=jdbc:postgresql://localhost:5432/testdatabase</code>
+7. To start server locally, run the heroku command
+ 1. <code>heroku local web -f Procfile.local</code>
  
- <a href="https://www.npmjs.com/package/gulp-browser">Gulp-browser</a>
- <code>npm install gulp-browser</code>
- 
- <a href="https://www.npmjs.com/package/gulp-sass">Gulp-sass</a>
- <code>npm install gulp-sass</code>
+
  
  
 # Quick Start
