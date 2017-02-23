@@ -1,5 +1,3 @@
-/* Large and up */
-/* Large only */
 html {
   background-color: #F5F2EE; }
 
@@ -10,6 +8,15 @@ body {
 .error {
   color: #0D4656;
   background-color: #6FC5D9;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem; }
+
+.success {
+  color: #0D4656;
+  background-color: #1DAE83;
   padding: 15px;
   display: flex;
   align-items: center;
@@ -97,94 +104,94 @@ header {
       header nav #nav-links ul button:hover {
         color: #6FC5D9; }
 
-#welcome-section #hero {
+#hero {
   background-image: url("../assets/drumcircle-hero.jpg");
   background-size: cover;
   background-position: center center;
   height: 220px; }
   @media screen and (min-width: 25.876em) {
-    #welcome-section #hero {
+    #hero {
       height: 350px; } }
   @media screen and (min-width: 64em) {
-    #welcome-section #hero {
+    #hero {
       height: 525px; } }
 
-#welcome-section span {
+span {
   font-style: italic; }
 
-#welcome-section #forms {
+#forms {
   padding: 7.5%;
   align-items: center;
   margin-bottom: 50px;
   background-color: #F5F2EE; }
   @media screen and (min-width: 25.876em) {
-    #welcome-section #forms {
+    #forms {
       margin-bottom: 75px; } }
-  #welcome-section #forms md-content {
+  #forms md-content {
     width: 100%;
     overflow: hidden;
     background-color: #333333;
-    color: white; }
+    color: #F5F2EE; }
     @media screen and (min-width: 25.876em) {
-      #welcome-section #forms md-content {
+      #forms md-content {
         width: 75%;
         height: 300px; } }
     @media screen and (min-width: 64em) {
-      #welcome-section #forms md-content {
+      #forms md-content {
         width: 50%; } }
-    #welcome-section #forms md-content md-tabs {
+    #forms md-content md-tabs {
       min-height: 190px;
       margin-top: 12px; }
       @media screen and (min-width: 25.876em) {
-        #welcome-section #forms md-content md-tabs {
+        #forms md-content md-tabs {
           min-height: 220px; } }
-    #welcome-section #forms md-content md-tab-content {
+    #forms md-content md-tab-content {
       top: -9px;
       height: 165px;
       overflow: hidden; }
       @media screen and (min-width: 25.876em) {
-        #welcome-section #forms md-content md-tab-content {
+        #forms md-content md-tab-content {
           top: 0px; } }
-    #welcome-section #forms md-content md-pagination-wrapper {
+    #forms md-content md-pagination-wrapper {
       width: 100% !important; }
-      #welcome-section #forms md-content md-pagination-wrapper md-tab-item {
+      #forms md-content md-pagination-wrapper md-tab-item {
         width: 50%;
         text-transform: capitalize; }
-      #welcome-section #forms md-content md-pagination-wrapper .md-tab.md-active {
+      #forms md-content md-pagination-wrapper .md-tab.md-active {
         background-color: #1DAE83; }
-      #welcome-section #forms md-content md-pagination-wrapper .md-tab {
-        color: white;
+      #forms md-content md-pagination-wrapper .md-tab {
+        color: #F5F2EE;
         font-size: 11px;
         padding: 8px 24px; }
         @media screen and (min-width: 25.876em) {
-          #welcome-section #forms md-content md-pagination-wrapper .md-tab {
+          #forms md-content md-pagination-wrapper .md-tab {
             font-size: 14px;
             padding: 12px 24px; } }
-      #welcome-section #forms md-content md-pagination-wrapper md-ink-bar {
+      #forms md-content md-pagination-wrapper md-ink-bar {
         color: #8ED6C1;
         background-color: #8ED6C1;
         bottom: 6px; }
         @media screen and (min-width: 25.876em) {
-          #welcome-section #forms md-content md-pagination-wrapper md-ink-bar {
+          #forms md-content md-pagination-wrapper md-ink-bar {
             bottom: 0px; } }
-    #welcome-section #forms md-content form {
+    #forms md-content form {
       margin-top: 14px; }
-      #welcome-section #forms md-content form input {
+      #forms md-content form input {
         height: 2rem;
         font-size: 0.8rem;
         background-color: #333333; }
         @media screen and (min-width: 25.876em) {
-          #welcome-section #forms md-content form input {
+          #forms md-content form input {
             height: 2.4375rem;
             font-size: 1rem; } }
-      #welcome-section #forms md-content form .user-lock {
+      #forms md-content form .user-lock {
         float: right;
         margin-right: 16px;
         margin-top: -41px;
         position: relative;
         z-index: 2;
         color: #1DAE83; }
-      #welcome-section #forms md-content form button {
+      #forms md-content form button {
         width: 100%;
         background-color: #1DAE83;
         padding: 14px 24px;
@@ -192,20 +199,20 @@ header {
         font-weight: 600;
         font-family: "Play", sans-serif; }
         @media screen and (min-width: 25.876em) {
-          #welcome-section #forms md-content form button {
+          #forms md-content form button {
             font-size: 14px;
             font-weight: normal; } }
-      #welcome-section #forms md-content form .md-button {
+      #forms md-content form .md-button {
         width: 100%;
         background-color: #1DAE83;
         margin: 0; }
-  #welcome-section #forms .md-padding {
+  #forms .md-padding {
     padding: 30px; }
     @media screen and (min-width: 64em) {
-      #welcome-section #forms .md-padding {
+      #forms .md-padding {
         padding: 35px; } }
 
-#welcome-section #welcome-container {
+#welcome-container {
   background-image: url("../assets/welcome-image.jpg");
   background-size: cover;
   height: 200px;
@@ -215,26 +222,26 @@ header {
   justify-content: center;
   margin-bottom: 50px; }
   @media screen and (min-width: 25.876em) {
-    #welcome-section #welcome-container {
+    #welcome-container {
       height: 485px;
       padding-bottom: 75px; } }
-  #welcome-section #welcome-container #welcome-content {
+  #welcome-container #welcome-content {
     text-align: center;
     width: 70%;
     overflow: hidden;
-    color: white; }
-    #welcome-section #welcome-container #welcome-content h1 {
+    color: #F5F2EE; }
+    #welcome-container #welcome-content h1 {
       font-family: "Play", sans-serif; }
-    #welcome-section #welcome-container #welcome-content h4 {
+    #welcome-container #welcome-content h4 {
       font-style: italic;
       font-family: "Play", sans-serif; }
-    #welcome-section #welcome-container #welcome-content img {
+    #welcome-container #welcome-content img {
       width: 14%; }
       @media screen and (min-width: 25.876em) {
-        #welcome-section #welcome-container #welcome-content img {
+        #welcome-container #welcome-content img {
           width: 10%; } }
       @media screen and (min-width: 64em) {
-        #welcome-section #welcome-container #welcome-content img {
+        #welcome-container #welcome-content img {
           width: 8%; } }
 
 #browse-container {
@@ -248,7 +255,7 @@ header {
     height: 415px;
     overflow: hidden;
     background-color: #333333;
-    color: white;
+    color: #F5F2EE;
     margin: 5% auto; }
     @media screen and (min-width: 25.876em) {
       #browse-container md-content {
@@ -273,7 +280,7 @@ header {
           #browse-container md-content md-tabs md-tabs-wrapper {
             height: 110px; } }
         #browse-container md-content md-tabs md-tabs-wrapper .md-tab {
-          color: white;
+          color: #F5F2EE;
           font-size: 9px;
           padding: 6px; }
           @media screen and (min-width: 25.876em) {
@@ -311,7 +318,7 @@ header {
                 #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item {
                   height: 95px; } }
               #browse-container md-content md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item p {
-                color: white;
+                color: #F5F2EE;
                 margin: 3px 0 0;
                 font-size: 0.35rem; }
                 @media screen and (min-width: 25.876em) {
@@ -361,9 +368,6 @@ header {
                 padding: 0px; }
               #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div img.ng-scope {
                 height: 35px !important; }
-
-#kit-container span {
-  display: none; }
 
 #kit-container .wrapper {
   color: white;

@@ -10,17 +10,29 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css">
     <link href="https://fonts.googleapis.com/css?family=Joti+One|Play" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="DrumCircleApp">
+    <!--<script type="text/javascript">
+        // Get URL
+        var url = window.location.href;
+        // Get DIV
+        var msg = document.getElementById('sucess-moustache');
+        // Check if URL contains the keyword
+        if( url.search( 'browse' ) === -1 && ( url.search( 'kit' ) === -1 )) {
+            // Display the message
+            msg.style.display = block;
+        } else {
+            ms.style.display=none;
+        }
+     </script>-->
     <main>
         <header-section logged-in="true"></header-section>
         {{#error}}
             <span class="error">{{.}}</span>
         {{/error}}
-            {{#success}}
-                <span class="success">{{.}}</span>
-            {{/success}}
+        <!--<div id="success-moustache" ng-if="window.loads >= 1">-->
+        <!--</div>-->
         <ui-view>
             <home></home>
         </ui-view>

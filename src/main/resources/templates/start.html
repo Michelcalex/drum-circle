@@ -13,14 +13,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="DrumCircleApp">
+
+    <!--<script type="text/javascript">
+        // Get URL
+        var url = window.location.href;
+        // Get DIV
+        var msg = document.getElementById('success-mes');
+        // Check if URL contains the keyword
+        if( url.search( 'browse' ) === -1) {
+            // Display the message
+            msg.style.display = block;
+        } else {
+            msg.style.display = none;
+        }
+     </script>-->
     <main>
         <header-section logged-in="false"></header-section>
-            {{#error}}
-                <span class="error"><i class="fa fa-exclamation-circle error-icon" aria-hidden="true"></i> {{.}}</span>
-            {{/error}}
-            {{#success}}
-                <span class="success">{{.}}</span>
-            {{/success}}
+        {{#error}}
+            <span class="error"><i class="fa fa-exclamation-circle error-icon" aria-hidden="true"></i> {{.}}</span>
+        {{/error}}
+        <!--<div id="success-mes">-->
+        {{#success}}
+            <span class="success">{{.}}</span>
+        {{/success}}
+        <!--</div>-->
         <ui-view>
             <start></start>
         </ui-view>

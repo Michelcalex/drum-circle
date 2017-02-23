@@ -301,17 +301,17 @@ app.filter('capitalize', function() {
 //States ---------------------------------------------------------
 
 app.config(function ($stateProvider) {
-    $stateProvider.state({
-        name: 'start',
-        url: '/start',
-        component: 'start',
-    });
+    // $stateProvider.state({
+    //     name: 'start',
+    //     url: '/start',
+    //     component: 'start',
+    // });
 
-    $stateProvider.state({
-        name: 'index',
-        url: '/index',
-        component: 'home',
-    });
+    // $stateProvider.state({
+    //     name: 'index',
+    //     url: '/index',
+    //     component: 'home',
+    // });
 
     $stateProvider.state({
         name: 'login',
