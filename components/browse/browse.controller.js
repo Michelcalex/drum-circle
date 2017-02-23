@@ -17,7 +17,7 @@ module.exports = {
 
         HomeService.getUser().then(function (name) {
             $scope.username = name; // if username is undefined, nothing will render.
-        });
+    });
 
 
 //filter sounds and tab functionality 
