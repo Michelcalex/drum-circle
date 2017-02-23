@@ -9,7 +9,7 @@ mobile, tablet, and laptop allowing users access from multiple platforms.
 Demo can be found at https://drumcircle1.herokuapp.com/
  
  
- # CDNjs used for Drum Circle 
+# CDNjs used for Drum Circle 
  <ul> 
   <li>//cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/css/foundation.css</li>
   <li>//cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css</li>
@@ -18,7 +18,7 @@ Demo can be found at https://drumcircle1.herokuapp.com/
   <li>//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js</li>
  </ul>
  
- # Install
+# Install
  <a href="https://www.npmjs.com/package/gulp-install">Gulp</a>
  <code>npm install gulp</code>
  
@@ -29,30 +29,28 @@ Demo can be found at https://drumcircle1.herokuapp.com/
  <code>npm install gulp-sass</code>
  
  
- # Quick Start
- <ol>
+# Quick Start
+ <ul>
   <li>Browse through our library and sample different sounds.</li>
   <li>When your ready to save your favorites, make sure to log in!</li>
-    <ul>
-      <li>You can easily sign up or log in on the 'Home' page.</li>
-    </ul>
+  <li>You can easily sign up or log in on the 'Home' page.</li>
   <li>Once you find a sound you love, click on the heart icon to save that sound to your favorites.</li>
   <li>After, head on over to the 'Kit' page to begin playing.</li>
   <li>Drag and drop sounds from your favorite list onto the pads and you are ready to play.</li>
   <li>Want to start over? Just hit the trash button and rebuild your kit</li>
- </ol>
+ </ul>
  
  
- # Authors 
- <em>Lexi Michel</em>
+# Authors 
+ <p><em>Lexi Michel</em></p>
  <p>Github: @Michelcalex</p>
- 
- <em>Leo Wolf</em>
+ <br>
+ <p><em>Leo Wolf</em></p>
  <p>Github: @leowolf749</p>
- 
- <em>Ben Burr</em>
+ <br>
+ <p><em>Ben Burr</em></p>
  <p>Github: @bburrva</p>
  
- # Copyright
+# Copyright
  <p>Copyright &#9400; 2017</p>
  
