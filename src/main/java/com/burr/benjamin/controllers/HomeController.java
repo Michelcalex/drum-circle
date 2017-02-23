@@ -64,7 +64,6 @@ public class HomeController {
         User user = users.findByUsername(username);
         if (user != null && PasswordStorage.verifyPassword(password, user.getPassword())) {
             session.setAttribute("user", user.getId());
-            session.setAttribute("success", "Login Successful.");
         } else {
             session.setAttribute("error", "You entered an invalid username or password.");
         }
@@ -85,7 +84,7 @@ public class HomeController {
             try {
                 user = new User(username, PasswordStorage.createHash(password));
                 users.save(user);
-                session.setAttribute("success", "Sign up successful. Please Login.");
+                session.setAttribute("success", "Awesome sauce! Now please Login.");
             } catch (PasswordStorage.CannotPerformOperationException e) {
                 e.printStackTrace();
             }
@@ -122,8 +121,7 @@ public class HomeController {
 
             List<File> files = (List) FileUtils.listFiles(new File("test-sounds"), null, true);
 
-            if (!files.equals(".DS_Store")) {
-                files.stream().forEach(f -> {
+                files.stream().filter(file -> !file.getName().equals(".DS_Store")).forEach(f -> {
                     String[] parts = f.getAbsolutePath().split("\\/");
 
                     Sound sound = new Sound();
@@ -141,7 +139,6 @@ public class HomeController {
                     sounds.save(sound);
 
                 });
-            }
         }
     }
 
