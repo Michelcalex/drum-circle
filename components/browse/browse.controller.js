@@ -24,7 +24,6 @@ module.exports = {
         $scope.showSounds = [];
 
         $scope.filterSounds = function (category) {
-            // console.log(`Filtering ${category}`)
             $scope.showSounds = [];
             for (let i = 0; i < $scope.sounds.length; i++) {
                 if (category === $scope.sounds[i].category || category === 'All') {

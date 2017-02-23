@@ -3,7 +3,6 @@ module.exports = {
     func: function ($state, $http) {
         const sounds = [];
         const wads = [];
-        // const favoriteSounds = [];
 
         $http.get('/sounds').then(function(soundResponse) {
             angular.copy(soundResponse.data, sounds);
@@ -38,8 +37,6 @@ module.exports = {
             previewSounds(index) {
                 wads[index].play();
             },
-
-
         }; 
     },
 };

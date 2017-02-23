@@ -26,7 +26,6 @@ module.exports = {
             },
 
             playKitSounds(index) {
-                // console.log(wads[index]);
                 wads[index].play();
             },
 
@@ -37,8 +36,6 @@ module.exports = {
                 sound.isFavorite = true;
                 favoriteList.push(sound);
                 addWad(sound);
-
-                // console.log(favoriteList);
             },
 
             markUnFavorite(sound) {
@@ -51,9 +48,7 @@ module.exports = {
                         favoriteList.splice(i,1);
                     }
                 }
-
             }
         }
-
     },
 };

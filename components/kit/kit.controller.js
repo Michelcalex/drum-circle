@@ -76,13 +76,6 @@ module.exports = {
             playList[slotNum] = parseInt(soundIndex);
         });
 
-        // TODO LATER ---------------------------------------
-        // $scope.$on('first-bag.out', function (el, container){
-        //     console.log(el);
-        //     console.log(container);
-            
-        // });
-
         dragulaService.options($scope, 'first-bag', {
             copy: false
         });
