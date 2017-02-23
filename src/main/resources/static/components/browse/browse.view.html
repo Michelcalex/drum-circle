@@ -1,6 +1,7 @@
 <section id="browse-container" layout="column">
     <section class="row page-overview">
-        <h3>Browse through our library and choose your favorite sounds by pressing the heart icon. Once you're through here move over to the 'Kit' page to begin playing.</h3>
+        <h3 ng-if="username">Browse through our library and choose your favorite sounds by pressing the heart icon. Once you're through here move over to the 'Kit' page to begin playing.</h3>
+        <h3 id="browseMessage"> Leos message goes here!</h3>
     </section>
     <md-content class="md-padding">
         <md-tabs md-selected="selectedIndex">

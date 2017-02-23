@@ -30,7 +30,8 @@ module.exports = {
 
         HomeService.getUser().then(function (name) {
             $scope.username = name; // if username is undefined, nothing will render.
-        });
+            $scope.browseMessage = '';
+    });
 
 
 //filter sounds and tab functionality 
@@ -214,45 +215,10 @@ module.exports = {
 module.exports = {
     name: 'signupForm',
     object: {
-        controller: 'SignupController',
-        controllerAs: '$ctrl',
         templateUrl: 'components/signup/signup.view.html',
     },
 };
 },{}],10:[function(require,module,exports){
-module.exports = {
-    name: 'SignupController',
-    func: function($scope, toastr, HomeService) {
-
-        //Angular submit ----------------------
-        // $scope.sendSignup = function(){
-        //     HomeService.sendSignup($scope.username, $scope.password);
-        // } 
-        
-        
-        //Toastr alert - only if Angular way-----------------
-        //toastr.success('Hello world!', 'Toastr fun!');
-        // $scope.status = ' ';
-        // $scope.customFullscreen = false;
-
-        //  $scope.showAlert = function(ev) {
-        //     $mdDialog.show(
-        //     $mdDialog.alert()
-        //         .parent(angular.element(document.querySelector('#popupContainer')))
-        //         .clickOutsideToClose(true)
-        //         .title('Awesomesauce')
-        //         .textContent('You can now login with your username and password')
-        //         .ariaLabel('Succesfully Signedup')
-        //         .ok('Got it!')
-        //         .targetEvent(ev)
-        //     );
-        // };
-    }, 
-};
-
-
-
-},{}],11:[function(require,module,exports){
 module.exports = {
     name: 'start',
     object: {
@@ -261,7 +227,7 @@ module.exports = {
         templateUrl: 'components/start/start.view.html',
     },
 };
-},{}],12:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 module.exports = {
     name: 'StartController',
     func: function($scope, HomeService) {
@@ -273,7 +239,7 @@ module.exports = {
 
 
 
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 const app = angular.module('DrumCircleApp', [
     'ui.router',
     'ngMaterial',
@@ -303,7 +269,6 @@ const controllers = [
     require('../components/home/home.controller'),
     require('../components/kit/kit.controller'),
     require('../components/start/start.controller'),
-    require('../components/signup/signup.controller'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -372,7 +337,7 @@ app.config(function ($stateProvider) {
         url: '/',
     });
 });
-},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/header/header.component":3,"../components/home/home.component":4,"../components/home/home.controller":5,"../components/kit/kit.component":6,"../components/kit/kit.controller":7,"../components/login/login.component":8,"../components/signup/signup.component":9,"../components/signup/signup.controller":10,"../components/start/start.component":11,"../components/start/start.controller":12,"../services/browse.service":14,"../services/home.service":15,"../services/kit.service":16}],14:[function(require,module,exports){
+},{"../components/browse/browse.component":1,"../components/browse/browse.controller":2,"../components/header/header.component":3,"../components/home/home.component":4,"../components/home/home.controller":5,"../components/kit/kit.component":6,"../components/kit/kit.controller":7,"../components/login/login.component":8,"../components/signup/signup.component":9,"../components/start/start.component":10,"../components/start/start.controller":11,"../services/browse.service":13,"../services/home.service":14,"../services/kit.service":15}],13:[function(require,module,exports){
 module.exports = {
     name: 'BrowseService',
     func: function ($state, $http) {
@@ -419,7 +384,7 @@ module.exports = {
     },
 };
 
-},{}],15:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 module.exports = {
     name: 'HomeService',
     func: function ($http, $state) {
@@ -435,7 +400,7 @@ module.exports = {
         }
     }
 }
-},{}],16:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 module.exports = {
     name: 'KitService',
     func: function ($state, $http) {
@@ -496,4 +461,4 @@ module.exports = {
     },
 };
 
-},{}]},{},[13]);
+},{}]},{},[12]);
