@@ -222,7 +222,7 @@ module.exports = {
 },{}],10:[function(require,module,exports){
 module.exports = {
     name: 'SignupController',
-    func: function($scope, toastr, HomeService) {
+    func: function($scope, HomeService) {
 
         //Angular submit ----------------------
         // $scope.sendSignup = function(){

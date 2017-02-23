@@ -362,6 +362,9 @@ header {
               #browse-container md-content md-tabs md-tabs-content-wrapper md-tab-content #tabs-container div img.ng-scope {
                 height: 35px !important; }
 
+#kit-container span {
+  display: none; }
+
 #kit-container .wrapper {
   color: white;
   width: 100%;
@@ -378,13 +381,16 @@ header {
     #kit-container .wrapper #kit-heading h2 {
       font-family: "Play", sans-serif;
       padding-left: 15px; }
+      #kit-container .wrapper #kit-heading h2 p {
+        font-size: .5em;
+        margin-bottom: 0px; }
       @media screen and (min-width: 25.876em) {
         #kit-container .wrapper #kit-heading h2 {
           font-size: 1.7em;
           text-align: left;
           margin: 0px;
           padding-left: 10px;
-          width: 25%; } }
+          width: 60%; } }
     #kit-container .wrapper #kit-heading #trash-image {
       background-image: url("../assets/trash.png");
       background-size: cover;
@@ -436,7 +442,8 @@ header {
       border-radius: 5px;
       box-shadow: 5px 8px #333333;
       font-size: .7em;
-      margin: 5px; }
+      margin: 5px;
+      vertical-align: top; }
       @media screen and (min-width: 25.876em) {
         #kit-container .wrapper #right-defaults .pad {
           width: 100px;
