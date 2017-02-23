@@ -17,18 +17,19 @@ Demo can be found at https://drumcircle1.herokuapp.com/
  </ul>
  
 # Install
-1. Install Postgres. The best way to do this on OSX is to find Postgres.app and install it. 
-2. Create database named drum circle 
+1. Install the latest JVM
+2. Install Postgres. The best way to do this on OSX is to find Postgres.app and install it. 
+3. Create database named drum circle 
  1. Run psql in terminal <code>psql</code>
  2. Create and name the database <code>CREATE DATABASE drumcircle;</code>
-3. Clone project 
-4. Npm install inside project directory
+4. Clone project 
+5. Npm install inside project directory
  1. <code>npm install </code>
-5. Create 'Procfile.local' file in project repository
+6. Create 'Procfile.local' file in project repository
  1. Place the following code in your file: <code>web: ./gradlew bootRun</code>
-6. Create '.env' file in the root of your project repository. NOTE: this file should <em>not</em> be in source control. The contents of this file will give heroku local environment variables to use. 
- 1. <code>JDBC_DATABASE_URL=jdbc:postgresql://localhost:5432/testdatabase</code>
-7. To start server locally, run the heroku command
+7. Create '.env' file in the root of your project repository. NOTE: this file should <em>not</em> be in source control. The contents of this file will give heroku local environment variables to use. 
+ 1. <code>JDBC_DATABASE_URL=jdbc:postgresql://localhost:5432/drumcircle</code>
+8. To start server locally, run the heroku command
  1. <code>heroku local web -f Procfile.local</code>
  
 
