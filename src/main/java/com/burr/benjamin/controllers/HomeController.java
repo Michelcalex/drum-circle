@@ -121,8 +121,7 @@ public class HomeController {
 
             List<File> files = (List) FileUtils.listFiles(new File("test-sounds"), null, true);
 
-            if (!files.equals(".DS_Store")) {
-                files.stream().forEach(f -> {
+                files.stream().filter(file -> !file.getName().equals(".DS_Store")).forEach(f -> {
                     String[] parts = f.getAbsolutePath().split("\\/");
 
                     Sound sound = new Sound();
@@ -140,7 +139,6 @@ public class HomeController {
                     sounds.save(sound);
 
                 });
-            }
         }
     }
 
