@@ -370,7 +370,7 @@ span {
                 height: 35px !important; }
 
 #kit-container .wrapper {
-  color: white;
+  color: #F5F2EE;
   width: 100%;
   background-color: #F5F2EE; }
   #kit-container .wrapper #kit-heading {
@@ -425,9 +425,9 @@ span {
     #kit-container .wrapper #left-defaults #fav-sounds {
       border-bottom: 1px solid #1DAE83;
       margin: 10px; }
-      #kit-container .wrapper #left-defaults #fav-sounds p {
-        font-size: .8em;
-        margin: 0; }
+    #kit-container .wrapper #left-defaults p .ng-binding {
+      font-size: .8em;
+      margin-bottom: 0px; }
   #kit-container .wrapper #right-defaults {
     background-color: #F5F2EE;
     width: 100%;
