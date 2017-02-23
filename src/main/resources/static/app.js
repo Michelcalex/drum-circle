@@ -170,8 +170,6 @@ module.exports = {
         $scope.play = function (slot, event) {
             if (playList[slot] !== undefined) {
                 KitService.playKitSounds(playList[slot]);
-            } else {
-                console.log(`Slot ${slot} doesnt have a sound assigned.`);
             }
         };
 
@@ -186,6 +184,13 @@ module.exports = {
 
             playList[slotNum] = parseInt(soundIndex);
         });
+
+        // TODO LATER ---------------------------------------
+        // $scope.$on('first-bag.out', function (el, container){
+        //     console.log(el);
+        //     console.log(container);
+            
+        // });
 
         dragulaService.options($scope, 'first-bag', {
             copy: false
@@ -272,8 +277,7 @@ module.exports = {
 const app = angular.module('DrumCircleApp', [
     'ui.router',
     'ngMaterial',
-    'ngAnimate', 
-    'toastr',
+    'ngAnimate',
     angularDragula(angular),
 ]);
 
@@ -428,27 +432,6 @@ module.exports = {
                     console.log(response.data);
                 });
             },
-
-
-            //Angular way to submit forms-----------------------------------
-            // sendSignup(username, password) {
-            //     $http.post('/sign-up', {
-            //         username: username,
-            //         password: password,
-            //     }).then(function(response) {
-            //         console.log('POST successful!');
-            //     });
-            // },
-
-            // sendLogin() {
-            //     $http.post('https://drumcircle1.herokuapp.com/login', {
-            //         username: $scope.username,
-            //         password: $scope.password
-            //     }).then(function(response) {
-            //         console.log('POST successful!');
-            //     });
-            // }, 
-            
         }
     }
 }
