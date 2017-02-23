@@ -179,7 +179,8 @@ header {
       #forms md-content form input {
         height: 2rem;
         font-size: 0.8rem;
-        background-color: #333333; }
+        background-color: #333333;
+        color: #F5F2EE; }
         @media screen and (min-width: 25.876em) {
           #forms md-content form input {
             height: 2.4375rem;
