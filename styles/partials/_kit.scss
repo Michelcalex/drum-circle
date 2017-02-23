@@ -1,13 +1,13 @@
 #kit-container {
 
     .wrapper {
-        color: white;
+        color: $primary-font-color;
         width:100%;
-        background-color: #F5F2EE;
+        background-color: $primary-bkgd-color;
 
         #kit-heading {
             width: 100%;
-            background-color: #333333;
+            background-color: $secondary-bkgd-color;
             display: flex;
             justify-content: space-between;
             padding: 10px;
@@ -54,7 +54,7 @@
         }
 
         #left-defaults {
-            background-color: #333333;
+            background-color: $secondary-bkgd-color;
             overflow-y: scroll;
             width: 25%;
             width: 100%;
@@ -63,7 +63,7 @@
    
 
             @media screen and (min-width: $size-medium) {
-                background-color: #333333;
+                background-color: $secondary-bkgd-color;
                 width: 25%; 
                 height: 700px;
                 padding-right: 0px;
@@ -71,18 +71,18 @@
             } 
 
             #fav-sounds {
-                border-bottom: 1px solid #1DAE83;
+                border-bottom: 1px solid $border-line-color;
                 margin: 10px;
 
                 p {
                     font-size: .8em;
-                    margin:0;
+                    margin-bottom: 0;
                 }
             }
         }
 
         #right-defaults {
-            background-color: #F5F2EE;
+            background-color: $primary-bkgd-color;
             width: 100%;
             text-align: center;
             margin-bottom: 50px;
@@ -97,7 +97,7 @@
                 width: 65px;
                 height: 65px;
                 background-image: linear-gradient(to top right, #1DAE83, #F5F2EE);
-                color: #0D4656;
+                color: $secondary-font-color;
                 border-radius: 5px;
                 box-shadow: 5px 8px #333333;
                 font-size: .7em;      
