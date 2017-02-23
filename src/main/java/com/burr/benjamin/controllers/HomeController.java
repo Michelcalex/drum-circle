@@ -84,7 +84,7 @@ public class HomeController {
             try {
                 user = new User(username, PasswordStorage.createHash(password));
                 users.save(user);
-                session.setAttribute("success", "Awesome sauce! Now please Login.");
+                session.setAttribute("success", "Awesome sauce! Sign up successful. Now please Login.");
             } catch (PasswordStorage.CannotPerformOperationException e) {
                 e.printStackTrace();
             }
