@@ -1,5 +1,5 @@
 footer {
-    background-color: #0D4656;
+    background-color: $footer-bkgd-color;
     width: 100%;
     position: fixed;
     left: 0px;
@@ -15,7 +15,7 @@ footer {
     }
 
     p {
-        color: #6FC5D9;
+        color: $secondary-highlight-color;
         margin: 0;
         font-size: 0.4rem;
 

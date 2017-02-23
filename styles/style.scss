@@ -1,38 +1,54 @@
 //Global styles
-$logo-font-type: 'Joti One', cursive;
+$primary-bkgd-color: #F5F2EE;
+$secondary-bkgd-color: #333333;
+$pg-overview-bkgd-color: #0D4656;
+$footer-bkgd-color: #0D4656;
+
+$primary-highlight-color: #1DAE83;
+$secondary-highlight-color: #6FC5D9;
+$tertiary-highlight-color: #0D4656;
+
+
 $logo-font-color: #0D4656;
+$primary-font-color: #F5F2EE;
+$secondary-font-color:#0D4656;
+
+$border-line-color: #1DAE83;
+
+$logo-font-type: 'Joti One', cursive;
 $primary-font-type: 'Play', sans-serif;
 
 
-
-
 //Screen sizes for media quieres 
-$size-medium: 25.876em; //375px - 414px
+$size-medium: 25.876em; //414px
 $size-large: 47.93em; //767px 
-$size-x-large: 64em; //900px; - 1024
+$size-x-large: 64em; //1024px
 $size-xx-large: 75em; //1200px;
-
-//Examples: 
-/* Large and up */
-//@media screen and (min-width: 64em) {}
-
-/* Large only */
-//@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
 
 
 //Global classes
 html {
-   background-color: #F5F2EE;
+   background-color: $primary-bkgd-color;
 }
 
 body {
-    background-color: #F5F2EE;
+    background-color: $primary-bkgd-color;
     font-family: $primary-font-type;
 }
 
 .error {
-    color:#0D4656;
-    background-color: #6FC5D9;
+    color:$secondary-font-color;
+    background-color: $secondary-highlight-color;
+    padding:15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.success {
+    color:$secondary-font-color;
+    background-color: $primary-highlight-color;
     padding:15px;
     display: flex;
     align-items: center;
@@ -41,7 +57,7 @@ body {
 }
 
 .error-icon {
-    color: #0D4656;
+    color: $tertiary-highlight-color;
 }
 
 .row {
@@ -50,8 +66,8 @@ body {
 }
 
 .page-overview {
-    background-color: #0D4656;
-    color: #F5F2EE;
+    background-color: $pg-overview-bkgd-color;
+    color: $primary-font-color;
     margin: 0 !important;
     text-align: center;
     padding: 15px 5px;
@@ -73,17 +89,19 @@ body {
 }
 
 a {
-    color: #0D4656;
+    color: $secondary-font-color;
 }
 
 a:hover {
-    color: #6FC5D9;
+    color: $secondary-highlight-color;
 }
 
 
 //Partial Imports -------------------------------------------------
 @import 'partials/header';
 @import 'partials/hero-blurb';
+@import 'partials/forms-section';
+@import 'partials/welcome';
 @import 'partials/browse';
 @import 'partials/kit';
 @import 'partials/footer';

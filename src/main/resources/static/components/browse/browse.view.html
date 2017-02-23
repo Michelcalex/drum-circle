@@ -1,11 +1,9 @@
 <section id="browse-container" layout="column">
     <section class="row page-overview">
         <h3 ng-if="username">Browse through our library and choose your favorite sounds by pressing the heart icon. Once you're through here move over to the 'Kit' page to begin playing.</h3>
-        <h3 id="browseMessage"> Leos message goes here!</h3>
     </section>
     <md-content class="md-padding">
         <md-tabs md-selected="selectedIndex">
-            <!--<md-tab ng-click="filterSounds(tab.title)" ng-repeat="tab in tabs" ng-disabled="tab.disabled" label ="{{tab.title}}" src="{{tab.src}}">-->
             <md-tab ng-click="filterSounds(tab.title)" ng-repeat="tab in tabs" ng-disabled="tab.disabled">
                 <md-tab-label>
                     <img ng-src="{{tab.src}}">
@@ -17,14 +15,11 @@
                             <p class="small-8 columns">{{ sound.name }}</p>
                             <input type="image" src="assets/play-button.png" id="play-btn" ng-click="testPlay(sound.index)" layout-sm="column">
                             <section layout="row" layout-sm="column" layout-align="center center">
-                                <!--<md-button ng-click="unfavorite(sound)" ng-show="sound.isFavorite" class="md-icon-button md-accent" aria-label="Favorite">-->
                                 <span ng-if="username">
                                     <md-button ng-click="unfavorite(sound)" ng-show="sound.isFavorite" aria-label="Favorite">
                                         <img src="../assets/favorite.png">
-                                        <!--<md-icon md-svg-icon="../assets/favorite.svg"></md-icon>-->
                                     </md-button>
                                     <md-button ng-click="favorite(sound)" ng-hide="sound.isFavorite" aria-label="Favorite">
-                                        <!--<md-icon md-svg-icon="../assets/unfavorite.svg"></md-icon>-->
                                         <img src="../assets/unfavorite.png">
                                     </md-button>
                                 </span>

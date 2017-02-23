@@ -1,5 +1,5 @@
 header {
-    background-color: #F5F2EE;
+    background-color: $primary-bkgd-color;
 
     nav {
         height: 100px;
@@ -58,12 +58,12 @@ header {
                 }
 
                 button {
-                    color: #0D4656;
+                    color: $secondary-font-color;
                     font-family: $primary-font-type;
                 }
 
                 button:hover {
-                    color: #6FC5D9;
+                    color: $secondary-highlight-color;
                 }
             }
         }

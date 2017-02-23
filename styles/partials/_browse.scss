@@ -1,5 +1,5 @@
 #browse-container {
-    background-color: #F5F2EE;
+    background-color: $primary-bkgd-color;
     padding-bottom: 50px;
 
      @media screen and (min-width: $size-medium) {
@@ -10,8 +10,8 @@
         width: 90%;
         height: 415px;
         overflow: hidden;
-        background-color: #333333;
-        color: white;
+        background-color: $secondary-bkgd-color;
+        color: $primary-font-color;
         margin: 5% auto;
 
         @media screen and (min-width: $size-medium) {
@@ -44,7 +44,7 @@
                 }
 
                 .md-tab {
-                    color: white;
+                    color: $primary-font-color;
                     font-size: 9px;
                     padding: 6px;
 
@@ -54,7 +54,7 @@
                 }
 
                 .md-tab.md-active {
-                    background-color: #1DAE83;
+                    background-color: $primary-highlight-color;
                 }
                
 
@@ -97,7 +97,7 @@
                             }
 
                             p {
-                                color: white;
+                                color: $primary-font-color;
                                 margin: 3px 0 0;
                                 font-size: 0.35rem;
 
@@ -145,7 +145,7 @@
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            border-bottom: 1px solid #1DAE83;
+                            border-bottom: 1px solid $border-line-color;
                             margin: 10px;
 
                             #play-btn {
@@ -156,7 +156,7 @@
                             }
 
                             p {
-                                color: #F5F2EE;
+                                color: $primary-font-color;
                                 margin: 0;
                                 font-size: 12px;
 

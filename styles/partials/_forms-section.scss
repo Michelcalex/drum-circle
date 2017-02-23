@@ -1,0 +1,131 @@
+#forms {
+    padding: 7.5%;
+    align-items: center;
+    margin-bottom: 50px;
+    background-color: $primary-bkgd-color;
+
+    @media screen and (min-width: $size-medium) {
+        margin-bottom: 75px;
+    }
+
+    md-content {
+        width: 100%;
+        overflow: hidden;
+        background-color: $secondary-bkgd-color;
+        color: $primary-font-color;
+
+        @media screen and (min-width: $size-medium) {
+            width: 75%;
+            height: 300px;
+        }
+
+        @media screen and (min-width: $size-x-large) {
+            width: 50%;
+        }
+
+        md-tabs {
+            min-height: 190px;
+            margin-top: 12px;
+
+            @media screen and (min-width: $size-medium) {
+                min-height: 220px; 
+            }
+        }
+
+        md-tab-content {
+            top: -9px;
+            height: 165px;
+            overflow: hidden;
+
+            @media screen and (min-width: $size-medium) {
+                top: 0px;
+            }
+        }
+
+        md-pagination-wrapper {
+            width: 100% !important;
+
+            md-tab-item {
+                width: 50%;
+                text-transform: capitalize;
+            }
+
+            .md-tab.md-active {
+                background-color: $primary-highlight-color;
+            }
+
+            .md-tab {
+                color: $primary-font-color;
+                font-size: 11px;
+                padding: 8px 24px;
+
+                @media screen and (min-width: $size-medium) {
+                    font-size: 14px;
+                    padding: 12px 24px;
+                }
+            }
+
+            md-ink-bar {
+                color: #8ED6C1;
+                background-color: #8ED6C1;
+                bottom: 6px;
+
+                @media screen and (min-width: $size-medium) {
+                    bottom: 0px;
+                }
+            }
+        }
+            
+        form {
+            margin-top: 14px;
+
+            input {
+                height: 2rem;
+                font-size: 0.8rem;
+                background-color: $secondary-bkgd-color;
+
+                @media screen and (min-width: $size-medium) {
+                    height: 2.4375rem;
+                    font-size: 1rem;
+                }
+            }
+
+            .user-lock {
+                float: right;
+                margin-right: 16px;
+                margin-top: -41px;
+                position: relative;
+                z-index: 2;
+                color:$primary-highlight-color;
+            }
+
+            button {
+                width: 100%;
+                background-color: $primary-highlight-color;
+                padding: 14px 24px;
+                font-size: 11px;
+                font-weight: 600;
+                font-family: $primary-font-type;
+
+                @media screen and (min-width: $size-medium) {
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+            }
+
+            .md-button {
+                width: 100%;
+                background-color: $primary-highlight-color;
+                margin: 0;
+            }
+        }
+    }
+
+    .md-padding {
+        padding: 30px;
+
+        @media screen and (min-width: $size-x-large) {
+            padding: 35px;
+        }
+    }
+}

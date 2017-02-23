@@ -1,0 +1,43 @@
+#welcome-container {
+    background-image: url('../assets/welcome-image.jpg');
+    background-size: cover;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    @media screen and (min-width: $size-medium) {
+        height: 485px;
+        padding-bottom: 75px;
+    }
+
+    #welcome-content {
+        text-align: center;
+        width: 70%;
+        overflow: hidden;
+        color: $primary-font-color;
+
+        h1 {
+            font-family: $primary-font-type;
+        }
+
+        h4 {
+            font-style: italic;
+            font-family: $primary-font-type;
+        }
+
+        img {
+            width: 14%;
+
+            @media screen and (min-width: $size-medium) {
+                width: 10%;
+            }
+
+            @media screen and (min-width: $size-x-large) {
+                width: 8%;
+            }
+        }
+    }
+}  
