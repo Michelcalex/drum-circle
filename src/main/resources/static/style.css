@@ -379,38 +379,44 @@ header {
     width: 100%;
     background-color: #333333;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 10px; }
+    padding: 10px 25px; }
     @media screen and (min-width: 25.876em) {
       #kit-container .wrapper #kit-heading {
-        width: 25%; } }
-    #kit-container .wrapper #kit-heading h2 {
-      font-family: "Play", sans-serif;
-      padding-left: 15px; }
-      #kit-container .wrapper #kit-heading h2 p {
-        font-size: .5em;
+        width: 25%;
+        padding: 10px; } }
+    #kit-container .wrapper #kit-heading #instructions {
+      display: flex;
+      width: 100%;
+      align-content: center;
+      justify-content: space-between; }
+      #kit-container .wrapper #kit-heading #instructions h2 {
+        font-size: 1.5rem;
         margin-bottom: 0px; }
+      #kit-container .wrapper #kit-heading #instructions #trash-image {
+        background-image: url("../assets/trash.png");
+        background-size: cover;
+        background-position: center center;
+        width: 9%;
+        height: 26px; }
+        @media screen and (min-width: 25.876em) {
+          #kit-container .wrapper #kit-heading #instructions #trash-image {
+            width: 12%;
+            margin-top: 3px;
+            height: 28px; } }
+        @media screen and (min-width: 64em) {
+          #kit-container .wrapper #kit-heading #instructions #trash-image {
+            width: 10%;
+            height: 30px; } }
+    #kit-container .wrapper #kit-heading p {
+      font-size: 0.8rem;
+      padding-right: 30px;
+      margin-bottom: 0px; }
       @media screen and (min-width: 25.876em) {
-        #kit-container .wrapper #kit-heading h2 {
-          font-size: 1.7em;
-          text-align: left;
-          margin: 0px;
-          padding-left: 10px;
-          width: 60%; } }
-    #kit-container .wrapper #kit-heading #trash-image {
-      background-image: url("../assets/trash.png");
-      background-size: cover;
-      background-position: center center;
-      width: 8%;
-      height: 25px; }
-      @media screen and (min-width: 25.876em) {
-        #kit-container .wrapper #kit-heading #trash-image {
-          margin: 7px;
-          width: 13%; } }
-      @media screen and (min-width: 64em) {
-        #kit-container .wrapper #kit-heading #trash-image {
-          width: 10%;
-          height: 30px; } }
+        #kit-container .wrapper #kit-heading p {
+          padding-right: 0px;
+          margin-top: 5px; } }
   #kit-container .wrapper #left-defaults {
     background-color: #333333;
     overflow-y: scroll;
@@ -423,13 +429,15 @@ header {
         background-color: #333333;
         width: 25%;
         height: 700px;
-        padding-right: 0px; } }
+        padding-right: 0px;
+        padding-left: 0px; } }
     #kit-container .wrapper #left-defaults #fav-sounds {
       border-bottom: 1px solid #1DAE83;
       margin: 10px; }
       #kit-container .wrapper #left-defaults #fav-sounds p {
         font-size: .8em;
-        margin-bottom: 0; }
+        margin-bottom: 0;
+        font-family: "Play", sans-serif !important; }
   #kit-container .wrapper #right-defaults {
     background-color: #F5F2EE;
     width: 100%;

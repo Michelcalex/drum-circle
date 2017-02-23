@@ -9,46 +9,54 @@
             width: 100%;
             background-color: $secondary-bkgd-color;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            padding: 10px;
+            padding: 10px 25px;
 
             @media screen and (min-width: $size-medium) {
                 width: 25%;
+                padding: 10px;
             }
 
-            h2 {
-                font-family: $primary-font-type;
-                padding-left: 15px;
-
-                p {
-                    font-size: .5em;
+            #instructions {
+                display: flex;
+                width: 100%;
+                align-content: center;
+                justify-content: space-between;
+                
+                h2 {
+                    font-size: 1.5rem;
                     margin-bottom: 0px;
                 }
 
+                #trash-image {
+                    background-image: url('../assets/trash.png');
+                    background-size: cover;
+                    background-position: center center;
+                    width: 9%;
+                    height: 26px;
+
+                    @media screen and (min-width: $size-medium) {
+                        width: 12%;
+                        margin-top: 3px;
+                        height: 28px;
+                    }
+
+                    @media screen and (min-width: $size-x-large) {
+                        width: 10%;
+                        height: 30px;
+                    }
+                }  
+            }
+
+            p {
+                font-size: 0.8rem;
+                padding-right: 30px;
+                margin-bottom: 0px;
+
                 @media screen and (min-width: $size-medium) {
-                    font-size: 1.7em;
-                    text-align: left;
-                    margin: 0px;
-                    padding-left: 10px;
-                    width: 60%;
-                }
-            } 
-
-            #trash-image {
-                background-image: url('../assets/trash.png');
-                background-size: cover;
-                background-position: center center;
-                width: 8%;
-                height: 25px;
-
-                @media screen and (min-width: $size-medium) {
-                    margin: 7px;
-                    width: 13%;
-                }
-
-                @media screen and (min-width: $size-x-large) {
-                    width: 10%;
-                    height: 30px;
+                    padding-right: 0px;
+                    margin-top: 5px;
                 }
             }
         }
@@ -67,6 +75,7 @@
                 width: 25%; 
                 height: 700px;
                 padding-right: 0px;
+                padding-left: 0px;
 
             } 
 
@@ -77,6 +86,7 @@
                 p {
                     font-size: .8em;
                     margin-bottom: 0;
+                    font-family: $primary-font-type !important;
                 }
             }
         }
